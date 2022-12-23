@@ -14,12 +14,14 @@ a{
 ul{
     list-style: none;
 }
-nav{
-    width: 20%;
+#nav{
+    position: absolute;
     background: linear-gradient(90deg,rgb(89, 0, 255),rgb(165, 97, 255));
-    height: 100vh;
     padding-top: 3rem;
     box-shadow: 0 0 20px 0 #000;
+    cursor: pointer;
+    z-index: 1000;
+    height: 100vh;
 }
 .nav-list-item{
     background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(67, 0, 112));
@@ -37,26 +39,102 @@ nav{
 .close{
     animation-name: closeSide;
     animation-duration: 1s;
-    margin-right: -20% ;
+    margin-right: -15% ;
 }
 .open{
     animation-name: openSide;
     animation-duration: 1s;
     margin-right: 0% ;
 }
+.closeTop{
+    animation-name: closeSideTop;
+    animation-duration: 1s;
+    margin-top: -95% ;
+}
+.openTop{
+    animation-name: openSideTop;
+    animation-duration: 1s;
+    margin-top: 0% ;
+}
 @keyframes closeSide {
     0%{
         margin-right: 0% ;
     }
     100%{
-        margin-right: -20% ;
+        margin-right: -15% ;
     }
 }
 @keyframes openSide {
     0%{
-        margin-right: -20% ;
+        margin-right: -15% ;
     }
     100%{
         margin-right: 0% ;
     }
+}
+
+@keyframes closeSideTop {
+    0%{
+        margin-top: 0% ;
+    }
+    100%{
+        margin-top: -95% ;
+    }
+}
+@keyframes openSideTop {
+    0%{
+        margin-top: -95% ;
+    }
+    100%{
+        margin-top: 0% ;
+    }
+}
+#search-form{
+    background: rgb(255, 255, 255);
+    padding: 0.5rem;
+    border-radius: 5rem;
+    margin-bottom: 3rem;
+}
+#search{
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0);
+    outline: none;
+}
+
+#search::placeholder{
+    color: rgba(0, 0, 0, 0.466);
+}
+#search-btn{
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+#search-btn:hover{
+    transform: scale(1.5);
+}
+#section{
+    height: 100vh;
+
+    overflow-y: auto;
+}
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f100;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(0deg,rgb(68, 0, 255),rgba(238, 238, 238, 0));
+    border-radius: 1rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(0deg,rgb(39, 0, 148),rgba(238, 238, 238, 0));
+    cursor: pointer;
+    
 }

@@ -6,34 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/SmallMobile.css">
     <title>Music Site: Index</title>
 </head>
 <body dir="rtl">
-    <!-- Started top nav -->
-    <div id="nav" class="open">
-        <nav>
-            <ul id="nav-list">
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-                <li class="nav-list-item"><a href="#">پلی لیست</a></li>
-            </ul>
-        </nav>
-    </div>
-    <!-- Ended top nav -->
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Started top nav -->
+            <div id="nav" class="col-sm-12 col-lg-2 ">
+                <div class="navbar-brand my-4 text-light">
+                    MusicPlayer.Com
+                </div>
 
-    <!-- Started top section -->
-    <div >
-        
+                <div id="search-form-panel" class=" m-sm-5 m-lg-0 my-5">
+                    <form class="d-flex flex-row w-100" id="search-form" action="#">
+                        <input class="w-100" placeholder="جستجو کنید.." id="search" type="text" >
+                        <button id="search-btn"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <ul id="nav-list">
+                    <li class="nav-list-item bg-warning mb-5"><a href="#">ورود به حساب کاربری</a></li>
+                    <li class="nav-list-item"><a href="#">پلی لیست</a></li>
+                    <li class="nav-list-item"><a href="#">سبک های موسیقیی</a></li>
+                    <li class="nav-list-item"><a href="#">جدید ترین</a></li>
+                    <li class="nav-list-item"><a href="#">پر بازدید ترین</a></li>
+                    <li class="nav-list-item"><a href="#">خارجی</a></li>
+                    <li class="nav-list-item"><a href="#">ریمیکس</a></li>
+                    <li class="nav-list-item"><a href="#">پادکست</a></li>
+                    <li class="nav-list-item"><a href="#">آواز خوان ها</a></li>
+                    <li class="nav-list-item"><a href="#">آهنگ های پیشنهادی</a></li>
+                </ul>
+            </div>
+            <!-- Ended top nav -->
+
+            <!-- Started top section -->
+            <div id="section" class="col-sm-12 col-lg-12">
+                <div class="bg-danger p-5 m-3">
+                    THis is section
+                </div>
+            </div>
+            <!-- Ended top section -->
+        </div>
     </div>
-    <!-- Ended top section -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./js/script1.js"></script>

@@ -1,0 +1,33 @@
+@media screen and (max-width: 576px) {
+    .closeTop{
+        margin-top: -120% ;
+    }
+   
+  }
+
+@media screen and (min-width: 680px) {
+  .closeTop{
+      margin-top: -100% ;
+  }
+  
+}
+
+@media screen and (min-width: 710px) {
+    .closeTop{
+        margin-top: -90% ;
+    }
+    
+  }
+
+  @media screen and (min-width: 810px) {
+    .closeTop{
+        margin-top: -80% ;
+    }
+    
+  }
+  @media screen and (min-width: 930px) {
+    .closeTop{
+        margin-top: -70% ;
+    }
+    
+  }
