@@ -1,0 +1,62 @@
+@font-face {
+    font-family: "iranSansWeb";
+    src: url("./../fonts/IRANSansWeb\ Bold.ttf");
+}
+body{
+    background: linear-gradient(90deg,rgb(155, 215, 255),rgb(255, 207, 207));
+    font-family: "iranSansWeb";
+    text-align: center;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+nav{
+    width: 20%;
+    background: linear-gradient(90deg,rgb(89, 0, 255),rgb(165, 97, 255));
+    height: 100vh;
+    padding-top: 3rem;
+    box-shadow: 0 0 20px 0 #000;
+}
+.nav-list-item{
+    background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(67, 0, 112));
+    margin-top: 0.2rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.nav-list-item:hover{
+    background: linear-gradient(130deg,rgb(61, 0, 85),rgb(153, 0, 255));
+}
+.nav-list-item > a{
+    color: #fff;
+}
+.close{
+    animation-name: closeSide;
+    animation-duration: 1s;
+    margin-right: -20% ;
+}
+.open{
+    animation-name: openSide;
+    animation-duration: 1s;
+    margin-right: 0% ;
+}
+@keyframes closeSide {
+    0%{
+        margin-right: 0% ;
+    }
+    100%{
+        margin-right: -20% ;
+    }
+}
+@keyframes openSide {
+    0%{
+        margin-right: -20% ;
+    }
+    100%{
+        margin-right: 0% ;
+    }
+}
