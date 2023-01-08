@@ -5,8 +5,9 @@ let progressCon=document.getElementById("progress-container");
 let progress=document.getElementById("progress");
 
 progressCon.addEventListener("click",(e)=>{
-    console.log(e.offsetX);
-    let width=(100*e.offsetX)/600;
+    console.log(e);
+    console.log(progressCon.style);
+    let width=(100*e.offsetX)/350;
     progress.setAttribute("style",`width:${width}%`);
 });
 function setProgress(e) {

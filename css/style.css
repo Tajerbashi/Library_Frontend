@@ -165,8 +165,96 @@ ul{
     box-shadow: 2px 0 0 0 rgb(0, 0, 0);
     height: 1rem;
     border-radius: 1rem;
+    animation: changer 5s infinite linear;
 }
 #Controller-Container{
     background: linear-gradient(90deg,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.5));
     border-radius: 1rem;
+}
+#header-img{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 5px solid rgb(76, 0, 255);
+    animation: rotation 5s infinite linear;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+        border: 1px solid red;
+        box-shadow: 0 0 10px 0 rgb(132, 0, 255);
+    }
+    to {
+        transform: rotate(359deg);
+        border: 1px solid rgb(0, 17, 255);
+    }
+}
+@keyframes changer {
+    10% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(255, 0, 0));
+
+    }
+    20% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(255, 136, 0));
+
+    }
+    30% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(255, 230, 0));
+
+    }
+    40% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(166, 255, 0));
+
+    }
+    50% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(81, 255, 0));
+
+    }
+    60% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(0, 255, 170));
+
+    }
+    70% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(0, 153, 255));
+
+    }
+    80% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(0, 17, 255));
+
+    }
+    90% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(132, 0, 255));
+
+    }
+    100% {
+        background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(255, 0, 170));
+
+    }
+    
+}
+#nav-song{
+    padding: 1rem;
+    margin: 1rem 0;
+}
+.nav-header-item{
+    cursor: pointer;
+}
+.nav-header-item:hover .song-title{
+    display: block;
+}
+.song-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 1rem;
+}
+.song-title{
+    color: #fff;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    margin: -60px 0 0 1px;
+    width: 95px;
+    height: 59px;
+    border-radius: 0 0 1rem 1rem;
+    display: none;
 }
