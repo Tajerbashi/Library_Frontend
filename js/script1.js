@@ -1,8 +1,23 @@
 var side=document.getElementById("nav");
 var sideSw=document.getElementById("nav-sw");
+
+const frame=document.getElementById("frame");
+
+const HomePage=document.getElementById("HomePage");
+const userPanel=document.getElementById("userPanel");
+const playList=document.getElementById("playList");
+const groupType=document.getElementById("groupType");
+const newSongs=document.getElementById("newSongs");
+const mostVisit=document.getElementById("mostVisit");
+const stranger=document.getElementById("stranger");
+const remix=document.getElementById("remix");
+const padcast=document.getElementById("padcast");
+const singers=document.getElementById("singers");
+const adminfavorite=document.getElementById("adminfavorite");
+
 side.addEventListener("click",(event)=>{
     // console.log(event.target.tagName);
-    console.log(event.view.innerWidth);
+    // console.log(event.view.innerWidth);
 
     if(event.view.innerWidth>991){
         if(event.target.tagName === "UL" || event.target.tagName==="DIV"){
@@ -29,7 +44,7 @@ side.addEventListener("click",(event)=>{
     }
 });
 window.addEventListener("resize",(event)=>{
-    console.log(event.target.innerWidth);
+    // console.log(event.target.innerWidth);
     if(event.target.innerWidth>991){
         side.classList.add("close");
         side.classList.remove("openTop");
@@ -39,5 +54,41 @@ window.addEventListener("resize",(event)=>{
         side.classList.remove("open");
         side.classList.remove("close");
     }
+});
+
+HomePage.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+
+userPanel.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/UserLogin.html");
+});
+
+playList.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/playList.html");
+});
+groupType.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+newSongs.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+mostVisit.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+stranger.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+remix.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+padcast.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
+});
+singers.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Singer.html");
+});
+adminfavorite.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/Main.html");
 });
 
