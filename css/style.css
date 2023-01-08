@@ -43,7 +43,7 @@ ul{
 .close{
     animation-name: closeSide;
     animation-duration: 1s;
-    margin-right: -15% ;
+    margin-right: -12% ;
     height: 100%;
 }
 .open{
@@ -68,12 +68,12 @@ ul{
         margin-right: 0% ;
     }
     100%{
-        margin-right: -15% ;
+        margin-right: -12% ;
     }
 }
 @keyframes openSide {
     0%{
-        margin-right: -15% ;
+        margin-right: -12% ;
     }
     100%{
         margin-right: 0% ;
@@ -144,4 +144,29 @@ ul{
     background: linear-gradient(0deg,rgb(39, 0, 148),rgba(238, 238, 238, 0));
     cursor: pointer;
     
+}
+.header-music-controller{
+    color: #fff;
+    cursor: pointer;
+    padding: 1rem;
+}
+.header-music-controller:hover{
+    color: rgb(0, 89, 255);
+    transform: scale(1.5);
+}
+#progress-container{
+    background-color: rgba(255, 255, 255, 0.5) !important;
+    height: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+#progress{
+    background: linear-gradient(90deg,rgba(238, 238, 238, 0),rgb(255, 196, 0));
+    box-shadow: 2px 0 0 0 rgb(0, 0, 0);
+    height: 1rem;
+    border-radius: 1rem;
+}
+#Controller-Container{
+    background: linear-gradient(90deg,rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.5));
+    border-radius: 1rem;
 }
