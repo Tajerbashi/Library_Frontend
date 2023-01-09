@@ -28,7 +28,7 @@ ul{
     overflow-y: auto;
 }
 .nav-list-item{
-    background: linear-gradient(90deg,rgba(255, 142, 36, 0.74),rgb(112, 26, 0));
+    background: linear-gradient(90deg,rgb(207, 83, 0),rgba(112, 26, 0, 0.226));
     margin-top: 0.2rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
