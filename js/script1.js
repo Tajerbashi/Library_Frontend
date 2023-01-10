@@ -5,7 +5,7 @@ const frame=document.getElementById("frame");
 
 const HomePage=document.getElementById("HomePage");
 const userPanel=document.getElementById("userPanel");
-const playList=document.getElementById("playList");
+const PlayLists=document.getElementById("PlayLists");
 const groupType=document.getElementById("groupType");
 const newSongs=document.getElementById("newSongs");
 const mostVisit=document.getElementById("mostVisit");
@@ -15,7 +15,7 @@ const padcast=document.getElementById("padcast");
 const singers=document.getElementById("singers");
 const adminfavorite=document.getElementById("adminfavorite");
 
-frame.setAttribute("src","/pages/Main.html");
+frame.setAttribute("src","/pages/PLayLists.html");
 
 
 side.addEventListener("click",(event)=>{
@@ -63,36 +63,8 @@ HomePage.addEventListener("click",()=>{
     frame.setAttribute("src","/pages/Main.html");
 });
 
-userPanel.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/UserLogin.html");
-});
-
-playList.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/playList.html");
-});
-groupType.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-newSongs.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-mostVisit.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-stranger.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-remix.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-padcast.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
-});
-singers.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Singer.html");
-});
-adminfavorite.addEventListener("click",()=>{
-    frame.setAttribute("src","/pages/Main.html");
+PlayLists.addEventListener("click",()=>{
+    frame.setAttribute("src","/pages/PlayLists.html");
 });
 
 let progressCon=document.getElementById("progress-container");
@@ -111,3 +83,4 @@ function setProgress(e) {
   
     Music.currentTime = (clickX / width) * duration;
   }
+
