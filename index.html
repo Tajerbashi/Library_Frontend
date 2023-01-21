@@ -12,6 +12,18 @@
     <title>Music Site: Index</title>
 </head>
 <body dir="rtl">
+    <!-- Start Modal -->
+    <div id="modal-container" class="d-none">
+        <div id="modal">
+            <div id="modal-header" class="d-flex flex-row justify-content-between">
+                <span id="modal-header-site" style="margin: 13px;">نام سایت</span>
+                <span id="modal-header-title" style="margin: 13px;">عنوان</span>
+                <span style="margin: 10px;"><i class="fa fa-close fa-2x"></i></span>
+            </div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <!-- End Modal -->
     <!-- Started top nav -->
     <div class="d-flex flex-column open">
                 
@@ -20,7 +32,7 @@
             <a id="userPanel" class="bg-danger mt-3">ورود به حساب کاربری</a>
         </div>
 
-        <div id="search-panel" class="">
+        <div id="search-panel">
             <div id="search-panel-control">
                 <input id="search-word" placeholder="جستجو کنید ..."/>
                 <span><i id="search-icon-pk" class="fa fa-search"></i></span>
@@ -425,5 +437,6 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="./js/script1.js"></script>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
