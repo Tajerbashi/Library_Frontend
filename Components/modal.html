@@ -1,0 +1,101 @@
+<style>
+    /* Start Modal */
+#modal-container{
+    background: rgba(0, 0, 0, 0.514);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Stay in place front is invalid - may break your css so removed */
+    left: 0;
+    right: 0; /* Full width (left and right 0) */
+    top: 0;
+    bottom: 0; /* Full height top and bottom 0 */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    z-index: 99999; /* Sit on top - higher than any other z-index in your site*/
+}
+#modal{
+    position: absolute;
+    top: 50px;
+    width: 95%;
+    z-index: 9999;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2),0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.568);
+    animation-name: animateTop;
+    animation-duration: 1s
+}
+#modal-header{
+    background: linear-gradient(60deg,rgb(255, 94, 0),rgb(255, 174, 0));
+    height: 5%;
+    border-radius: 1rem 1rem 0 0;
+}
+.fa-close{
+    color: rgb(68, 0, 107);
+    cursor: pointer;
+}
+.fa-close:hover{
+    color: rgb(255, 255, 255);
+}
+#modal-body{
+    background: linear-gradient(45deg,rgba(255, 192, 140, 0.5),rgba(255, 243, 132, 0.5));
+    padding: 10px;
+    border-radius: 0 0 1rem 1rem;
+    height: 780px;
+    overflow-y: auto;
+}
+/* Add Animation */
+@keyframes animateTop {
+    /* from {top: -500px; opacity: 0}
+    to {top: 50px; opacity: 1} */
+    from { opacity: -1}
+    to { opacity: 1}
+  }
+/* End Modal */
+</style>
+<!-- Start Modal -->
+<div id="modal-container" class="d-none">
+    <div id="modal">
+        <div id="modal-header" class="d-flex flex-row justify-content-between">
+            <span id="modal-header-site" style="margin: 13px;">نام سایت</span>
+            <span id="modal-header-title" style="margin: 13px;">عنوان</span>
+            <span style="margin: 10px;"><i class="fa fa-close fa-2x"></i></span>
+        </div>
+        <div id="modal-body"></div>
+    </div>
+</div>
+<!-- End Modal -->
+<script>
+    let modal_container=document.getElementById("modal-container");
+    let navListItem=document.querySelectorAll(".nav-list-item");
+    let modalHeaderSite=document.getElementById("modal-header-site");
+    let modalHeaderTitle=document.getElementById("modal-header-title");
+    let userPanel=document.getElementById("userPanel");
+    
+    
+    modal_container.addEventListener("click",(event)=>{
+        // console.log(event.target);
+        if(event.target.getAttribute("id")==="modal-container" || event.target.classList.contains("fa-close")){
+            modal_container.classList.add("d-none");
+        }
+    });
+    navListItem.forEach(item => {
+        item.addEventListener("click",()=>{
+            console.log(item);
+            if(item.getAttribute("id")!="HomePage"){
+                modal_container.classList.remove("d-none");
+                modalHeaderSite.innerHTML="موزیک سایت";
+                modalHeaderTitle.innerHTML=item.firstChild.innerHTML;
+            }
+        });
+    });
+    userPanel.addEventListener("click",()=>{
+        modalHeaderSite.innerHTML="موزیک سایت";
+        modalHeaderTitle.innerHTML="صفحه ورود کاربر";
+    
+        modal_container.classList.remove("d-none");
+    });
+</script>
