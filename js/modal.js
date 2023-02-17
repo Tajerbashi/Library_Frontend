@@ -26,5 +26,4 @@ userPanel.addEventListener("click",()=>{
     modalHeaderTitle.innerHTML="صفحه ورود کاربر";
 
     modal_container.classList.remove("d-none");
-
 });
