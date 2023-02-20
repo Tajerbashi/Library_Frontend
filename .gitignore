@@ -1,2 +1,7 @@
-node_modules
+.DS_Store
+/node_modules
 *.jpg
+*.png
+*.mp3
+
+
