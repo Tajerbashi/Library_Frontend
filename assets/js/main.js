@@ -1,4 +1,5 @@
 let aside=document.getElementById("aside");
+let aside_toggle=document.getElementById("aside-toggle");
 
 function Open_Aside(event){
     console.log(event.target);
@@ -6,14 +7,14 @@ function Open_Aside(event){
 function Close_Aside(event){
     console.log(event.target);
 }
-aside.addEventListener("click",(event)=>{
-    console.log(event.target.classList.contains("open-aside"));
-    console.log(event.target.classList.contains("close-aside"));
-    if (event.target.classList.contains("open-aside")){
-        event.target.classList.remove("open-aside")
-        event.target.classList.add("close-aside")
+aside_toggle.addEventListener("click",()=>{
+    console.log(aside.classList.contains("open-aside"));
+    console.log(aside.classList.contains("close-aside"));
+    if (aside.classList.contains("open-aside")){
+        aside.classList.remove("open-aside")
+        aside.classList.add("close-aside")
     }else{
-        event.target.classList.add("open-aside")
-        event.target.classList.remove("close-aside")
+        aside.classList.add("open-aside")
+        aside.classList.remove("close-aside")
     }
 });
