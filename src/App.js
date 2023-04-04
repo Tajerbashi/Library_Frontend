@@ -4,11 +4,9 @@ import Product from "./Components/Product/Product"
 function App(){
     return (
         <div id="app" className="container">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
+            <Product title="Book"/>
+            <Product title="Computer"/>
+            <Product title="Iphone"/>
         </div>
     )
 }

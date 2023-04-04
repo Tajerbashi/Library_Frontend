@@ -1,4 +1,4 @@
-#product-container{
+.product-container{
     margin: 1rem;
     padding: 1rem;
     background: linear-gradient(90deg,rgba(255, 0, 0, 0.4),rgba(255, 0, 0, 0.5),rgba(255, 0, 0, 0.5),rgba(255, 0, 0, 0.4));
