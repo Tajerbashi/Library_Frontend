@@ -1,8 +1,8 @@
 import './Product.css'
 
-function Product(props){
+const Product = ({title}) => {
     return (
-        <div class='product-container'>{props.title}</div>
+        <div class='product-container'>{title}</div>
     )
 }
 
