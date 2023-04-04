@@ -11,5 +11,15 @@ import ReactDOM from "react-dom";
 //     );
 
 // -------------------  New Version of React -------------------
-const element = <div id="app" className="container">Welcome to React Application</div>
-ReactDOM.render(element, document.getElementById("root"));
+// const element = <div id="app" className="container">Welcome to React Application</div>
+// ReactDOM.render(element, document.getElementById("root"));
+
+function App(){
+    return (
+        <div id="app" className="container">
+            App is a Component
+        </div>
+    )
+}
+
+ReactDOM.render(<App />, document.getElementById("root"))
