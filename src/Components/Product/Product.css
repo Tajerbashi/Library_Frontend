@@ -7,3 +7,10 @@
     border-radius: 1rem ;
     text-align: center;
 }
+.btn{
+    margin-top: 0.5rem;
+    padding: 0.5rem 2rem;
+    color: red;
+    background: black;
+    border-radius: 0.5rem;
+}
