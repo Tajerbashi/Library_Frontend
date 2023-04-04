@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 import App from './App'
+import './index.css'
 // in index.js just import App component because it's will be the parent component and all components will be children of App component so import in App.js component
 
 // -------------------  Older Version of React -------------------

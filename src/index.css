@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(90deg,rgb(126, 219, 255),rgb(109, 172, 255),rgb(37, 150, 255));
+    font-family: sans-serif;
+    font: inherit;
+    color: black;
+}
+
+.container{
+    width: 80%;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
