@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# react-web-animation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+  <img src="https://github.com/RinconStrategies/react-web-animation/blob/master/react_gif.gif" />
+</p>
 
-## Available Scripts
 
-In the project directory, you can run:
+[![build status](https://travis-ci.org/bringking/react-web-animation.svg?branch=master)](https://travis-ci.org/bringking/react-web-animation)
+[![npm version](https://img.shields.io/npm/v/react-web-animation.svg?style=flat-square)](https://www.npmjs.com/package/react-web-animation)
+[![npm downloads](https://img.shields.io/npm/dm/react-web-animation.svg?style=flat-square)](https://www.npmjs.com/package/react-web-animation)
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
-### `npm start`
+## Usage
+import React, { Component } from 'react';
+import { Animated } from 'react-web-animation';
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+export default class Basic extends Component {
 
-### `npm test`
+    getKeyFrames() {
+        return [
+            { transform: 'scale(1)',    opacity: 1,     offset: 0 },
+            { transform: 'scale(.5)',   opacity: 0.5,   offset: 0.3 },
+            { transform: 'scale(.667)', opacity: 0.667, offset: 0.7875 },
+            { transform: 'scale(.6)',   opacity: 0.6,   offset: 1 }
+        ];
+    }
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    getTiming( duration ) {
+        return {
+            duration,
+            easing: 'ease-in-out',
+            delay: 0,
+            iterations: 2,
+            direction: 'alternate',
+            fill: 'forwards'
+        };
+    }
 
-### `npm run build`
+    render() {
+        return
+            <Animated.div keyframes={this.getKeyFrames()}
+                       timing={this.getTiming(2500)}>
+                    Web Animations API Rocks
+            </Animated.div>;
+    }
+}
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![example animation](./src/assets/comparison.gif)
