@@ -7,11 +7,11 @@ import AddProduct from '../AddProduct/AddProduct'
 
 const App = () => {
     const [products,setProducts] = useState([
-        {id: 1 , name: 'Kaihan'},
-        {id: 2 , name: 'Kamran'},
-        {id: 3 , name: 'Mohammad'},
-        {id: 4 , name: 'Farhad'},
-        {id: 5 , name: 'Karim'},
+        {id: 1 , title: 'Kaihan'},
+        {id: 2 , title: 'Kamran'},
+        {id: 3 , title: 'Mohammad'},
+        {id: 4 , title: 'Farhad'},
+        {id: 5 , title: 'Karim'},
     ])
 
     const DeleteProduct = (id) => {
@@ -21,13 +21,20 @@ const App = () => {
     const UpdateProduct = (id) => {
         console.log("UpdateProduct",id);
     }
+    const AddToProducts = (title) => {
+        console.log("AddProduct :",title);
+        const id = Math.floor(Math.random()*10000);
+        const newProduct = {id , ...title};
 
+        setProducts([...products,newProduct])
+
+    }
 
 
 
     return (
         <div id="app" className="container">
-            <AddProduct />
+            <AddProduct onAdd={AddToProducts}/>
             <ProductList products={products} DeleteProduct={DeleteProduct} UpdateProduct={UpdateProduct}/>
         </div>
     )
