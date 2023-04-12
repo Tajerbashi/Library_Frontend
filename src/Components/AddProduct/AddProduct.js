@@ -1,7 +1,7 @@
 import './AddProduct.css'
 import { useState } from 'react';
 const AddProduct = ({onAdd}) => {
-    const [title,setTitle] = useState("","");
+    const [title,setTitle] = useState("");
     const SubmitForm = (e) => {
         e.preventDefault();
         onAdd ({ title });

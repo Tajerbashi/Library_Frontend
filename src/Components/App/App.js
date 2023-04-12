@@ -1,32 +1,46 @@
 // It's important component because it is the main component of the react project
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 import './App.css'
 import ProductList from './../ProductList/ProductList'
 import AddProduct from '../AddProduct/AddProduct'
 
 const App = () => {
-    const [products,setProducts] = useState([
-        {id: 1 , title: 'Kaihan'},
-        {id: 2 , title: 'Kamran'},
-        {id: 3 , title: 'Mohammad'},
-        {id: 4 , title: 'Farhad'},
-        {id: 5 , title: 'Karim'},
-    ])
+    const [products,setProducts] = useState([])
 
-    const DeleteProduct = (id) => {
+    useEffect(() =>{
+        const sendRequest = async () => {
+            const response = await fetch("http://localhost:8877/Products");
+            const data = await response.json();
+            setProducts(data);
+        }
+
+        sendRequest();
+    },[])
+
+    const DeleteProduct = async (id) => {
         console.log("DeleteProduct : ",id);
+        await fetch(`http://localhost:8877/Products/${id}`,{method: 'DELETE' });
         setProducts(products.filter(item => item.id !== id));
     }
+
     const UpdateProduct = (id) => {
         console.log("UpdateProduct",id);
     }
-    const AddToProducts = (title) => {
-        console.log("AddProduct :",title);
-        const id = Math.floor(Math.random()*10000);
-        const newProduct = {id , ...title};
 
-        setProducts([...products,newProduct])
+    const AddToProducts = async (title) => {
+        console.log("AddProduct :",title);
+
+        const response = await fetch("http://localhost:8877/Products",
+        {
+            method: 'POST',
+            headers: {
+                "Content-type":"application/json"
+            },
+            body:JSON.stringify(title)
+        });
+        const data = await response.json();
+        setProducts([...products,data])
 
     }
 
