@@ -1,19 +1,18 @@
-import './ProductList.css'
-const Products = [
-    { id:1,title:'Book', name:'Selection' },
-    { id:2,title:'Watch', name:'Rolex' },
-    { id:3,title:'Glass', name:'Robin' },
-    { id:4,title:'Phone', name:'14 Pro Max' },
-];
-const ProductList = () => {
+import Product from "../Product/Product"
 
+import './ProductList.css'
+
+const ProductList = ({products,DeleteProduct,UpdateProduct}) => {
     return (
-        <ul className='list-group'>
-            {Products.map((item) => {
-                return <li key={item.id} className='list-group-item'><a href='./#'>{item.title} : {item.name}</a></li>
-            })}
-        </ul>
-    );
+        <div className="product-list">
+            {
+                products.map((item) =>{
+                    return <Product key={item.id} product={item} DeleteProduct={DeleteProduct} UpdateProduct={UpdateProduct}/>
+                })
+            }
+        </div>
+    )
+
 }
 
-export default ProductList;
+export default ProductList

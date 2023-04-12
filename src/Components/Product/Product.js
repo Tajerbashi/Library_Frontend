@@ -1,15 +1,19 @@
 import './Product.css'
 
-const Product = ({title}) => {
-    const ShowInfo = () => {
-        alert("Product is : "+ document.getElementById("inputer").value);
-        console.log("Product is : ", title);
-    }
+const Product = ({ product,DeleteProduct ,UpdateProduct}) => {
+
+
     return (
-        <div className='product-container'>
-            <div>{title}</div>
-            <input type='text' className='inputer' id='inputer' />
-            <button className='btn' onClick={ShowInfo}>Click</button>
+        <div className='product'>
+            <div>{ product.title }</div>
+            <div>
+                <button className='btn' onClick={() => DeleteProduct(product.id)}>
+                    Delete
+                </button>
+                <button className='btn' onClick={() => UpdateProduct(product.id)}>
+                    Update
+                </button>
+            </div>
         </div>
     )
 }
