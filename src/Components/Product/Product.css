@@ -7,7 +7,6 @@
     border: none;
     border-bottom: 2px solid rgb(255, 255, 255);
     margin: 5px;
-    color: #eee;
 }
 .priceSpan{
     background: linear-gradient(90deg,rgb(67, 70, 253),rgb(92, 157, 255),rgba(0, 162, 255, 0.795));
@@ -15,5 +14,6 @@
     border-left: 2px solid rgb(255, 255, 255);
     padding: 0 1rem;
     margin: 0.5rem 1rem;
-    color: #eee;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
 }
