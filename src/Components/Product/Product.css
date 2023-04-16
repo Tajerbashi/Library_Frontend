@@ -7,13 +7,24 @@
     border: none;
     border-bottom: 2px solid rgb(255, 255, 255);
     margin: 5px;
+    padding: 1rem;
+    color: rgb(229, 255, 0);
 }
 .priceSpan{
     background: linear-gradient(90deg,rgb(67, 70, 253),rgb(92, 157, 255),rgba(0, 162, 255, 0.795));
     border-right: 2px solid rgb(255, 255, 255);
     border-left: 2px solid rgb(255, 255, 255);
-    padding: 0 1rem;
+    padding: 1rem;
     margin: 0.5rem 1rem;
+    font-size: 1.5rem;
+}
+.pro-item{
+    background: linear-gradient(90deg,rgb(0, 2, 94),rgb(0, 102, 255),rgba(0, 36, 56, 0.795));
+    border-right: 2px solid rgb(0, 0, 0);
+    border-left: 2px solid rgb(0, 0, 0);
+    padding: 0.5rem;
+    margin: 1rem;
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
+    border-radius: 1rem;
 }
