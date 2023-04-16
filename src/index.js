@@ -6,7 +6,15 @@ import App from './Components/App/app';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.css'
 import './index.css'
-ReactDOM.createRoot( document.getElementById("root")).render(<App />);
+
+// ReactDOM
+// .createRoot( document.getElementById("root"))
+// .render(<App />);
+
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
 //  OR
 //    ========================= : React 17 : =========================
 // import './index.css'
