@@ -1,7 +1,7 @@
 import './Product.css'
-const Product = () => {
+const Product = (props) => {
     return (
-        <div className="Product">Book : Name <span>Price : 98$</span></div>
+        <div className="Product"><span className='priceSpan'>Book : {props.name}</span> <span className='priceSpan'>Price : {props.price}$</span></div>
     );
 }
 
