@@ -1,0 +1,12 @@
+.header-container{
+    background: linear-gradient(90deg,red,red,red);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem;
+    border: none;
+}

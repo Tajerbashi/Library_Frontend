@@ -1,21 +1,15 @@
 import './Product.css'
-
-const Product = ({ product,DeleteProduct ,UpdateProduct}) => {
-
-
+const Product = (props) => {
     return (
-        <div className='product'>
-            <div>{ product.title }</div>
-            <div>
-                <button className='btn' onClick={() => DeleteProduct(product.id)}>
-                    Delete
-                </button>
-                <button className='btn' onClick={() => UpdateProduct(product.id)}>
-                    Update
-                </button>
-            </div>
+        <div className="Product">
+            <span className='product'>
+                Product : <span className='pro-item'>{props.name}</span>
+            </span>
+            <span className='product'>
+                Price : <span className='pro-item'>{props.price}$</span>
+            </span>
         </div>
-    )
+    );
 }
 
-export default Product
+export default Product;
