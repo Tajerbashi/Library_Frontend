@@ -11,13 +11,15 @@
     color: rgb(229, 255, 0);
 }
 .product{
-    background: linear-gradient(90deg,rgb(67, 70, 253),rgb(92, 157, 255),rgba(0, 162, 255, 0.795));
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.418);
+    background: linear-gradient(90deg,rgba(67, 70, 253, 0.699),rgba(92, 157, 255, 0.24),rgba(0, 162, 255, 0.418));
     border-right: 2px solid rgb(255, 255, 255);
     border-left: 2px solid rgb(255, 255, 255);
     padding: 1rem;
     font-size: 1.5rem;
 }
 .pro-item{
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.418);
     background: linear-gradient(90deg,rgb(0, 2, 94),rgb(0, 102, 255),rgba(0, 36, 56, 0.795));
     border-right: 2px solid rgb(0, 0, 0);
     border-left: 2px solid rgb(0, 0, 0);
