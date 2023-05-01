@@ -39,8 +39,8 @@ const App = () => {
             flag = true;
         }
     };
-    const ChangeInformation = () => {
-        console.log("Change Status");
+    const ChangeInformation = (word) => {
+        console.log("Change Status : ",word);
     };
     return (
         <div className='container'>
@@ -50,22 +50,22 @@ const App = () => {
                         <Product
                         name={productState.products[0].title} 
                         price={productState.products[0].price}
-                        ChangeStatus={ChangeInformation}
+                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[1].title} 
                         price={productState.products[1].price}
-                        ChangeStatus={ChangeInformation}
+                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[2].title} 
                         price={productState.products[2].price}
-                        ChangeStatus={ChangeInformation}
+                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[3].title} 
                         price={productState.products[3].price}
-                        ChangeStatus={ChangeInformation}
+                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                     <button onClick={ChangeState}
                             className='btn btn-dark text-light w-100'>
