@@ -50,22 +50,26 @@ const App = () => {
                         <Product
                         name={productState.products[0].title} 
                         price={productState.products[0].price}
-                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
+                        ChangeStatus={() => ChangeInformation("Title 1")}
+                        // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[1].title} 
                         price={productState.products[1].price}
-                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
+                        ChangeStatus={() => {ChangeInformation("Title 2")}}
+                        // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[2].title} 
                         price={productState.products[2].price}
-                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
+                        ChangeStatus={() => ChangeInformation("Title 3")}
+                        // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[3].title} 
                         price={productState.products[3].price}
-                        ChangeStatus={ChangeInformation.bind(this, "setProductState")}
+                        ChangeStatus={() => ChangeInformation("Title 4")}
+                        // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                     <button onClick={ChangeState}
                             className='btn btn-dark text-light w-100'>
