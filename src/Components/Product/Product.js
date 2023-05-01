@@ -8,6 +8,12 @@ const Product = (props) => {
             <span className='product'>
                 Price : <span className='pro-item'>{props.price}$</span>
             </span>
+            <span className='product'>
+                Price : <span className='pro-in'><input placeholder='Enter Word ...' type='text' className='product-inputer'></input></span>
+            </span>
+            <span>
+                <button onClick={props.ChangeStatus} className='btn btn-dark'>Click</button>
+            </span>
         </div>
     );
 }

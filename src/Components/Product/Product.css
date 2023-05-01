@@ -29,3 +29,20 @@
     font-size: 1.2rem;
     border-radius: 1rem;
 }
+.product-inputer{
+    background: rgba(255, 0, 0, 0);
+    border: 1px solid transparent !important;
+    text-align: center;
+    color: white;
+    outline: none;
+}
+.product-inputer::placeholder{
+    color: rgba(255, 255, 255, 0.349);
+}
+.pro-in{
+    border-left: 2px solid rgba(0, 0, 0, 0);
+    padding: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+    border-radius: 1rem;
+}

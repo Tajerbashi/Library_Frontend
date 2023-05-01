@@ -17,8 +17,6 @@ const App = () => {
     });
 
     const ChangeState = () => {
-        console.log("ChangeState Clicked");
-        console.log("Flag : ",flag);
         if(flag){
             setProductState({
                 products : [
@@ -29,7 +27,6 @@ const App = () => {
                 ],
             });
             flag = false;
-            console.log("Flag1 : ",flag);
         }else{
             setProductState({
                 products : [
@@ -40,10 +37,11 @@ const App = () => {
                 ],
             });
             flag = true;
-            console.log("Flag2 : ",flag);
         }
     };
-
+    const ChangeInformation = () => {
+        console.log("Change Status");
+    };
     return (
         <div className='container'>
                 <MainHeader />
@@ -52,18 +50,22 @@ const App = () => {
                         <Product
                         name={productState.products[0].title} 
                         price={productState.products[0].price}
+                        ChangeStatus={ChangeInformation}
                         />
                         <Product
                         name={productState.products[1].title} 
                         price={productState.products[1].price}
+                        ChangeStatus={ChangeInformation}
                         />
                         <Product
                         name={productState.products[2].title} 
                         price={productState.products[2].price}
+                        ChangeStatus={ChangeInformation}
                         />
                         <Product
                         name={productState.products[3].title} 
                         price={productState.products[3].price}
+                        ChangeStatus={ChangeInformation}
                         />
                     <button onClick={ChangeState}
                             className='btn btn-dark text-light w-100'>
