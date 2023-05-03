@@ -9,7 +9,7 @@ const Product = (props) => {
                 Price : <span className='pro-item'>{props.price}$</span>
             </span>
             <span className='product'>
-                Price : <span className='pro-in'><input placeholder='Enter Price ...' type='text' className='product-inputer'></input></span>
+                Price : <span className='pro-in'><input placeholder='Enter Price ...' type='text' className='product-inputer' onChange={props.change}></input></span>
             </span>
             <span>
                 <button onClick={props.ChangeStatus} className='btn btn-dark'>Click</button>

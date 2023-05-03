@@ -16,14 +16,15 @@ const App = () => {
         ]
     });
 
-    const ChangeState = () => {
+    const ChangeState = (event) => {
+        console.log(event);
         if(flag){
             setProductState({
                 products : [
-                    {title : "Computer Rog Strix", price:3250},
-                    {title : "Computer Apple Mac Book", price:1250},
-                    {title : "Iphone 14 Pro Max", price:1400},
-                    {title : "Apple Watch Ultra Series 8", price:750},
+                    {title : event.target.value , price:3250},
+                    {title : event.target.value , price:1250},
+                    {title : event.target.value , price:1400},
+                    {title : event.target.value , price:750},
                 ],
             });
             flag = false;
@@ -39,8 +40,18 @@ const App = () => {
             flag = true;
         }
     };
-    const ChangeInformation = (word) => {
-        console.log("Change Status : ",word);
+    const ChangeInformation = (word,index) => {
+        console.log("Change Status : ",word,index);
+        let data = [
+            {title : "Book 1", price:205},
+            {title : "Book 2", price:324},
+            {title : "Book 3", price:580},
+            {title : "Book 4", price:358},
+        ];
+        data[index].price = word;
+        setProductState({
+            products : data,
+        });
     };
     return (
         <div className='container'>
@@ -51,24 +62,30 @@ const App = () => {
                         name={productState.products[0].title} 
                         price={productState.products[0].price}
                         ChangeStatus={() => ChangeInformation("Title 1")}
+                        change={(e) => ChangeInformation(e.target.value,0)}
                         // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[1].title} 
                         price={productState.products[1].price}
                         ChangeStatus={() => {ChangeInformation("Title 2")}}
+                        change={(e) => ChangeInformation(e.target.value,1)}
                         // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[2].title} 
                         price={productState.products[2].price}
                         ChangeStatus={() => ChangeInformation("Title 3")}
+                        change={(e) => ChangeInformation(e.target.value,2)}
+
                         // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                         <Product
                         name={productState.products[3].title} 
                         price={productState.products[3].price}
                         ChangeStatus={() => ChangeInformation("Title 4")}
+                        change={(e) => ChangeInformation(e.target.value,3)}
+
                         // ChangeStatus={ChangeInformation.bind(this, "setProductState")}
                         />
                     <button onClick={ChangeState}
