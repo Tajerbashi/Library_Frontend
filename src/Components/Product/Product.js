@@ -15,6 +15,7 @@ const Product = (props) => {
                     <button className='btn-p' onClick={props.SavePrice}>+</button>
                 </div>
             </div>
+            {false ? props.index + 1 : null}
         </div>
     );
 }

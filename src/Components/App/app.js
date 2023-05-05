@@ -6,31 +6,38 @@ import MainNav from "../nav/nav";
 import Product from "../Product/Product";
 const App = () => {
     console.log("Starting");
+    let counter = -1;
     const [productsState,setProductsState] = useState({
         products:[
             {
                 title: "شما نسخه برتر هستید !",
-                price: "2,500,000"
+                price: "2,500,000",
+                index: 0
             },
             {
                 title: "جادوی فکر بزرگ",
-                price: "1,500,000"
+                price: "1,500,000",
+                index: 1
             },
             {
                 title: "چهار اثر فلورانس",
-                price: "1,200,000"
+                price: "1,200,000",
+                index: 2
             },
             {
                 title: "اثر مرکب",
-                price: "980,000"
+                price: "980,000",
+                index: 3
             },
             {
                 title: "قدرت نامحدود",
-                price: "1,100,000"
+                price: "1,100,000",
+                index: 4
             },
             {
                 title: "365 گام موفقیت",
-                price: "1,750,000"
+                price: "1,750,000",
+                index: 5
             },
         ],
         ShowProducts : true
@@ -56,49 +63,17 @@ const App = () => {
     if (productsState.ShowProducts){
         productsDiv = (
             <div className="app-product-list-div">
-                    <Product
-                            title={productsState.products[0].title}
-                            price={productsState.products[0].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,0)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,0)}
-                             />
-                    <Product
-                            title={productsState.products[1].title}
-                            price={productsState.products[1].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,1)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,1)}
-                             />
-                    <Product
-                            title={productsState.products[2].title}
-                            price={productsState.products[2].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,2)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,2)}
-                             />
-                    <Product
-                            title={productsState.products[3].title}
-                            price={productsState.products[3].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,3)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,3)}
-                             />
-                    <Product
-                            title={productsState.products[4].title}
-                            price={productsState.products[4].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,4)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,4)}
-                             />
-                    <Product
-                            title={productsState.products[5].title}
-                            price={productsState.products[5].price}
-
-                            ChangeTitle={(e) => ChangeTitle(e.target.value,5)}
-                            ChangePrice={(e) => ChangePrice(e.target.value,5)}
-                             />
-                </div> 
+                {
+                    productsState.products.map(item =>{
+                        counter ++;
+                        return <Product title ={item.title} 
+                                        price ={item.price} 
+                                        index = {item.index}
+                                        ChangeTitle = {(e) => ChangeTitle(e.target.value,item.index)} 
+                                        ChangePrice = {(e) => ChangePrice(e.target.value,item.index)} />
+                    })
+                }
+            </div> 
         );
     }
     let btn = {
