@@ -52,27 +52,10 @@ const App = () => {
 
     };
 
-    let btn = {
-        padding: '1rem',  
-        margin: '0.2rem auto',
-        borderRadius: '5rem',
-        border: 'none',
-        textAlign: 'center',
-        alignItems: 'center',
-        background: '#000',
-        color: 'wheat',
-        boxShadow : '0 0 10px 5px #0005',
-    };
-
-    return (
-        <div>
-            <MainHeader />
-            <MainNav />
-            <button style={btn} onClick={ShowHandler}>Hide/Show Products</button>
-            {
-                productsState.ShowProducts ? 
-                (
-                <div className="app-product-list-div">
+    let productsDiv = null;
+    if (productsState.ShowProducts){
+        productsDiv = (
+            <div className="app-product-list-div">
                     <Product
                             title={productsState.products[0].title}
                             price={productsState.products[0].price}
@@ -116,7 +99,27 @@ const App = () => {
                             ChangePrice={(e) => ChangePrice(e.target.value,5)}
                              />
                 </div> 
-            ) : null
+        );
+    }
+    let btn = {
+        padding: '1rem',  
+        margin: '0.2rem auto',
+        borderRadius: '5rem',
+        border: 'none',
+        textAlign: 'center',
+        alignItems: 'center',
+        background: '#000',
+        color: 'wheat',
+        boxShadow : '0 0 10px 5px #0005',
+    };
+
+    return (
+        <div>
+            <MainHeader />
+            <MainNav />
+            <button style={btn} onClick={ShowHandler}>Hide/Show Products</button>
+            {
+                productsDiv
             }
         </div>
     );
