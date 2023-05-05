@@ -14,6 +14,9 @@ const Product = (props) => {
                     <input className='product-inputer-2' placeholder='قیمت جدید وارد کنید ...' onChange={props.ChangePrice} />
                     <button className='btn-p' onClick={props.SavePrice}>+</button>
                 </div>
+                <button className='btn text-danger mt-1' 
+                        onClick={props.Delete}
+                        >حذف محصول</button>
             </div>
             {false ? props.index + 1 : null}
         </div>

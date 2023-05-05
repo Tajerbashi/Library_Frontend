@@ -58,19 +58,27 @@ const App = () => {
         setProductsState({products: productsState.products,ShowProducts : flag});
 
     };
-
+    const DeleteProduct = (index) =>{
+        let data = productsState.products;
+        // data = data.filter(item => {
+        //     return item.index !== index ? item : null;
+        // });
+        data.splice(index,1);
+        setProductsState({products: data,ShowProducts :true});
+    }
     let productsDiv = null;
     if (productsState.ShowProducts){
         productsDiv = (
             <div className="app-product-list-div">
                 {
-                    productsState.products.map(item =>{
+                    productsState.products.map((item,index) =>{
                         counter ++;
                         return <Product title ={item.title} 
                                         price ={item.price} 
                                         index = {item.index}
-                                        ChangeTitle = {(e) => ChangeTitle(e.target.value,item.index)} 
-                                        ChangePrice = {(e) => ChangePrice(e.target.value,item.index)} />
+                                        Delete = {() => DeleteProduct(index)}
+                                        ChangeTitle = {(e) => ChangeTitle(e.target.value,index)} 
+                                        ChangePrice = {(e) => ChangePrice(e.target.value,index)} />
                     })
                 }
             </div> 
