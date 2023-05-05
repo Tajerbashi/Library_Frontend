@@ -59,7 +59,8 @@ const App = () => {
 
     };
     const DeleteProduct = (index) =>{
-        let data = productsState.products;
+        const data = [...productsState.products]
+        // let data = productsState.products;
         // data = data.filter(item => {
         //     return item.index !== index ? item : null;
         // });
