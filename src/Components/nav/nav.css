@@ -3,8 +3,40 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg,red,rgb(255, 153, 153),red);
-    border-radius: 1rem;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0.555),rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.521));
+    border-radius: 1rem; 
     padding: 1rem;
-    margin: 1rem;
+    margin: 1.5rem 1rem;
+    font-size: 1.3rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.534);
+
+}
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0.5rem;
+    margin: auto;
+    width: 100%;
+}
+.nav-list-items{
+    text-align: center;
+    padding: 0.5rem;
+    width: 15%;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    color: rgb(255, 0, 0) !important;
+}
+.nav-list-items:hover {
+    border-bottom: 2px solid rgb(255, 0, 0);
+    cursor: pointer;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0.733),rgba(255, 255, 255, 0));
+
+}
+.nav-list-items > a{
+    color: black;
+
+}
+.nav-list-items > a:hover{
+    color: rgb(255, 0, 0);
 }

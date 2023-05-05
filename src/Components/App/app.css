@@ -1,8 +1,12 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-body{
-    background: linear-gradient(90deg,rgb(68, 68, 68),rgb(99, 99, 99),rgb(70, 70, 70));
-    color: #fff;
+.app-product-list-div{
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 1rem;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
