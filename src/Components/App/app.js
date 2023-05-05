@@ -4,7 +4,6 @@ import './app.css'
 import MainHeader from "../header/header";
 import MainNav from "../nav/nav";
 import Product from "../Product/Product";
-import { render } from "@testing-library/react";
 const App = () => {
     console.log("Starting");
     const [productsState,setProductsState] = useState({
@@ -36,24 +35,23 @@ const App = () => {
         ],
         ShowProducts : true
     });
-    const ChangeTitle = (event,index) => {
-        console.log('====================================');
-        console.log(event.target.value);
-        console.log('====================================');
+    const ChangeTitle = (word,index) => {
+        let data = productsState.products;
+        data[index].title = word;
+        setProductsState({products: data,ShowProducts : true});
+        // setProductsState(data);
     };
-    const ChangePrice = (event,index) => {
-        console.log('====================================');
-        console.log(event.target.value);
-        console.log('====================================');
+    const ChangePrice = (word,index) => {
+        let data = productsState.products;
+        data[index].price = word;
+        setProductsState({products: data,ShowProducts : true});
     };
     const ShowHandler = () => {
-        productsState.ShowProducts = productsState.ShowProducts ? false : true;
-        setProductsState.ShowProducts = setProductsState.ShowProducts ? false : true;
-        console.log('====================================');
-        console.log("SetState : ",setProductsState.ShowProducts);
-        console.log("State : ",productsState.ShowProducts);
-        console.log('====================================');
+        let flag = productsState.ShowProducts ? false : true;
+        setProductsState({products: productsState.products,ShowProducts : flag});
+
     };
+
     let btn = {
         padding: '1rem',  
         margin: '0.2rem auto',
@@ -65,57 +63,60 @@ const App = () => {
         color: 'wheat',
         boxShadow : '0 0 10px 5px #0005',
     };
+
     return (
         <div>
             <MainHeader />
             <MainNav />
             <button style={btn} onClick={ShowHandler}>Hide/Show Products</button>
             {
-                productsState.ShowProducts ? (
-                    <div className="app-product-list-div">
-                        <Product
-                                title={productsState.products[0].title}
-                                price={productsState.products[0].price}
+                productsState.ShowProducts ? 
+                (
+                <div className="app-product-list-div">
+                    <Product
+                            title={productsState.products[0].title}
+                            price={productsState.products[0].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                        <Product
-                                title={productsState.products[1].title}
-                                price={productsState.products[1].price}
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,0)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,0)}
+                             />
+                    <Product
+                            title={productsState.products[1].title}
+                            price={productsState.products[1].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                        <Product
-                                title={productsState.products[2].title}
-                                price={productsState.products[2].price}
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,1)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,1)}
+                             />
+                    <Product
+                            title={productsState.products[2].title}
+                            price={productsState.products[2].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                        <Product
-                                title={productsState.products[3].title}
-                                price={productsState.products[3].price}
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,2)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,2)}
+                             />
+                    <Product
+                            title={productsState.products[3].title}
+                            price={productsState.products[3].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                        <Product
-                                title={productsState.products[4].title}
-                                price={productsState.products[4].price}
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,3)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,3)}
+                             />
+                    <Product
+                            title={productsState.products[4].title}
+                            price={productsState.products[4].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                        <Product
-                                title={productsState.products[5].title}
-                                price={productsState.products[5].price}
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,4)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,4)}
+                             />
+                    <Product
+                            title={productsState.products[5].title}
+                            price={productsState.products[5].price}
 
-                                ChangeTitle={ChangeTitle}
-                                ChangePrice={ChangePrice}
-                                 />
-                    </div> ) : null
+                            ChangeTitle={(e) => ChangeTitle(e.target.value,5)}
+                            ChangePrice={(e) => ChangePrice(e.target.value,5)}
+                             />
+                </div> 
+            ) : null
             }
         </div>
     );
