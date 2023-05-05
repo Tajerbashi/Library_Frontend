@@ -11,7 +11,7 @@ const Product = (props) => {
                     <button className='btn-t' onClick={props.SaveTitle}>+</button>
                 </div>
                 <div className='product-config-item'>
-                    <input className='product-inputer-2' placeholder='قیمت جدید وارد کنید ...' onChange={props.ChangePrice} />
+                    <input type='number' min='0' max='9999999' className='product-inputer-2 text-center' placeholder='قیمت جدید وارد کنید ...' onChange={props.ChangePrice} />
                     <button className='btn-p' onClick={props.SavePrice}>+</button>
                 </div>
                 <button className='btn text-danger mt-1' 

@@ -25,12 +25,12 @@
     padding: 0.5rem;
     width: 15%;
     border-bottom: 2px solid rgb(0, 0, 0);
-    color: rgb(255, 0, 0) !important;
+    color: rgb(0, 17, 255) !important;
 }
 .nav-list-items:hover {
     border-bottom: 2px solid rgb(255, 0, 0);
     cursor: pointer;
-    background: linear-gradient(0deg,rgba(255, 255, 255, 0.733),rgba(255, 255, 255, 0));
+    background: linear-gradient(0deg,rgba(255, 0, 0, 0.733),rgba(255, 255, 255, 0));
 
 }
 .nav-list-items > a{
@@ -38,5 +38,5 @@
 
 }
 .nav-list-items > a:hover{
-    color: rgb(255, 0, 0);
+    color: rgb(0, 29, 158);
 }
