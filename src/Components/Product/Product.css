@@ -35,5 +35,34 @@
     background: rgb(0, 0, 0) !important;
     color: wheat;
     transform: scale(1.1);
-    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.5);
+}
+.product-configs-con{
+    margin-top: 1rem ;
+}
+.product-config-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.product-inputer-1 , .product-inputer-2{
+    background: rgba(255, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid wheat;
+    margin-top: 10px;
+    width: 90%;
+    outline: none;
+    color: wheat;
+}
+.btn-t,.btn-p{
+    background: rgb(255, 255, 255);
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+}
+.btn-t:hover,.btn-p:hover{
+    background: rgb(0, 0, 0);
+    color: wheat;
+    transform: scale(1.3);
 }
