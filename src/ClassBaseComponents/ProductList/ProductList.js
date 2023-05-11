@@ -2,6 +2,7 @@ import React from 'react';
 import Product from "../Product/Product";
 import './ProductList.css'
 const ProductList = (props) => {
+    console.log("Product Log");
             return props.products.map((item,index) =>{
                 return(
                     <Product 

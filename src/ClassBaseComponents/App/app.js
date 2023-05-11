@@ -4,6 +4,10 @@ import './app.css'
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
 class AppClass extends React.Component {
+    constructor(props){
+        super(props);
+        console.log("App.js Constructor");
+    }
     state = {
         products : [
             {id: 1, title:'Book 90', price: 90},
@@ -59,7 +63,12 @@ class AppClass extends React.Component {
         products.splice(index,1);
         this.setState({products:products});
     }
+    componentDidMount(){
+        console.log("Component Did Mount");
+        console.log("---------------------------------");
+    }
     render(){
+        console.log("App.js Render");
         let productsDiv = null;
         if (this.state.show){
             productsDiv = (

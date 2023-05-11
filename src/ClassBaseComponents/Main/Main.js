@@ -3,6 +3,8 @@ import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
 
 const Main = (props) =>{
+    console.log("Main Log");
+
     const btn = {
         padding: '1rem',  
         margin: '0.2rem auto',

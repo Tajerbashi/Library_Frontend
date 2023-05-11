@@ -1,5 +1,6 @@
 import './Product.css'
 const Product = (props) => {
+    console.log("Product Log");
     return (
         <div className='product-container'>
             <h6 className='product-title'>{props.title}</h6>
