@@ -2,6 +2,20 @@ import React,{Component} from 'react';
 import Product from "../Product/Product";
 import './ProductList.css'
 class ProductList extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("shouldComponentUpdate : Product List");
+        return true;
+    }
+    
+    getSnapshotBeforeUpdate(prevProps, prevState) {
+        console.log("getSnapshotBeforeUpdate : Product List");
+        return null;
+    }
+
+    componentDidUpdate(){
+        console.log("componentDidUpdate : Product List");
+    }
+
     render(){
         console.log("Product Log");
             return this.props.products.map((item,index) =>{

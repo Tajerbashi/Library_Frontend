@@ -65,8 +65,17 @@ class AppClass extends React.Component {
     }
     componentDidMount(){
         console.log("Component Did Mount");
-        console.log("---------------------------------");
     }
+
+    componentDidUpdate(){
+        console.log("Component Did Update");
+    }
+
+    shouldComponentUpdate(nextProps,nextState){
+        console.log("shouldComponentUpdate : App");
+        return true;
+    }
+
     render(){
         console.log("App.js Render");
         let productsDiv = null;
