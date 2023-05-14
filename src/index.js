@@ -2,15 +2,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// import App from './Components/App/app';
-import AppClass from './ClassBaseComponents/App/app';
+import App from './Components/App/app';
+// import AppClass from './ClassBaseComponents/App/app';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.css'
 import './index.css'
 
-// ReactDOM
-// .createRoot( document.getElementById("root"))
-// .render(<App />);
+ReactDOM
+.createRoot( document.getElementById("root"))
+.render(<App />);
 
 //  Function BaseComponent
 // const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -21,8 +21,8 @@ import './index.css'
 
 
 //  Class BaseComponents.
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppClass />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<AppClass />);
 
 //  OR
 //    ========================= : React 17 : =========================
