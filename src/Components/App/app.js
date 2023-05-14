@@ -3,7 +3,7 @@ import './app.css'
 
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
-
+import Wrapper from "../../HOC/Wrapper";
 const App = () => {
     console.log("Starting");
     //UseState Hook
@@ -98,7 +98,7 @@ const App = () => {
     
 
     return (
-        <div>
+        <Wrapper center="center">
             <Main 
                 ShowHandler = { ShowHandler }
                 changeUseEffect = { changeUseEffect }
@@ -106,7 +106,7 @@ const App = () => {
             {
                 productsDiv
             }
-        </div>
+        </Wrapper>
     );
 }
 
