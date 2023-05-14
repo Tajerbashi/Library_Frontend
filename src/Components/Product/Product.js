@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import './Product.css'
+import Dynamic from '../../HOC/Dynamic';
 const Product = (props) => {
     useEffect(()=>{
         console.log("+++This is useEffect in Product.js");

@@ -1,7 +1,7 @@
 import React,{ useEffect }  from 'react';
 import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
-import Container  from '../../HOC/Container';
+import Dynamic from '../../HOC/Dynamic';
 const Main = (props) =>{
     useEffect(() => {
         console.log('===Main Use Effect Started');
@@ -35,4 +35,4 @@ const Main = (props) =>{
     );
 }
 
-export default Main;
+export default Dynamic(Main,'main');
