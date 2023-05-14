@@ -1,17 +1,17 @@
-import React,{ useEffect }  from 'react';
+import React,{ useEffect,useRef }  from 'react';
 import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
 import Dynamic from '../../HOC/Dynamic';
 const Main = (props) =>{
+    const btnRef = useRef(null);
+
     useEffect(() => {
         console.log('===Main Use Effect Started');
-        setTimeout(() => {
-            console.log('===This is SetTimeout in 2s from Main Component');
-        },2000);
+        btnRef.current.click();
         return ()=>{
             console.log('::This is From Clean Up In Main.js::');
         }
-    },[props.changeUseEffect]);
+    },[]);
 
     const btn = {
         padding: '1rem',  
@@ -29,7 +29,12 @@ const Main = (props) =>{
             {/* <Container> */}
                 <MainHeader />
                 <MainNav />
-                <button style={btn} onClick={props.ShowHandler}>نمایش و پنهان کردن محصولات</button>
+                <button 
+                    ref={btnRef} 
+                    style={btn} 
+                    onClick={props.ShowHandler}>
+                    نمایش و پنهان کردن محصولات
+                </button>
             {/* </Container> */}
         </React.Fragment>
     );
