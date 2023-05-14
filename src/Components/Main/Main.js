@@ -1,8 +1,7 @@
-import React from 'react';
+import React,{ useEffect }  from 'react';
 import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
-import { useEffect } from 'react';
-
+import Container  from '../../HOC/Container';
 const Main = (props) =>{
     useEffect(() => {
         console.log('===Main Use Effect Started');
@@ -23,12 +22,12 @@ const Main = (props) =>{
         boxShadow : '0 0 10px 5px #0005',
     };
     return (
-        <div>
+        <Container>
             <MainHeader />
             <MainNav />
             <button style={btn} onClick={props.ShowHandler}>نمایش و پنهان کردن محصولات</button>
+        </Container>
             
-        </div>
     );
 }
 
