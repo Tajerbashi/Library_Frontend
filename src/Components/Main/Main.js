@@ -1,8 +1,16 @@
 import React from 'react';
 import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
+import { useEffect } from 'react';
 
 const Main = (props) =>{
+    useEffect(() => {
+        console.log('===Main Use Effect Started');
+        setTimeout(() => {
+            console.log('===This is SetTimeout in 2s from Main Component');
+        },2000);
+    },[props.changeUseEffect]);
+
     const btn = {
         padding: '1rem',  
         margin: '0.2rem auto',
