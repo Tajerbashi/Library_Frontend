@@ -2,6 +2,14 @@ import React, {Component} from 'react';
 
 import './Product.css'
 class Product extends Component {
+    constructor(props){
+        super(props);
+        this.inputRef = React.createRef();
+    }
+    componentDidMount(){
+        this.inputRef.current.focus();
+        this.inputRef.current.value = "اکنون اینجا هستم";
+    }
     render(){
         console.log("Product Log");
         return (
@@ -11,7 +19,7 @@ class Product extends Component {
                 <button className='product-button'>دیدن</button>
                 <div className='product-configs-con'>
                     <div className='product-config-item'>
-                        <input  className='product-inputer-1' placeholder='عنوان جدید وارد کنید ...' onChange={this.props.ChangeTitle} />
+                        <input ref={this.inputRef} className='product-inputer-1' placeholder='عنوان جدید وارد کنید ...' onChange={this.props.ChangeTitle} />
                         <button className='btn-t' onClick={this.props.SaveTitle}>+</button>
                     </div>
                     <div className='product-config-item'>
