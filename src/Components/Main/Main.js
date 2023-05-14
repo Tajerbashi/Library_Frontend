@@ -22,12 +22,13 @@ const Main = (props) =>{
         boxShadow : '0 0 10px 5px #0005',
     };
     return (
-        <Container>
-            <MainHeader />
-            <MainNav />
-            <button style={btn} onClick={props.ShowHandler}>نمایش و پنهان کردن محصولات</button>
-        </Container>
-            
+        <React.Fragment>
+            {/* <Container> */}
+                <MainHeader />
+                <MainNav />
+                <button style={btn} onClick={props.ShowHandler}>نمایش و پنهان کردن محصولات</button>
+            {/* </Container> */}
+        </React.Fragment>
     );
 }
 
