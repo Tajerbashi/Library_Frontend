@@ -8,6 +8,9 @@ const Main = (props) =>{
         setTimeout(() => {
             console.log('===This is SetTimeout in 2s from Main Component');
         },2000);
+        return ()=>{
+            console.log('::This is From Clean Up In Main.js::');
+        }
     },[props.changeUseEffect]);
 
     const btn = {

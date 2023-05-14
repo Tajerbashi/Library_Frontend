@@ -46,6 +46,9 @@ const App = () => {
     // 1
     useEffect(()=>{
         console.log(":::This is App Component Use Effect : App.js");
+        return ()=>{
+            console.log('::This is From Clean Up In App.js::');
+        }
     });
     const ChangeTitle = (e,index) => {
         let data = productsState.products;
