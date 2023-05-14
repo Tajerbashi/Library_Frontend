@@ -3,7 +3,8 @@ import './app.css'
 
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
-import Wrapper from "../../HOC/Wrapper";
+import Dynamic from "../../HOC/Dynamic";
+import Container from "../../HOC/Container";
 const App = () => {
     console.log("Starting");
     //UseState Hook
@@ -98,7 +99,7 @@ const App = () => {
     
 
     return (
-        <Wrapper center="center">
+        <Container>
             <Main 
                 ShowHandler = { ShowHandler }
                 changeUseEffect = { changeUseEffect }
@@ -106,8 +107,8 @@ const App = () => {
             {
                 productsDiv
             }
-        </Wrapper>
+        </Container>
     );
 }
 
-export default App;
+export default Dynamic(App,'center');
