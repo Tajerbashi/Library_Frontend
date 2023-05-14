@@ -1,10 +1,12 @@
-import {React, useState} from "react"
+import {React, useState,useEffect} from "react"
 import './app.css'
 
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
+
 const App = () => {
     console.log("Starting");
+    //UseState Hook
     const [productsState,setProductsState] = useState({
         products:[
             {
@@ -40,7 +42,11 @@ const App = () => {
         ],
         ShowProducts : true
     });
-
+    //UseEffect Hook
+    // 1
+    useEffect(()=>{
+        console.log(":::This is App Component Use Effect : App.js");
+    });
     const ChangeTitle = (e,index) => {
         let data = productsState.products;
         data[index].title = e.target.value;
@@ -68,6 +74,11 @@ const App = () => {
         data.splice(index,1);
         setProductsState({products: data,ShowProducts :true});
     }
+
+    const changeUseEffect = () =>{
+        console.log("changeUseEffect Clicked");
+    }
+
     let productsDiv = null;
     if (productsState.ShowProducts){
         productsDiv = (
@@ -85,7 +96,10 @@ const App = () => {
 
     return (
         <div>
-            <Main ShowHandler={ShowHandler}/>
+            <Main 
+                ShowHandler = { ShowHandler }
+                changeUseEffect = { changeUseEffect }
+            />
             {
                 productsDiv
             }
