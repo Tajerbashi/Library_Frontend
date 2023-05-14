@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import './Product.css'
 const Product = (props) => {
+    useEffect(()=>{
+        console.log("+++This is useEffect in Product.js");
+    },[]);
     return (
         <div className='product-container'>
             <h6 className='product-title'>{props.title}</h6>
