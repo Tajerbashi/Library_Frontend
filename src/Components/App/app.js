@@ -41,7 +41,8 @@ const App = () => {
                 id: 5
             },
         ],
-        ShowProducts : true
+        ShowProducts : true,
+        isAuth : true,
     });
     //UseEffect Hook
     // 1
@@ -83,6 +84,10 @@ const App = () => {
         console.log("changeUseEffect Clicked");
     }
 
+    const Authutication = () => {
+        console.log(productsState);
+        setProductsState({Auth : true});
+    }
     let productsDiv = null;
     if (productsState.ShowProducts){
         productsDiv = (

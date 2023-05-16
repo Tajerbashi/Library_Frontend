@@ -13,9 +13,9 @@ class AppClass extends React.Component {
             {id: 1, title:'Book 90', price: 90},
             {id: 2, title:'Book 50', price: 50},
             {id: 3, title:'Book 70', price: 70},
-            {id: 4, title:'Book 20', price: 20},
         ],
-        show : false
+        show : false,
+        auth : false,
     }
 
     ChangeTitle = (e,id) => {
@@ -34,7 +34,6 @@ class AppClass extends React.Component {
 
         this.setState({products: products});
     };
-
 
     ChangePrice = (e,id) => {
         const productIndex = this.state.products.findIndex((item) => {
@@ -63,6 +62,7 @@ class AppClass extends React.Component {
         products.splice(index,1);
         this.setState({products:products});
     }
+
     componentDidMount(){
         console.log("Component Did Mount");
     }
@@ -76,6 +76,11 @@ class AppClass extends React.Component {
         return true;
     }
 
+    LoginHandler = () => {
+        console.log("Login Auth Handler");
+        this.setState({auth: true});
+    }
+
     render(){
         console.log("App.js Render");
         let productsDiv = null;
@@ -87,17 +92,19 @@ class AppClass extends React.Component {
                         Delete= { this.DeleteProduct }
                         ChangeTitle = { this.ChangeTitle }
                         ChangePrice = { this.ChangePrice }
+                        IsAuth = { this.state.auth }
                     />
                 </div> 
             );
         }
         return (
             <div>
-                
-                <Main ShowHandler={ this.ShowHandler }/>
+                <Main 
+                ShowHandler = { this.ShowHandler }
+                Login = {this.LoginHandler}
+                />
                 
                 { productsDiv }
-            
             </div>
         );
     }
