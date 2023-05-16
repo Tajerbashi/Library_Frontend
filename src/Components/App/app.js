@@ -55,14 +55,14 @@ const App = () => {
     const ChangeTitle = (e,index) => {
         let data = productsState.products;
         data[index].title = e.target.value;
-        setProductsState({products: data, ShowProducts : true});
+        setProductsState({products: data, ShowProducts : true,auth:true});
         // setProductsState(data);
     };
 
     const ChangePrice = (e,index) => {
         let data = productsState.products;
         data[index].price = e.target.value;
-        setProductsState({products: data,ShowProducts : true});
+        setProductsState({products: data,ShowProducts : true,auth: true});
     };
 
     const ShowHandler = () => {
@@ -77,7 +77,7 @@ const App = () => {
         //     return item.index !== index ? item : null;
         // });
         data.splice(index,1);
-        setProductsState({products: data,ShowProducts :true});
+        setProductsState({products: data,ShowProducts: true, auth: true});
     }
 
     const changeUseEffect = () =>{

@@ -10,7 +10,8 @@ const Product = (props) => {
     },[]);
     return (
         <div className='product-container'>
-            { props.IsAuth ? <p>ورود</p> : <p>خروج</p>}
+            { props.IsAuth ? 
+            <div>
             <h6 className='product-title'>{props.title}</h6>
             <p className='product-price'>{props.price} تومان</p>
             <button className='product-button'>دیدن</button>
@@ -28,6 +29,8 @@ const Product = (props) => {
                         >حذف محصول</button>
             </div>
             {false ? props.index + 1 : null}
+            </div>
+            : null}
         </div>
     );
 }
