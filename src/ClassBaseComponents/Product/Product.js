@@ -14,6 +14,7 @@ class Product extends Component {
         console.log("Product Log");
         return (
             <div className='product-container'>
+                {this.props.IsAuth ? <p>ورود</p> : <p>خروج</p>}
                 <h6 className='product-title'>{this.props.title}</h6>
                 <p className='product-price'>{this.props.price} تومان</p>
                 <button className='product-button'>دیدن</button>

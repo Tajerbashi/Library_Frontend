@@ -28,6 +28,7 @@ class ProductList extends Component {
                             key={item.id}
                             ChangeTitle = {(e) => this.props.ChangeTitle(e,item.id)} 
                             ChangePrice = {(e) => this.props.ChangePrice(e,item.id)} 
+                            IsAuth = {this.props.IsAuth} 
                     />
                 )
             });
