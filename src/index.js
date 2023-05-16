@@ -2,8 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// import App from './Components/App/app';
-import AppClass from './ClassBaseComponents/App/app';
+import App from './Components/App/app';
+// import AppClass from './ClassBaseComponents/App/app';
 
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.css'
 import './index.css'
@@ -13,12 +13,12 @@ import './index.css'
 // .render(<App />);
 
 //  Function BaseComponent
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
 //  Class BaseComponents.
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppClass />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<AppClass />);
 
 //Class BaseComponents.
 // ReactDOM.render(<AppClass/> , document.getElementById('root'));

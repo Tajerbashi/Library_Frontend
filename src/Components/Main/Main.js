@@ -29,12 +29,19 @@ const Main = (props) =>{
             {/* <Container> */}
                 <MainHeader />
                 <MainNav />
-                <button 
-                    ref={btnRef} 
-                    style={btn} 
-                    onClick={props.ShowHandler}>
-                    نمایش و پنهان کردن محصولات
-                </button>
+                <div className='container d-flex flex-row justify-content-around'>
+                    <button 
+                        ref={btnRef} 
+                        style={btn} 
+                        onClick={props.ShowHandler}>
+                        نمایش و پنهان کردن محصولات
+                    </button>
+                    <button 
+                        style={btn} 
+                        onClick={props.login}>
+                        خروج / ورود
+                    </button>
+                </div>
             {/* </Container> */}
         </React.Fragment>
     );

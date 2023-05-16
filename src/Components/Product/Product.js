@@ -10,6 +10,7 @@ const Product = (props) => {
     },[]);
     return (
         <div className='product-container'>
+            { props.IsAuth ? <p>ورود</p> : <p>خروج</p>}
             <h6 className='product-title'>{props.title}</h6>
             <p className='product-price'>{props.price} تومان</p>
             <button className='product-button'>دیدن</button>

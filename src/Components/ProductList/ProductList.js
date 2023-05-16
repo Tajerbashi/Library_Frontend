@@ -2,6 +2,7 @@ import React from 'react';
 import Product from "../Product/Product";
 import './ProductList.css'
 const ProductList = (props) => {
+    console.log("ProductList : ",props);
             return props.products.map((item,index) =>{
                 return(
                     <Product 
@@ -12,6 +13,7 @@ const ProductList = (props) => {
                             key={item.id}
                             ChangeTitle = {(e) => props.ChangeTitle(e,item.id)} 
                             ChangePrice = {(e) => props.ChangePrice(e,item.id)} 
+                            IsAuth = {props.IsAuth}
                     />
                 )
             });

@@ -42,12 +42,12 @@ const App = () => {
             },
         ],
         ShowProducts : true,
-        isAuth : true,
+        auth : false
     });
     //UseEffect Hook
     // 1
     useEffect(()=>{
-        console.log(":::This is App Component Use Effect : App.js");
+        console.log(":This is App Component Use Effect : App.js");
         return ()=>{
             console.log('::This is From Clean Up In App.js::');
         }
@@ -55,7 +55,7 @@ const App = () => {
     const ChangeTitle = (e,index) => {
         let data = productsState.products;
         data[index].title = e.target.value;
-        setProductsState({products: data,ShowProducts : true});
+        setProductsState({products: data, ShowProducts : true});
         // setProductsState(data);
     };
 
@@ -84,9 +84,10 @@ const App = () => {
         console.log("changeUseEffect Clicked");
     }
 
-    const Authutication = () => {
-        console.log(productsState);
-        setProductsState({Auth : true});
+    const LoginHandler = () => {
+        let flag = productsState.auth ? false : true;
+        const data = [...productsState.products]
+        setProductsState({products: data,ShowProducts :true,auth: flag});
     }
     let productsDiv = null;
     if (productsState.ShowProducts){
@@ -97,6 +98,7 @@ const App = () => {
                     Delete= {DeleteProduct}
                     ChangeTitle = {ChangeTitle}
                     ChangePrice = {ChangePrice}
+                    IsAuth = {productsState.auth}
                 />
             </div> 
         );
@@ -108,6 +110,7 @@ const App = () => {
             <Main 
                 ShowHandler = { ShowHandler }
                 changeUseEffect = { changeUseEffect }
+                login = { LoginHandler }
             />
             {
                 productsDiv
