@@ -3,12 +3,10 @@ import Product from "../Product/Product";
 import './ProductList.css'
 class ProductList extends Component {
     shouldComponentUpdate(nextProps, nextState) {
-        console.log("shouldComponentUpdate : Product List");
         return true;
     }
     
     getSnapshotBeforeUpdate(prevProps, prevState) {
-        console.log("getSnapshotBeforeUpdate : Product List");
         return null;
     }
 
@@ -17,7 +15,7 @@ class ProductList extends Component {
     }
 
     render(){
-        console.log("Product Log");
+        console.log("ProductList Log");
             return this.props.products.map((item,index) =>{
                 return(
                     <Product 

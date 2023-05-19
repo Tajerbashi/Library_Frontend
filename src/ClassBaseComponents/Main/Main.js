@@ -3,7 +3,6 @@ import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
 
 const Main = (props) =>{
-    console.log("Main Log");
     const btn = {
         padding: '1rem',  
         margin: '0.2rem auto',
@@ -21,7 +20,7 @@ const Main = (props) =>{
             <MainNav />
             <div className='container d-flex flex-row justify-content-around'>
                 <button style={btn} onClick={props.ShowHandler}>نمایش و پنهان کردن محصولات</button>
-                <button style={btn} onClick={props.Login}>ورود / خروج</button>
+                <button style={btn} onClick={props.LoginHandler}>ورود / خروج</button>
             </div>
             
         </div>

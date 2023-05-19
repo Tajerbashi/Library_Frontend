@@ -3,22 +3,24 @@ import './app.css'
 
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
+import AuthContext from '../Context/auth-Context';
 class AppClass extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         console.log("App.js Constructor");
+        this.state = {
+            products: [
+                { id: 1, title: 'Book 90', price: 90 },
+                { id: 2, title: 'Book 50', price: 50 },
+                { id: 3, title: 'Book 70', price: 70 },
+            ],
+            show: true,
+            auth: false,
+        };
     }
-    state = {
-        products : [
-            {id: 1, title:'Book 90', price: 90},
-            {id: 2, title:'Book 50', price: 50},
-            {id: 3, title:'Book 70', price: 70},
-        ],
-        show : false,
-        auth : false,
-    }
+    
 
-    ChangeTitle = (e,id) => {
+    ChangeTitle = (e, id) => {
         const productIndex = this.state.products.findIndex((item) => {
             return item.id === id;
         });
@@ -32,10 +34,10 @@ class AppClass extends React.Component {
 
         products[productIndex] = product;
 
-        this.setState({products: products});
+        this.setState({ products: products });
     };
 
-    ChangePrice = (e,id) => {
+    ChangePrice = (e, id) => {
         const productIndex = this.state.products.findIndex((item) => {
             return item.id === id;
         });
@@ -49,64 +51,62 @@ class AppClass extends React.Component {
 
         products[productIndex] = product;
 
-        this.setState({products: products});
+        this.setState({ products: products });
     };
 
     ShowHandler = () => {
-        const show = this.state.show;
-        this.setState({show: !show});
+        const show = this.state.show ? false : true;
+        console.log("ShowHandler : show => ",this.state.show);
+        console.log("show : ",show);
+        this.setState({show: show});
     };
 
-    DeleteProduct = (index) =>{
+    DeleteProduct = (index) => {
         const products = [...this.state.products];
-        products.splice(index,1);
-        this.setState({products:products});
+        products.splice(index, 1);
+        this.setState({ products: products });
     }
 
-    componentDidMount(){
-        console.log("Component Did Mount");
+    componentDidMount() {
     }
 
-    componentDidUpdate(){
-        console.log("Component Did Update");
+    componentDidUpdate() {
     }
 
-    shouldComponentUpdate(nextProps,nextState){
-        console.log("shouldComponentUpdate : App");
+    shouldComponentUpdate(nextProps, nextState) {
         return true;
     }
 
-    LoginHandler = () => {
-        console.log("Login Auth Handler");
-        this.setState({auth: true});
+    LoginHandler = async () => {
+        var flag = this.state.auth ? false : true;
+        await this.setState({ auth: flag });
     }
 
-    render(){
-        console.log("App.js Render");
+    render() {
         let productsDiv = null;
-        if (this.state.show){
+        if (this.state.show) {
             productsDiv = (
                 <div className="app-product-list-div">
-                    <ProductList 
-                        products= { this.state.products }
-                        Delete= { this.DeleteProduct }
-                        ChangeTitle = { this.ChangeTitle }
-                        ChangePrice = { this.ChangePrice }
-                        IsAuth = { this.state.auth }
+                    <ProductList
+                        products={this.state.products}
+                        Delete={this.DeleteProduct}
+                        ChangeTitle={this.ChangeTitle}
+                        ChangePrice={this.ChangePrice}
+                        IsAuth={this.state.auth}
                     />
-                </div> 
+                </div>
             );
         }
         return (
             <div>
-                <Main 
-                ShowHandler = { this.ShowHandler }
-                Login = {this.LoginHandler}
+                <Main
+                    ShowHandler={this.ShowHandler}
+                    LoginHandler={this.LoginHandler}
                 />
-                
-                { productsDiv }
+
+                {productsDiv}
             </div>
         );
     }
-}    
+}
 export default AppClass;

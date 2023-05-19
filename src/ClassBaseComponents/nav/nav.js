@@ -1,7 +1,6 @@
 import './nav.css'
 
 const MainNav  = () => {
-    console.log("Main Nav Log");
     return(
         <div className='main-nav'>
             <ul className='nav-list'>
