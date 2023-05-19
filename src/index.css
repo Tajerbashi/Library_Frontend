@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'vazir-regular';
+    src: url('./../public/fonts/Vazir.ttf');
+}
 *{
     padding: 0;
     margin: 0;
@@ -6,6 +10,8 @@ body{
     direction: rtl;
     background: linear-gradient(90deg,rgb(69, 66, 255),rgb(105, 145, 255),rgb(69, 66, 255));
     text-align: center;
+    font-family: 'vazir-regular';
+
 }
 ul{
     list-style: none;
