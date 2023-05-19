@@ -13,12 +13,12 @@ import './index.css'
 // .render(<App />);
 
 //  Function BaseComponent
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
 //  Class BaseComponents.
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppClass />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<AppClass />);
 
 //Class BaseComponents.
 // ReactDOM.render(<AppClass/> , document.getElementById('root'));

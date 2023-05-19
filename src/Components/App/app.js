@@ -1,15 +1,17 @@
-import {React, useState,useEffect} from "react"
+import { React, useState, useEffect } from "react"
 import './app.css'
 
 import ProductList from "../ProductList/ProductList";
 import Main from "../Main/Main";
 import Dynamic from "../../HOC/Dynamic";
 import Container from "../../HOC/Container";
+import AuthContext from "../Context/Auth-Context"
+
 const App = () => {
     console.log("Starting");
     //UseState Hook
-    const [productsState,setProductsState] = useState({
-        products:[
+    const [productsState, setProductsState] = useState({
+        products: [
             {
                 title: "شما نسخه برتر هستید !",
                 price: "2,500,000",
@@ -41,82 +43,89 @@ const App = () => {
                 id: 5
             },
         ],
-        ShowProducts : true,
-        auth : false
+        ShowProducts: true,
+        auth: false
     });
     //UseEffect Hook
     // 1
-    useEffect(()=>{
+    useEffect(() => {
         console.log(":This is App Component Use Effect : App.js");
-        return ()=>{
+        return () => {
             console.log('::This is From Clean Up In App.js::');
         }
     });
-    const ChangeTitle = (e,index) => {
+    const ChangeTitle = (e, index) => {
         let data = productsState.products;
         data[index].title = e.target.value;
-        setProductsState({products: data, ShowProducts : true,auth:true});
+        setProductsState({ products: data, ShowProducts: true, auth: true });
         // setProductsState(data);
     };
 
-    const ChangePrice = (e,index) => {
+    const ChangePrice = (e, index) => {
         let data = productsState.products;
         data[index].price = e.target.value;
-        setProductsState({products: data,ShowProducts : true,auth: true});
+        setProductsState({ products: data, ShowProducts: true, auth: true });
     };
 
     const ShowHandler = () => {
         let flag = productsState.ShowProducts ? false : true;
-        setProductsState({products: productsState.products,ShowProducts : flag});
+        setProductsState({ products: productsState.products, ShowProducts: flag });
     };
 
-    const DeleteProduct = (index) =>{
+    const DeleteProduct = (index) => {
         const data = [...productsState.products]
         // let data = productsState.products;
         // data = data.filter(item => {
         //     return item.index !== index ? item : null;
         // });
-        data.splice(index,1);
-        setProductsState({products: data,ShowProducts: true, auth: true});
+        data.splice(index, 1);
+        setProductsState({ products: data, ShowProducts: true, auth: true });
     }
 
-    const changeUseEffect = () =>{
+    const changeUseEffect = () => {
         console.log("changeUseEffect Clicked");
     }
 
     const LoginHandler = () => {
         let flag = productsState.auth ? false : true;
         const data = [...productsState.products]
-        setProductsState({products: data,ShowProducts :true,auth: flag});
+        setProductsState({ products: data, ShowProducts: true, auth: flag });
+    }
+    const ContextHandler = () => {
+        let flag = productsState.auth ? false : true;
+        const data = [...productsState.products]
+        setProductsState({ products: data, ShowProducts: true, auth: flag });
     }
     let productsDiv = null;
-    if (productsState.ShowProducts){
+    if (productsState.ShowProducts) {
         productsDiv = (
             <div className="app-product-list-div">
-                <ProductList 
-                    products= {productsState.products}
-                    Delete= {DeleteProduct}
-                    ChangeTitle = {ChangeTitle}
-                    ChangePrice = {ChangePrice}
-                    IsAuth = {productsState.auth}
+                <ProductList
+                    products={productsState.products}
+                    Delete={DeleteProduct}
+                    ChangeTitle={ChangeTitle}
+                    ChangePrice={ChangePrice}
+                    IsAuth={productsState.auth}
                 />
-            </div> 
+            </div>
         );
     }
-    
+
 
     return (
         <Container>
-            <Main 
-                ShowHandler = { ShowHandler }
-                changeUseEffect = { changeUseEffect }
-                login = { LoginHandler }
-            />
-            {
-                productsDiv
-            }
+            <AuthContext.Provider value={ { auth: productsState.auth, login: ContextHandler } }>
+                <Main
+                    ShowHandler={ShowHandler}
+                    changeUseEffect={changeUseEffect}
+                    login={LoginHandler}
+                />
+                {
+                    productsDiv
+                }
+            </AuthContext.Provider>
         </Container>
     );
 }
 
-export default Dynamic(App,'center');
+export default Dynamic(App, 'center');
