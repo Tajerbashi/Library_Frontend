@@ -13,12 +13,13 @@ class AppClass extends React.Component {
                 { id: 1, title: 'Book 90', price: 90 },
                 { id: 2, title: 'Book 50', price: 50 },
                 { id: 3, title: 'Book 70', price: 70 },
+                { id: 4, title: 'Book 100', price: 100 },
             ],
             show: true,
             auth: false,
         };
     }
-    
+
 
     ChangeTitle = (e, id) => {
         const productIndex = this.state.products.findIndex((item) => {
@@ -56,9 +57,9 @@ class AppClass extends React.Component {
 
     ShowHandler = () => {
         const show = this.state.show ? false : true;
-        console.log("ShowHandler : show => ",this.state.show);
-        console.log("show : ",show);
-        this.setState({show: show});
+        console.log("ShowHandler : show => ", this.state.show);
+        console.log("show : ", show);
+        this.setState({ show: show });
     };
 
     DeleteProduct = (index) => {
@@ -81,7 +82,11 @@ class AppClass extends React.Component {
         var flag = this.state.auth ? false : true;
         await this.setState({ auth: flag });
     }
-
+    ContextHandler = async () => {
+        // در ین موقعیت میتوانیم شرط لاگین بودن و نبودن را مدیریت کنیم که این روش بهینه میباشد
+        var flag = this.state.auth ? false : true;
+        this.setState({ auth: flag });
+    }
     render() {
         let productsDiv = null;
         if (this.state.show) {
@@ -99,12 +104,13 @@ class AppClass extends React.Component {
         }
         return (
             <div>
-                <Main
-                    ShowHandler={this.ShowHandler}
-                    LoginHandler={this.LoginHandler}
-                />
-
-                {productsDiv}
+                <AuthContext.Provider value={{ auth: this.state.auth, login: this.ContextHandler }}>
+                    <Main
+                        ShowHandler={this.ShowHandler}
+                        LoginHandler={this.LoginHandler}
+                    />
+                    {productsDiv}
+                </AuthContext.Provider>
             </div>
         );
     }
