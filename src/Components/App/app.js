@@ -1,10 +1,15 @@
 import React from "react";
-
-const app = () => {
-    return (
-        <div>
-        </div>
-    );
+import Layout from "../Layout/Layout";
+class App extends React.Component {
+    render(){
+        return (
+            <div>
+                <Layout>
+                    <p>Shopoing App</p>
+                </Layout>
+            </div>
+        );
+    }
 }
 
-export default app;
+export default App;
