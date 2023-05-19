@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import MainHeader from '../header/header';
 import MainNav from '../nav/nav';
 import Dynamic from '../../HOC/Dynamic';
@@ -12,7 +12,7 @@ const Main = (props) => {
             console.log('::This is From Clean Up In Main.js::');
         }
     }, []);
-
+    const authContext = useContext(AuthContext);
     const btn = {
         padding: '1rem',
         margin: '0.2rem auto',
@@ -41,16 +41,12 @@ const Main = (props) => {
                     onClick={props.login}>
                     خروج / ورود
                 </button>
-                <AuthContext.Consumer>
-                    {
-                        (context) =>
-                            <button
-                                style={btn}
-                                onClick={context.login}>
-                                    Context Login
-                            </button>
-                    }
-                </AuthContext.Consumer>
+                <button
+                    style={btn}
+                    onClick={authContext.login}>
+                    Context Login
+                </button>
+
             </div>
             {/* </Container> */}
         </React.Fragment>
