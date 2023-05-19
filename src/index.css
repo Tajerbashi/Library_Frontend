@@ -4,7 +4,7 @@
 }
 body{
     direction: rtl;
-    background: linear-gradient(90deg,rgb(255, 235, 193),rgb(255, 255, 211),rgb(245, 245, 245));
+    background: linear-gradient(90deg,rgba(94, 66, 255, 0.76),rgb(195, 149, 255),rgba(101, 59, 255, 0.733));
     text-align: center;
 }
 ul{

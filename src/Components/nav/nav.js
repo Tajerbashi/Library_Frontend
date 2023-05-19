@@ -1,4 +1,4 @@
-import './nav.css'
+import './nav.css';
 
 const MainNav  = () => {
     return(

@@ -8,7 +8,6 @@ import Container from "../../HOC/Container";
 import AuthContext from "../Context/Auth-Context"
 
 const App = () => {
-    console.log("Starting");
     //UseState Hook
     const [productsState, setProductsState] = useState({
         products: [
@@ -49,7 +48,6 @@ const App = () => {
     //UseEffect Hook
     // 1
     useEffect(() => {
-        console.log(":This is App Component Use Effect : App.js");
         return () => {
             console.log('::This is From Clean Up In App.js::');
         }

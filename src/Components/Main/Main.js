@@ -7,7 +7,6 @@ const Main = (props) => {
     const btnRef = useRef(null);
 
     useEffect(() => {
-        console.log('===Main Use Effect Started');
         btnRef.current.click();
         return () => {
             console.log('::This is From Clean Up In Main.js::');
