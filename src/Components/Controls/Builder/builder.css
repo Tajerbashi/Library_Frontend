@@ -3,6 +3,11 @@
     justify-content: space-between;
     align-items: center;
     margin: 12px 0;
+    background: #00000054;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    border-radius: 20px;
+
 }
 
 .builder button {
@@ -14,7 +19,7 @@
     background: #9c27b0;
     color: wheat;
     border: none;
-    border-radius: 3px;
+    border-radius: 15px;
     outline: none;
 }
 
@@ -25,6 +30,23 @@
 }
 
 .builder div {
-    color: #9c27b0;
-    margin: 0 12px;
+    color: #f9ebff;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    background: rgb(26, 0, 121);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+span{
+    font-size: 0.7rem;
+    padding: 5px;
+    width: 80px;
+    background: #0400ff;
+    color: wheat;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    margin: 0.5rem 1rem;
+
 }

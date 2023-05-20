@@ -4,21 +4,21 @@ import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/controls';
 
 const prices = {
-    prduct1: 110,
-    prduct2: 120,
-    prduct3: 150,
-    prduct4: 90,
-    prduct5: 180,
+    Product1: 110,
+    Product2: 120,
+    Product3: 150,
+    Product4: 90,
+    Product5: 180,
 }
 
 class Shopping extends React.Component {
     state = {
         products: {
-            prduct1: 0,
-            prduct2: 0,
-            prduct3: 0,
-            prduct4: 0,
-            prduct5: 0,
+            Product1: 0,
+            Product2: 0,
+            Product3: 0,
+            Product4: 0,
+            Product5: 0,
         },
         totalPrice: 0,
     };
@@ -48,7 +48,10 @@ class Shopping extends React.Component {
         const newPrice = prevPrice - priceSub;
         this.setState({ totalPrice: newPrice, products: updateProducts });
     }
-
+    productPriceHandler = (type) => {
+        console.log(prices[type]);
+        return prices[type];
+    }
     render() {
         return (
             <Wrapper>
@@ -56,6 +59,8 @@ class Shopping extends React.Component {
                     <Controls
                         productAdd={this.addProductHandler}
                         productRemove={this.removeProductHandler}
+                        price = {this.state.totalPrice}
+                        productPrice = {this.productPriceHandler}
                     />
                 </div>
             </Wrapper>

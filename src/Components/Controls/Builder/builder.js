@@ -4,9 +4,12 @@ import './builder.css'
 const Builder = (props) => {
     return (
         <div className='builder'>
-            <div>{props.title}</div>
-            <button onClick={props.add}>اضافه</button>
-            <button onClick={props.remove}>حذف</button>
+            <div> 
+                <span>نام : {props.title}</span>
+                <span>قیمت : {props.productPrice()}</span>
+            </div>
+            <button onClick={props.add}> اضافه </button>
+            <button onClick={props.remove}> حذف </button>
         </div>
     );
 }
