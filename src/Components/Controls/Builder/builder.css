@@ -1,0 +1,30 @@
+.builder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 12px 0;
+}
+
+.builder button {
+    display: block;
+    font: inherit;
+    padding: 5px;
+    margin: 0 12px;
+    width: 80px;
+    background: #9c27b0;
+    color: wheat;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+}
+
+.builder button:hover {
+    background: wheat;
+    color: #9c27b0;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.builder div {
+    color: #9c27b0;
+    margin: 0 12px;
+}
