@@ -30,3 +30,11 @@
     transition: all 0.2s ease-in-out;
     transform: scale(1.2);
 }
+.msg{
+    background: rgb(156, 0, 0);
+    padding: 5px;
+    border-radius: 5rem;
+    color: wheat;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+
+}

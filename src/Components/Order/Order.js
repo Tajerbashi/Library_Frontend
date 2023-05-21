@@ -1,11 +1,12 @@
 import React from "react";
 import Wrapper from "../../Hoc/wrapper";
+import Button from "../UI/Button/Button";
 import './Order.css'
 const Order = (props) => {
     const summery = Object.keys(props.products).map(item => {
         return (
             <li className="li-item" key={item}>
-                <span>{item}</span> : 
+                <span>{item}</span> :
                 <span>{props.products[item]}</span>
             </li>
         );
@@ -13,9 +14,10 @@ const Order = (props) => {
     return (
         <Wrapper>
             <h3 className="title">سبد سفارشات</h3>
-            <ul className="ul-list">
-                {summery}
-            </ul>
+            <ul className="ul-list">{summery}</ul>
+            <p className="msg">آیا میخواهید ادامه دهید یا خیر ؟</p>
+            <Button click={props.continue} btnType="yes">بلی</Button>
+            <Button click={props.cancel} btnType="no">خیر</Button>
         </Wrapper>
     );
 }

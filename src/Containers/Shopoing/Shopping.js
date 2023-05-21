@@ -61,6 +61,10 @@ class Shopping extends React.Component {
     showHandler = () => {
         this.setState({ purchased: false});
     }
+    purchasedContinueHandler = () => {
+        console.log("Purchased Clicked");
+        // this.setState({ purchased: false});
+    }
     render() {
         return (
             <Wrapper>
@@ -75,7 +79,7 @@ class Shopping extends React.Component {
                     show={this.state.purchased}
                     showHandler={this.showHandler}
                     >
-                        <Order products={this.state.products}/>
+                        <Order continue={this.purchasedContinueHandler} cancel={this.showHandler} products={this.state.products}/>
                     </MyModal>
             </Wrapper>
         );
