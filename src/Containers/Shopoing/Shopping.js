@@ -2,23 +2,24 @@ import React from 'react'
 
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/controls';
-
+import MyModal from '../../Components/UI/Modal/MyModal';
+import Order from '../../Components/Order/Order';
 const prices = {
     Product1: 110,
     Product2: 120,
     Product3: 150,
     Product4: 90,
-    Product5: 180,
+    Product5: 280,
 }
 
 class Shopping extends React.Component {
     state = {
         products: {
-            Product1: 0,
-            Product2: 0,
-            Product3: 0,
-            Product4: 0,
-            Product5: 0,
+            'محصول 1': 0,
+            'محصول 2': 0,
+            'محصول 3': 0,
+            'محصول 4': 0,
+            'محصول 5': 0,
         },
         totalPrice: 0,
     };
@@ -49,20 +50,20 @@ class Shopping extends React.Component {
         this.setState({ totalPrice: newPrice, products: updateProducts });
     }
     productPriceHandler = (type) => {
-        console.log(prices[type]);
         return prices[type];
     }
     render() {
         return (
             <Wrapper>
-                <div>
-                    <Controls
+                <Controls
                         productAdd={this.addProductHandler}
                         productRemove={this.removeProductHandler}
                         price = {this.state.totalPrice}
                         productPrice = {this.productPriceHandler}
                     />
-                </div>
+                    <MyModal>
+                        <Order products={this.state.products}/>
+                    </MyModal>
             </Wrapper>
         );
     }

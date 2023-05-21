@@ -1,0 +1,23 @@
+.myModal{
+    position: fixed;
+    z-index: 3000;
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0.411),rgba(255, 255, 255, 0.644),rgba(255, 255, 255, 0.562));
+    width: 50%;
+    border-radius: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 1rem;
+    top: 25%;
+    left: 25%;
+    margin: 1rem auto;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+    backdrop-filter: blur(10px);
+}
+@media (max-width:60rem) {
+
+    .myModal{
+        width: 50%;
+    }
+}
