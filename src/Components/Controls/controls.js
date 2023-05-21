@@ -26,7 +26,7 @@ const Controls = (props) => {
                 })
             }
             <div>
-                <button className='order-btn'>سبد سفارشات</button>
+                <button onClick={props.modal} className='order-btn'>سبد سفارشات</button>
             </div>
         </div>
     );

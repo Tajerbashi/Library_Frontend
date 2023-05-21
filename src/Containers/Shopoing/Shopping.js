@@ -22,7 +22,9 @@ class Shopping extends React.Component {
             'محصول 5': 0,
         },
         totalPrice: 0,
+        purchased : false,
     };
+
     addProductHandler = (type) => {
         console.log("Clicked Add Button");
         const prevCount = this.state.products[type];
@@ -52,6 +54,10 @@ class Shopping extends React.Component {
     productPriceHandler = (type) => {
         return prices[type];
     }
+    purchasedHandler = () => {
+        let flag = this.state.purchased ? false : true;
+        this.setState({ purchased: flag});
+    }
     render() {
         return (
             <Wrapper>
@@ -60,8 +66,9 @@ class Shopping extends React.Component {
                         productRemove={this.removeProductHandler}
                         price = {this.state.totalPrice}
                         productPrice = {this.productPriceHandler}
+                        modal={this.purchasedHandler}
                     />
-                    <MyModal>
+                    <MyModal show={this.state.purchased}>
                         <Order products={this.state.products}/>
                     </MyModal>
             </Wrapper>
