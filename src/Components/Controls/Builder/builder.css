@@ -38,7 +38,7 @@
     background: rgb(26, 0, 121);
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }
-span{
+.builder > div > span{
     font-size: 0.7rem;
     padding: 5px;
     width: 80px;

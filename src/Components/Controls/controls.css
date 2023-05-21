@@ -1,5 +1,5 @@
-.controls{
-    width:50rem;
+.controls {
+    width: 50rem;
     background: #fafafa;
     display: flex;
     flex-flow: column;
@@ -7,5 +7,28 @@
     margin: auto;
     border-radius: 5px;
     padding: 32px 0;
-    box-shadow: 0 0 25px 5px rgba(0,0,0,0.5);
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+}
+.controls > div > p {
+    background: #3e5bff;
+    color: wheat;
+    margin: 1rem ;
+    border-radius: 5px;
+    padding: 0.5rem 20rem;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
+}
+.order-btn {
+    background: rgb(31, 0, 145);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding: 7px 15px;
+    margin-top: 2rem;
+}
+
+.order-btn:hover {
+    background: rgba(0, 140, 255, 0);
+    color: #000000;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
 }

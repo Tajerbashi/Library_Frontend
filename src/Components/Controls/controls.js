@@ -1,7 +1,6 @@
 import React from 'react';
 import './controls.css'
 import Builder from './Builder/builder';
-
 const Products = [
     { title: 'محصول 1', type: 'Product1' },
     { title: 'محصول 2', type: 'Product2' },
@@ -26,6 +25,9 @@ const Controls = (props) => {
                     />
                 })
             }
+            <div>
+                <button className='order-btn'>سبد سفارشات</button>
+            </div>
         </div>
     );
 };
