@@ -58,6 +58,9 @@ class Shopping extends React.Component {
         let flag = this.state.purchased ? false : true;
         this.setState({ purchased: flag});
     }
+    showHandler = () => {
+        this.setState({ purchased: false});
+    }
     render() {
         return (
             <Wrapper>
@@ -68,7 +71,10 @@ class Shopping extends React.Component {
                         productPrice = {this.productPriceHandler}
                         modal={this.purchasedHandler}
                     />
-                    <MyModal show={this.state.purchased}>
+                    <MyModal 
+                    show={this.state.purchased}
+                    showHandler={this.showHandler}
+                    >
                         <Order products={this.state.products}/>
                     </MyModal>
             </Wrapper>
