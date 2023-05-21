@@ -2,11 +2,11 @@ import React from 'react';
 import './controls.css'
 import Builder from './Builder/builder';
 const Products = [
-    { title: 'محصول 1', type: 'Product1' },
-    { title: 'محصول 2', type: 'Product2' },
-    { title: 'محصول 3', type: 'Product3' },
-    { title: 'محصول 4', type: 'Product4' },
-    { title: 'محصول 5', type: 'Product5' }
+    { title: 'محصول 1', type: 'محصول 1' },
+    { title: 'محصول 2', type: 'محصول 2' },
+    { title: 'محصول 3', type: 'محصول 3' },
+    { title: 'محصول 4', type: 'محصول 4' },
+    { title: 'محصول 5', type: 'محصول 5' }
 ];
 const Controls = (props) => {
     return (

@@ -5,11 +5,11 @@ import Controls from '../../Components/Controls/controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
 import Order from '../../Components/Order/Order';
 const prices = {
-    Product1: 110,
-    Product2: 120,
-    Product3: 150,
-    Product4: 90,
-    Product5: 280,
+    'محصول 1': 110,
+    'محصول 2': 120,
+    'محصول 3': 150,
+    'محصول 4': 90,
+    'محصول 5': 280,
 }
 
 class Shopping extends React.Component {
