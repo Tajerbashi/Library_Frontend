@@ -1,0 +1,22 @@
+.nav-items-li {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-items-li>a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    height: 100%;
+    padding: 16px 10px;
+    box-sizing: border-box;
+    display: block;
+
+}
+
+.nav-items-li>a:hover {
+    color: rgb(0, 195, 255);
+    transform: scale(1.1);
+}
