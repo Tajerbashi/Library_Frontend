@@ -79,7 +79,7 @@ class Shopping extends React.Component {
                     show={this.state.purchased}
                     showHandler={this.showHandler}
                     >
-                        <Order continue={this.purchasedContinueHandler} cancel={this.showHandler} products={this.state.products}/>
+                        <Order continue={this.purchasedContinueHandler} cancel={this.showHandler} products={this.state.products} total={this.state.totalPrice}/>
                     </MyModal>
             </Wrapper>
         );

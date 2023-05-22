@@ -15,6 +15,7 @@ const Order = (props) => {
         <Wrapper>
             <h3 className="title">سبد سفارشات</h3>
             <ul className="ul-list">{summery}</ul>
+            <div className="total">قیمت کل سبد : {props.total}</div>
             <p className="msg">آیا میخواهید ادامه دهید یا خیر ؟</p>
             <Button click={props.continue} btnType="yes">بلی</Button>
             <Button click={props.cancel} btnType="no">خیر</Button>
