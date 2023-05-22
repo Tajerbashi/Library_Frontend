@@ -19,6 +19,12 @@
 .warning{
     background: rgb(209, 84, 0) !important;
 }
+.link{
+    background: rgb(0, 140, 255) !important;
+}
+.link:hover{
+    background: rgb(0, 81, 255) !important;
+}
 .yes:hover{
     background: rgb(12, 58, 0) !important;
     box-shadow: 0 0 25px 5px rgb(0, 0, 0);

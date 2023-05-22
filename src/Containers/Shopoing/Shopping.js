@@ -4,6 +4,7 @@ import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
 import Order from '../../Components/Order/Order';
+import HttpAxios from '../../Components/Controls/HttpAxios/HttpAxios';
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -22,7 +23,8 @@ class Shopping extends React.Component {
             'محصول 5': 0,
         },
         totalPrice: 0,
-        purchased : false,
+        purchased: false,
+        axios: false,
     };
 
     addProductHandler = (type) => {
@@ -56,31 +58,52 @@ class Shopping extends React.Component {
     }
     purchasedHandler = () => {
         let flag = this.state.purchased ? false : true;
-        this.setState({ purchased: flag});
+        this.setState({ purchased: flag });
     }
     showHandler = () => {
-        this.setState({ purchased: false});
+        this.setState({ purchased: false });
+        this.setState({ axios: false });
+
     }
     purchasedContinueHandler = () => {
         console.log("Purchased Clicked");
         // this.setState({ purchased: false});
     }
+    axiosHandler = () => {
+        console.log("Axios Clicked");
+        let flag = this.state.axios ? false : true;
+        this.setState({ axios: flag });
+    }
     render() {
         return (
             <Wrapper>
                 <Controls
-                        productAdd={this.addProductHandler}
-                        productRemove={this.removeProductHandler}
-                        price = {this.state.totalPrice}
-                        productPrice = {this.productPriceHandler}
-                        modal={this.purchasedHandler}
-                    />
-                    <MyModal 
+                    productAdd={this.addProductHandler}
+                    productRemove={this.removeProductHandler}
+                    price={this.state.totalPrice}
+                    productPrice={this.productPriceHandler}
+                    modal={this.purchasedHandler}
+                    axios={this.axiosHandler}
+                />
+                <MyModal
                     show={this.state.purchased}
-                    showHandler={this.showHandler}
-                    >
-                        <Order continue={this.purchasedContinueHandler} cancel={this.showHandler} products={this.state.products} total={this.state.totalPrice}/>
-                    </MyModal>
+                    showBackDrop={this.showHandler}
+                >
+                    <Order
+                        continue={this.purchasedContinueHandler}
+                        cancel={this.showHandler}
+                        products={this.state.products}
+                        total={this.state.totalPrice}
+                    />
+                </MyModal>
+                <MyModal
+                    show={this.state.axios}
+                    showBackDrop={this.showHandler}
+                >
+                    <HttpAxios
+                        close={this.showHandler}
+                    />
+                </MyModal>
             </Wrapper>
         );
     }

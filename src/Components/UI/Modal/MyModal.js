@@ -5,7 +5,7 @@ import './MyModal.css'
 const MyModal = (props) => {
     return (
         <Wrapper>
-            <BackDrop show={props.show} showHandler={props.showHandler}/>
+            <BackDrop show={props.show} showHandler={props.showBackDrop}/>
             <div className="myModal"
 
                 style={

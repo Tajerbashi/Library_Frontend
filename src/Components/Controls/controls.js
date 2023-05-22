@@ -1,6 +1,7 @@
 import React from 'react';
 import './controls.css'
 import Builder from './Builder/builder';
+
 const Products = [
     { title: 'محصول 1', type: 'محصول 1' },
     { title: 'محصول 2', type: 'محصول 2' },
@@ -26,7 +27,10 @@ const Controls = (props) => {
                 })
             }
             <div>
-                <button onClick={props.modal} className='order-btn'>سبد سفارشات</button>
+                <button onClick={props.modal} className='order-btn blue-light'>سبد سفارشات</button>
+                <button onClick={props.axios} className='order-btn blue-dark'>AXIOS</button>
+                <button onClick={props.modal} className='order-btn green-light'>سبد سفارشات</button>
+                <button onClick={props.modal} className='order-btn green-dark'>سبد سفارشات</button>
             </div>
         </div>
     );

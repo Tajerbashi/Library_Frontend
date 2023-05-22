@@ -42,7 +42,7 @@
     font-size: 0.7rem;
     padding: 5px;
     width: 80px;
-    background: #0400ff;
+    background: linear-gradient(90deg,rgba(105, 105, 105, 0.644),rgba(255, 0, 0, 0),rgba(0, 4, 255, 0.705));
     color: wheat;
     border: none;
     border-radius: 5px;

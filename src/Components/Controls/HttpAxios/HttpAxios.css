@@ -1,0 +1,11 @@
+.axios{
+    padding: 0.5rem;
+}
+.axios > h1{
+    padding: 0.5rem;
+    background: linear-gradient(90deg,rgba(0, 89, 255, 0.6),rgba(255, 0, 0, 0),rgba(0, 89, 255, 0.6));
+    border-radius: 1rem;
+    box-sizing: border-box;
+    box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.6);
+
+}
