@@ -27,8 +27,9 @@ const Controls = (props) => {
                 })
             }
             <div>
-                <button onClick={props.modal} className='order-btn blue-light'>سبد سفارشات</button>
                 <button onClick={props.axios} className='order-btn blue-dark'>AXIOS</button>
+                <button onClick={props.fetch} className='order-btn blue-dark'>Fetch</button>
+                <button onClick={props.modal} className='order-btn blue-light'>سبد سفارشات</button>
                 <button onClick={props.modal} className='order-btn green-light'>سبد سفارشات</button>
                 <button onClick={props.modal} className='order-btn green-dark'>سبد سفارشات</button>
             </div>
