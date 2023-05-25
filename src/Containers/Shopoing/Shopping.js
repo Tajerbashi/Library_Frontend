@@ -4,7 +4,7 @@ import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
 import Order from '../../Components/Order/Order';
-import HttpAxios from '../../Components/Controls/HttpAxios/HttpAxios';
+import Axios from '../../Components/Axios/Axios';
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -100,7 +100,7 @@ class Shopping extends React.Component {
                     show={this.state.axios}
                     showBackDrop={this.showHandler}
                 >
-                    <HttpAxios
+                    <Axios
                         close={this.showHandler}
                     />
                 </MyModal>
