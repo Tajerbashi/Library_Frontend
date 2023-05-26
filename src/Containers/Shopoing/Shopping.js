@@ -101,7 +101,6 @@ class Shopping extends React.Component {
                     showBackDrop={this.showHandler}
                 >
                     <Axios
-                        close={this.showHandler}
                     />
                 </MyModal>
             </Wrapper>
