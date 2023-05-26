@@ -9,3 +9,21 @@
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.6);
 
 }
+.posts ,.fullPost,.newPost{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid rgba(255, 0, 0, 0);
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 0.2rem;
+}
+.posts{
+    background: rgba(255, 255, 255, 0.89);
+}
+.fullPost{
+    background: rgba(255, 255, 255, 0.89);
+
+}
+.newPost{
+    background: rgba(255, 255, 255, 0.89);
+
+}
