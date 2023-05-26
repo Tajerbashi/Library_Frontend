@@ -2,7 +2,7 @@ import React from 'react';
 
 import './NewPost.css'
 
-const NewPost = () => {
+const NewPost = (props) => {
     return (
         <div>
             New Post
