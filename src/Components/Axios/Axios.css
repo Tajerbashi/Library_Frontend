@@ -9,21 +9,25 @@
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.6);
 
 }
-.posts ,.fullPost,.newPost{
-    padding: 0.5rem;
+.posts-container ,.fullPost-container,.newPost-container{
     margin: 0.5rem;
     border: 1px solid rgba(255, 0, 0, 0);
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
 }
-.posts{
-    background: rgba(255, 255, 255, 0.89);
+.posts-container{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
 }
-.fullPost{
+.fullPost-container{
     background: rgba(255, 255, 255, 0.89);
 
 }
-.newPost{
+.newPost-container{
     background: rgba(255, 255, 255, 0.89);
 
 }

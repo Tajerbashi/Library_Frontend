@@ -1,0 +1,67 @@
+.NewPost {
+    padding: 1rem;
+}
+.NewPost > h5{
+    color: rgb(162, 0, 255);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.301);
+    padding: 0.5rem;
+    border-radius: 5rem;
+
+}
+.NewPost-row{
+    margin-top: 0.2rem !important;
+    padding: 0.2rem;
+
+}
+
+.NewPost-row > p{
+    color: rgb(100, 0, 158);
+}
+.New-Post-Input {
+    width: 90%;
+    background: rgba(255, 0, 0, 0);
+    border: 1px solid transparent;
+    outline: none;
+    border-bottom: 1px solid rgb(162, 0, 255);
+    padding: 0.1rem 1rem;
+    color: rgb(162, 0, 255);
+}
+
+.NewPost-row {
+    margin: 0.1rem 0;
+}
+
+.NewPost-row > textarea {
+    width: 90%;
+    height: 90px;
+    background: rgba(255, 0, 242, 0.1);
+    border: 1px solid rgba(204, 0, 255, 0.2);
+    outline: none;
+    padding: 0.5rem;
+    color: rgb(112, 0, 134);
+}
+
+.NewPost-row>select {
+    width: 90%;
+    border: 1px solid transparent;
+    border-bottom: 1px solid rgb(162, 0, 255);
+    background: rgba(255, 0, 0, 0);
+    outline: none;
+}
+
+.NewPost-row>select>option {
+    border-bottom: 1px solid rgb(162, 0, 255);
+}
+
+.NewPost-row>select>option:hover {
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.NewPost-btn{
+    padding: 0.2rem 5rem;
+    border: 1px solid rgba(31, 18, 36, 0);
+    background: rgb(153, 0, 255);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.3);
+    margin-top: 1rem;
+    outline: none;
+    color: wheat;
+}
