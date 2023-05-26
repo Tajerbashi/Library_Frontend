@@ -65,3 +65,8 @@
     outline: none;
     color: wheat;
 }
+.NewPost-btn:hover{
+    background: rgba(55, 0, 92, 0);
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.582);
+    color: rgb(0, 0, 0);
+}
