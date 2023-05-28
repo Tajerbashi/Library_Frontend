@@ -25,14 +25,12 @@ class Axios extends React.Component {
             });
     }
     UpdateFullPost (id) {
-        console.log(id);
         const data = this.state.posts.find((post) => post.id === id);
         const newData = {
             title: data.title,
             author: data.body
         }
         this.setState({fullPost:newData});
-        console.log(data);
 
     }
     ClearFullPost () {
