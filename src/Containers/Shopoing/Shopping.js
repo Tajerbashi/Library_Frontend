@@ -7,6 +7,7 @@ import Order from '../../Components/Order/Order';
 import Axios from '../../Components/Axios/Axios';
 import axios from './../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
+import ProductRegister from '../../Components/Product/ProductRegister';
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -28,6 +29,7 @@ class Shopping extends React.Component {
         purchased: false,
         axios: false,
         loading: false,
+        register: false,
     };
 
     addProductHandler = (type) => {
@@ -66,7 +68,7 @@ class Shopping extends React.Component {
     showHandler = () => {
         this.setState({ purchased: false });
         this.setState({ axios: false });
-
+        this.setState({ register: false });
     }
     purchasedContinueHandler = () => {
         this.setState({ loading: true });
@@ -89,6 +91,9 @@ class Shopping extends React.Component {
                 this.setState({ loading: false, purchased: false });
             });
         // this.setState({ purchased: false});
+    }
+    productRegisterHandler = () => {
+        this.setState({ register: true });
     }
     axiosHandler = () => {
         console.log("Axios Clicked");
@@ -114,6 +119,7 @@ class Shopping extends React.Component {
                     productPrice={this.productPriceHandler}
                     modal={this.purchasedHandler}
                     axios={this.axiosHandler}
+                    productRegister={this.productRegisterHandler}
                 />
                 <MyModal
                     show={this.state.purchased}
@@ -126,6 +132,13 @@ class Shopping extends React.Component {
                     showBackDrop={this.showHandler}
                 >
                     <Axios
+                    />
+                </MyModal>
+                <MyModal
+                    show={this.state.register}
+                    showBackDrop={this.showHandler}
+                >
+                    <ProductRegister
                     />
                 </MyModal>
             </Wrapper>

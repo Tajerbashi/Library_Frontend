@@ -29,7 +29,7 @@ const Controls = (props) => {
             <div>
                 <button onClick={props.axios} className='order-btn blue-dark'>AXIOS</button>
                 <button onClick={props.fetch} className='order-btn blue-light'>Fetch</button>
-                <button onClick={props.modal} className='order-btn green-light'>سبد سفارشات</button>
+                <button onClick={props.productRegister} className='order-btn green-light'>ثبت محصول</button>
                 <button onClick={props.modal} className='order-btn green-dark'>سبد سفارشات</button>
             </div>
         </div>

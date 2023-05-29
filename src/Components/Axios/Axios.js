@@ -43,7 +43,6 @@ class Axios extends React.Component {
     render() {
         
         const Posts = this.state.posts.map(item => {
-            console.log(item);
             return (<Post
                 key={item.id}
                 Title={'کامران'}
