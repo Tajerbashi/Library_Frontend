@@ -12,19 +12,11 @@ const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
     'محصول 3': 150,
-    'محصول 4': 90,
-    'محصول 5': 280,
 }
 
 class Shopping extends React.Component {
     state = {
-        products: {
-            'محصول 1': 0,
-            'محصول 2': 0,
-            'محصول 3': 0,
-            'محصول 4': 0,
-            'محصول 5': 0,
-        },
+        products: null,
         totalPrice: 0,
         purchased: false,
         axios: false,
@@ -32,8 +24,19 @@ class Shopping extends React.Component {
         register: false,
     };
 
+    componentDidMount() {
+        axios
+            .get('https://reactfront-2023-default-rtdb.firebaseio.com/products.json')
+            .then(res => {
+                console.log(res);
+                let data = res.data;
+                this.setState({products:data});
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
     addProductHandler = (type) => {
-        console.log("Clicked Add Button");
         const prevCount = this.state.products[type];
         const UpdateCount = prevCount + 1;
         const updateProducts = {
@@ -96,31 +99,40 @@ class Shopping extends React.Component {
         this.setState({ register: true });
     }
     axiosHandler = () => {
-        console.log("Axios Clicked");
         let flag = this.state.axios ? false : true;
         this.setState({ axios: flag });
     }
     render() {
-        let order = <Order
-            continue={this.purchasedContinueHandler}
-            cancel={this.showHandler}
-            products={this.state.products}
-            total={this.state.totalPrice}
-        />
+        let order = null;
+        let productReg = null;
         if (this.state.loading) {
             order = <Loader />;
         }
+        let controls = <Loader />;
+        if (this.state.products) {
+            controls = (<Controls
+                productAdd={this.addProductHandler}
+                productRemove={this.removeProductHandler}
+                price={this.state.totalPrice}
+                productPrice={this.productPriceHandler}
+                modal={this.purchasedHandler}
+                axios={this.axiosHandler}
+                productRegister={this.productRegisterHandler}
+            />)
+            order = (<Order
+                continue={this.purchasedContinueHandler}
+                cancel={this.showHandler}
+                products={this.state.products}
+                total={this.state.totalPrice}
+            />)
+            productReg = (
+                <ProductRegister
+                    />
+            )
+        }
         return (
             <Wrapper>
-                <Controls
-                    productAdd={this.addProductHandler}
-                    productRemove={this.removeProductHandler}
-                    price={this.state.totalPrice}
-                    productPrice={this.productPriceHandler}
-                    modal={this.purchasedHandler}
-                    axios={this.axiosHandler}
-                    productRegister={this.productRegisterHandler}
-                />
+                {controls}
                 <MyModal
                     show={this.state.purchased}
                     showBackDrop={this.showHandler}
@@ -138,8 +150,7 @@ class Shopping extends React.Component {
                     show={this.state.register}
                     showBackDrop={this.showHandler}
                 >
-                    <ProductRegister
-                    />
+                    {productReg}
                 </MyModal>
             </Wrapper>
         );

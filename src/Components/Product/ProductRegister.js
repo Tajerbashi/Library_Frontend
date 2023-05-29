@@ -6,8 +6,8 @@ import axios from '../../Services/Order/orderServices'
 const ProductRegister = (props) => {
     const [state, setState] = useState({
         product: {
-            name: '',
-            price: ''
+            name: null,
+            price: null
         },
         loading: false
     });
@@ -26,7 +26,6 @@ const ProductRegister = (props) => {
             }
             setState({ product: product });
         }
-        console.log('Event : ', state.product);
     }
     const RegisterProductHandler = () => {
         var data = state.product;
