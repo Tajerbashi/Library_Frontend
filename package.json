@@ -1,6 +1,6 @@
 {
-  "name": "react-application",
-  "version": "0.1.0",
+  "name": "library",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -42,5 +42,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "<h3 align=\"center\" style=\"background: linear-gradient(90deg,rgb(62, 152, 255),rgb(255, 239, 92),rgb(39, 247, 177));\">Library Site UI with React.js</h3>\r <h3 align=\"center\" color=\"red\">Now you can add the changes you like with me and we will fork in this repository to learn React</h3>\r <p align=\"center\">\r   <img src=\"https://github.com/RinconStrategies/react-web-animation/blob/master/react_gif.gif\" />\r </p>",
+  "main": "0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KTajerbashi/ReactJS-Library.git"
+  },
+  "author": "Tajerbashi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KTajerbashi/ReactJS-Library/issues"
+  },
+  "homepage": "https://github.com/KTajerbashi/ReactJS-Library#readme",
+  "keywords": []
 }

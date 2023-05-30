@@ -80,18 +80,47 @@
 //    }
 // }
 ////////////////////////////////////////////////////////////////
-let mysql = require('mysql');
+// let mysql = require('mysql');
 
-let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '123123',
-    database: 'librarynodedb'
-});
-connection.connect(function(err) {
-    if (err) {
-      return console.error('error: ' + err.message);
-    }
+// let connection = mysql.createConnection({
+//     host: 'localhost',
+//     user: 'root',
+//     password: '123123',
+//     database: 'librarynodedb'
+// });
+// connection.connect(function(err) {
+//     if (err) {
+//       return console.error('error: ' + err.message);
+//     }
   
-    console.log('Connected to the MySQL server.');
-  });
+//     console.log('Connected to the MySQL server.');
+//   });
+
+////////////////////////////////////////////////////////////////
+
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+const mysql = require('mysql');
+ 
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'sa',
+  password: '123123',
+  database: 'librarynodedb'
+});
+ 
+connection.connect((error) => {
+  if (error) throw error;
+  console.log('Connected to MySQL database!');
+});
