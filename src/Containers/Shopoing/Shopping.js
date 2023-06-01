@@ -17,6 +17,8 @@ const prices = {
 class Shopping extends React.Component {
     state = {
         products: null,
+        price: null,
+        customer: null,
         totalPrice: 0,
         purchased: false,
         axios: false,
@@ -25,12 +27,14 @@ class Shopping extends React.Component {
     };
 
     componentDidMount() {
+        let data = [];
         axios
-            .get('https://reactfront-2023-default-rtdb.firebaseio.com/products.json')
+            .get('/orders.json')
             .then(res => {
-                console.log(res);
-                let data = res.data;
-                this.setState({products:data});
+                data = [res.data];
+                console.log(typeof res.data);
+                console.log(typeof data);
+                // this.setState({products:data});
             })
             .catch(err => {
                 console.log(err);
@@ -81,7 +85,7 @@ class Shopping extends React.Component {
             price: this.state.totalPrice,
             customer: {
                 name: 'Kaihan',
-                family: 'tajer',
+                family: 'Tajer',
                 email: 'kaihan@gmail.com',
             }
         }
