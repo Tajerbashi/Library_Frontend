@@ -1,6 +1,7 @@
 import React from "react";
 import './Axios.css'
-import axios from 'axios';
+// import axios from 'axios';
+import axios from './../../Services/Order/orderServices';
 
 import Post from './Post/Post'
 import FullPost from "./FullPost/FullPost";

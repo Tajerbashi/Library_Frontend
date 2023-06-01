@@ -7,7 +7,7 @@ const NavItems = (props) => {
             <NavItem link="/">خانه</NavItem>
             <NavItem link="/">محصولات</NavItem>
             <NavItem link="/">تخفیف ها</NavItem>
-            <NavItem link="/">در بازه ما</NavItem>
+            <NavItem link="/">در باره ما</NavItem>
         </ul>
     );
 }
