@@ -1,21 +1,19 @@
 {
-  "name": "library",
-  "version": "0.0.1",
+  "name": "react-application",
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "bootstrap": "^5.2.3",
-    "edge": "^7.10.1",
+    "bootstrap": "^5.3.0",
     "json-server": "^0.17.3",
-    "mssql": "^9.1.1",
+    "msnodesqlv8": "^4.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
-    "react-scripts": "^2.1.3",
-    "tedious": "^16.1.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -42,19 +40,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "<h3 align=\"center\" style=\"background: linear-gradient(90deg,rgb(62, 152, 255),rgb(255, 239, 92),rgb(39, 247, 177));\">Library Site UI with React.js</h3>\r <h3 align=\"center\" color=\"red\">Now you can add the changes you like with me and we will fork in this repository to learn React</h3>\r <p align=\"center\">\r   <img src=\"https://github.com/RinconStrategies/react-web-animation/blob/master/react_gif.gif\" />\r </p>",
-  "main": "0",
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/KTajerbashi/ReactJS-Library.git"
-  },
-  "author": "Tajerbashi",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/KTajerbashi/ReactJS-Library/issues"
-  },
-  "homepage": "https://github.com/KTajerbashi/ReactJS-Library#readme",
-  "keywords": []
+  }
 }
