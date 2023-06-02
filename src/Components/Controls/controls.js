@@ -27,10 +27,21 @@ const Controls = (props) => {
                 })
             }
             <div>
-                <button onClick={props.axios} className='order-btn blue-dark'>AXIOS</button>
-                <button onClick={props.fetch} className='order-btn blue-light'>Fetch</button>
-                <button onClick={props.productRegister} className='order-btn green-light'>ثبت محصول</button>
-                <button onClick={props.modal} className='order-btn green-dark'>سبد سفارشات</button>
+                <ul className='control-list'>
+                    <li>
+                        <button onClick={props.axios} className='order-btn blue-dark'>AXIOS</button>
+                    </li>
+                    <li>
+                        <button onClick={props.router} className='order-btn blue-light'>Router</button>
+                    </li>
+                    <li>
+                        <a href='/Router' onClick={props.productRegister} className='order-btn green-light'>ثبت محصول</a>
+                    </li>
+                    <li>
+                        <button onClick={props.modal} className='order-btn green-dark'>سبد سفارشات</button>
+
+                    </li>
+                </ul>
             </div>
         </div>
     );

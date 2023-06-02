@@ -17,6 +17,12 @@
     padding: 0.5rem 20rem;
     box-shadow: 0 0 25px 5px rgba(0, 0, 0, 0.5);
 }
+.control-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
 .order-btn {
     border: none;
     border-radius: 10px;

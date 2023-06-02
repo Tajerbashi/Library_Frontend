@@ -1,4 +1,7 @@
 import React from 'react'
+import {
+    BrowserRouter as Router,
+} from 'react-router-dom';
 
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/Controls';
@@ -24,6 +27,7 @@ class Shopping extends React.Component {
         totalPrice: 0,
         purchased: false,
         axios: false,
+        router: false,
         loading: false,
         register: false,
     };
@@ -41,7 +45,7 @@ class Shopping extends React.Component {
             .catch(err => {
                 this.setState({ products: prices });
                 console.log(err);
-                alert('اطلاعاتی در دتابس وجود ندارد ... !');
+                // alert('اطلاعاتی در دتابس وجود ندارد ... !');
             });
     }
     addProductHandler = (type) => {
@@ -110,6 +114,13 @@ class Shopping extends React.Component {
         let flag = this.state.axios ? false : true;
         this.setState({ axios: flag });
     }
+    routerHandler = () => {
+        let flag = this.state.router ? false : true;
+        this.setState({ router: flag });
+        console.log(flag);
+        console.log(this.state.router);
+    }
+
     render() {
         let order = null;
         let productReg = null;
@@ -125,6 +136,7 @@ class Shopping extends React.Component {
                 productPrice={this.productPriceHandler}
                 modal={this.purchasedHandler}
                 axios={this.axiosHandler}
+                router={this.routerHandler}
                 productRegister={this.productRegisterHandler}
             />)
             order = (<Order
@@ -141,7 +153,11 @@ class Shopping extends React.Component {
         }
         return (
             <Wrapper>
-                {controls}
+
+                <Router>
+                    {controls}
+                </Router>
+
                 <MyModal
                     show={this.state.purchased}
                     showBackDrop={this.showHandler}
