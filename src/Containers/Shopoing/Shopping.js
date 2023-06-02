@@ -1,6 +1,8 @@
 import React from 'react'
 import {
     BrowserRouter as Router,
+    Routes,
+    Route,
 } from 'react-router-dom';
 
 import Wrapper from '../../Hoc/wrapper';
@@ -153,11 +155,13 @@ class Shopping extends React.Component {
         }
         return (
             <Wrapper>
-
                 <Router>
-                    {controls}
-                </Router>
+                    <Routes>
+                        <Route path="/" render={() => <h2>Hello</h2>} />
 
+                    </Routes>
+                </Router>
+                {controls}
                 <MyModal
                     show={this.state.purchased}
                     showBackDrop={this.showHandler}
