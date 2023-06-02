@@ -1,6 +1,6 @@
 import React from 'react';
-import './controls.css'
-import Builder from './Builder/builder';
+import './Controls.css'
+import Builder from './Builder/Builder';
 
 const Products = [
     { title: 'محصول 1', type: 'محصول 1' },
@@ -13,12 +13,12 @@ const Controls = (props) => {
     return (
         <div className='controls'>
             <div>
-                <p>قیمت نهایی : {props.price}</p>
+                <p className='bg-gradient'>قیمت نهایی : {props.price}</p>
             </div>
             {
                 Products.map((item) => {
                     return <Builder
-                        key={item.title}
+                        key={item.type}
                         title={item.title}
                         productPrice={() => props.productPrice(item.type)}
                         add={() => props.productAdd(item.type)}

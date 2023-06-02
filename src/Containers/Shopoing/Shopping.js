@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Wrapper from '../../Hoc/wrapper';
-import Controls from '../../Components/Controls/controls';
+import Controls from '../../Components/Controls/Controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
 import Order from '../../Components/Order/Order';
 import Axios from '../../Components/Axios/Axios';
@@ -35,10 +35,13 @@ class Shopping extends React.Component {
             .then(res => {
                 data = Object.entries(res.data);
                 data = data[0][1];
+                console.log(!data);
                 this.setState({ products: data.products });
             })
             .catch(err => {
+                this.setState({ products: prices });
                 console.log(err);
+                alert('اطلاعاتی در دتابس وجود ندارد ... !');
             });
     }
     addProductHandler = (type) => {
@@ -129,7 +132,8 @@ class Shopping extends React.Component {
                 cancel={this.showHandler}
                 products={this.state.products}
                 total={this.state.totalPrice}
-            />)
+            />);
+
             productReg = (
                 <ProductRegister
                 />
@@ -144,6 +148,7 @@ class Shopping extends React.Component {
                 >
                     {order}
                 </MyModal>
+
                 <MyModal
                     show={this.state.axios}
                     showBackDrop={this.showHandler}
@@ -151,6 +156,7 @@ class Shopping extends React.Component {
                     <Axios
                     />
                 </MyModal>
+
                 <MyModal
                     show={this.state.register}
                     showBackDrop={this.showHandler}

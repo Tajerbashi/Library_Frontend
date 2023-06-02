@@ -1,5 +1,5 @@
 import React from 'react';
-import './builder.css'
+import './Builder.css'
 
 const Builder = (props) => {
     return (
