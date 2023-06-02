@@ -13,6 +13,8 @@ const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
     'محصول 3': 150,
+    'محصول 4': 250,
+    'محصول 5': 550,
 }
 
 class Shopping extends React.Component {

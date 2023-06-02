@@ -6,6 +6,8 @@ const Products = [
     { title: 'محصول 1', type: 'محصول 1' },
     { title: 'محصول 2', type: 'محصول 2' },
     { title: 'محصول 3', type: 'محصول 3' },
+    { title: 'محصول 4', type: 'محصول 4' },
+    { title: 'محصول 5', type: 'محصول 5' },
 ];
 const Controls = (props) => {
     return (
