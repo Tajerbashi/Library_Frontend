@@ -8,6 +8,7 @@ import Axios from '../../Components/Axios/Axios';
 import axios from './../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
 import ProductRegister from '../../Components/Product/ProductRegister';
+
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -17,7 +18,6 @@ const prices = {
 class Shopping extends React.Component {
     state = {
         products: null,
-        price: null,
         customer: null,
         totalPrice: 0,
         purchased: false,
@@ -31,10 +31,9 @@ class Shopping extends React.Component {
         axios
             .get('/orders.json')
             .then(res => {
-                data = [res.data];
-                console.log(typeof res.data);
-                console.log(typeof data);
-                // this.setState({products:data});
+                data = Object.entries(res.data);
+                data = data[0][1];
+                this.setState({ products: data.products });
             })
             .catch(err => {
                 console.log(err);
@@ -131,7 +130,7 @@ class Shopping extends React.Component {
             />)
             productReg = (
                 <ProductRegister
-                    />
+                />
             )
         }
         return (
