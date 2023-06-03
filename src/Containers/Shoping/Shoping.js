@@ -1,16 +1,11 @@
 import React from 'react'
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-} from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/Controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
 import Order from '../../Components/Order/Order';
 import Axios from '../../Components/Axios/Axios';
-import axios from './../../Services/Order/orderServices'
+import axios from '../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
 import ProductRegister from '../../Components/Product/ProductRegister';
 
@@ -126,10 +121,13 @@ class Shopping extends React.Component {
     render() {
         let order = null;
         let productReg = null;
+        let controls = <Loader />;
+        let products = <h1>products</h1>
+        let percents = <h1>percents</h1>
+        let about = <h1>about</h1>
         if (this.state.loading) {
             order = <Loader />;
         }
-        let controls = <Loader />;
         if (this.state.products) {
             controls = (<Controls
                 productAdd={this.addProductHandler}
@@ -157,11 +155,15 @@ class Shopping extends React.Component {
             <Wrapper>
                 <Router>
                     <Routes>
-                        <Route path="/" render={() => <h2>Hello</h2>} />
-
+                        <Route path='/' element={controls} />
+                        <Route path='/products' element={products} />
+                        <Route path='/percents' element={percents} />
+                        <Route path='/about' element={about} />
+                        {/* {controls} */}
                     </Routes>
                 </Router>
-                {controls}
+
+
                 <MyModal
                     show={this.state.purchased}
                     showBackDrop={this.showHandler}
@@ -183,6 +185,7 @@ class Shopping extends React.Component {
                 >
                     {productReg}
                 </MyModal>
+
             </Wrapper>
         );
     }

@@ -5,9 +5,9 @@ const NavItems = (props) => {
     return(
         <ul className="nav-items-ul">
             <NavItem link="/">خانه</NavItem>
-            <NavItem link="/">محصولات</NavItem>
-            <NavItem link="/">تخفیف ها</NavItem>
-            <NavItem link="/">در باره ما</NavItem>
+            <NavItem link="/products">محصولات</NavItem>
+            <NavItem link="/percents">تخفیف ها</NavItem>
+            <NavItem link="/about">در باره ما</NavItem>
         </ul>
     );
 }

@@ -1,17 +1,15 @@
 import React from "react";
 import Layout from "../Layout/Layout";
-import Shopping from "../../Containers/Shopoing/Shopping";
-import { 
-    BrowserRouter as Router
- } from 'react-router-dom';
+import Shopping from "../../Containers/Shoping/Shoping";
+import Wrapper from "../../Hoc/wrapper";
 class App extends React.Component {
-    render(){
+    render() {
         return (
-            <div>
+            <Wrapper>
                 <Layout>
-                    <Shopping/>
+                    <Shopping />
                 </Layout>
-            </div>
+            </Wrapper>
         );
     }
 }
