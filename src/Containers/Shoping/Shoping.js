@@ -7,8 +7,10 @@ import Order from '../../Components/Order/Order';
 import Axios from '../../Components/Axios/Axios';
 import axios from '../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
-import ProductRegister from '../../Components/Product/ProductRegister';
-
+import ProductRegister from '../../Components/ProductRegistery/ProductRegister';
+import Products from '../../Components/Products/Products'
+import Percents from '../../Components/Percents/Percents';
+import About from '../../Components/About/About';
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -122,9 +124,9 @@ class Shopping extends React.Component {
         let order = null;
         let productReg = null;
         let controls = <Loader />;
-        let products = <h1>products</h1>
-        let percents = <h1>percents</h1>
-        let about = <h1>about</h1>
+        let products = <Products />
+        let percents = <Percents />
+        let about = <About />
         if (this.state.loading) {
             order = <Loader />;
         }
