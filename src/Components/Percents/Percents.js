@@ -4,6 +4,7 @@ const Percents = (props) => {
     const [state, setState] = useState({
         products: [
             {
+                id: 1,
                 title: 'چهار اثر فلورانس',
                 price: 120,
                 oldprice: 150,
@@ -11,6 +12,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 2,
                 title: 'اثر مرکب',
                 percent: true,
                 oldprice: 180,
@@ -18,6 +20,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 3,
                 title: 'قدرت نامحدود',
                 percent: true,
                 oldprice: 200,
@@ -25,6 +28,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 4,
                 title: 'ثروتمند ترین مرد بابل',
                 percent: true,
                 oldprice: 150,
@@ -32,6 +36,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 5,
                 title: 'جادوی فکر یزرگ',
                 percent: true,
                 oldprice: 150,
@@ -39,6 +44,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 6,
                 title: 'تغییرات کوچک',
                 percent: true,
                 oldprice: 250,
@@ -46,6 +52,7 @@ const Percents = (props) => {
                 description: 'این کتاب در  مورد ذهنیت الهی بحث میکند'
             },
             {
+                id: 7,
                 title: 'افکار یا فکر یزرگ',
                 percent: true,
                 oldprice: 450,
@@ -54,15 +61,19 @@ const Percents = (props) => {
             },
         ],
     });
+    const UpdateState = () => {
+        setState({});
+    }
     const Products = state.products.map((item) => {
         return <ProductItem
+            key={item.id}
             title={item.title}
             price={item.price}
             oldprice={item.oldprice}
             description={item.description}
             percent={item.percent}
             buy={item.percent}
-            save={item.percent}
+            save={UpdateState}
         />
     });
     return (

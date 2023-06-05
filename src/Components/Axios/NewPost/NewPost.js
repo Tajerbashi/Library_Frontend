@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './NewPost.css'
 
 class NewPost extends React.Component {
@@ -7,6 +6,8 @@ class NewPost extends React.Component {
         title: '',
         content: '',
         author: ''
+    }
+    componentDidMount(){
     }
     render() {
         return (

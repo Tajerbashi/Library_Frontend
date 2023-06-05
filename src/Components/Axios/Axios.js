@@ -22,7 +22,7 @@ class Axios extends React.Component {
                 this.setState({ posts: res.data });
             })
             .catch((err) => {
-                console.log(err);
+                // console.log(err);
             });
     }
     UpdateFullPost (id) {

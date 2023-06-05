@@ -11,6 +11,10 @@ import ProductRegister from '../../Components/ProductRegistery/ProductRegister';
 import Products from '../../Components/Products/Products'
 import Percents from '../../Components/Percents/Percents';
 import About from '../../Components/About/About';
+import FullProduct from '../../Components/FullProduct/FullProduct';
+
+
+
 const prices = {
     'محصول 1': 110,
     'محصول 2': 120,
@@ -38,12 +42,12 @@ class Shopping extends React.Component {
             .then(res => {
                 data = Object.entries(res.data);
                 data = data[0][1];
-                console.log(!data);
+                // console.log(!data);
                 this.setState({ products: data.products });
             })
             .catch(err => {
                 this.setState({ products: prices });
-                console.log(err);
+                // console.log(err);
                 // alert('اطلاعاتی در دتابس وجود ندارد ... !');
             });
     }
@@ -126,6 +130,7 @@ class Shopping extends React.Component {
         let controls = <Loader />;
         let products = <Products />
         let percents = <Percents />
+        let fullProduct = <FullProduct />
         let about = <About />
         if (this.state.loading) {
             order = <Loader />;
@@ -160,6 +165,8 @@ class Shopping extends React.Component {
                         <Route path='/products' element={products} />
                         <Route path='/percents' element={percents} />
                         <Route path='/about' element={about} />
+                        <Route path='/:id' exact Component={FullProduct} />
+                        {/* <Route path='/:Id' exact element={fullProduct} /> */}
                     </Routes>
 
 
