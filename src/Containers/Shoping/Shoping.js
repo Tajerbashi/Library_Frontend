@@ -155,15 +155,12 @@ class Shopping extends React.Component {
         }
         return (
             <Wrapper>
-                <Router>
                     <Routes>
                         <Route path='/' element={controls} />
                         <Route path='/products' element={products} />
                         <Route path='/percents' element={percents} />
                         <Route path='/about' element={about} />
-                        {/* {controls} */}
                     </Routes>
-                </Router>
 
 
                 <MyModal
