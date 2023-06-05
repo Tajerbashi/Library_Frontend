@@ -68,15 +68,11 @@ class FullProduct extends React.Component {
         if (id) {
             this.setState({found: true});
             product = this.state.products.find(item => {
-                console.log(item.id == id);
-                console.log(id);
                 if(item.id == id){
                     return item;
                 }
             });
             this.setState({product: product});
-            console.log(product);
-            console.log("true : ", this.state.product);
         }
     }
     render() {
