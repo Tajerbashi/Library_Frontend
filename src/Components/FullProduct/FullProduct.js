@@ -65,14 +65,20 @@ class FullProduct extends React.Component {
         const queryString = window.location.pathname;
         let product = null;
         const id = queryString.substring(1,);
-        if (id) {
-            this.setState({found: true});
-            product = this.state.products.find(item => {
-                if(item.id == id){
-                    return item;
-                }
-            });
+        product = this.state.products.find(item => {
+            if (item.id == id) {
+                return item;
+            }
+        });
+        this.setState({ found: true });
+        console.log(product);
+        // this.setState({product: product});
+        if (product != undefined) {
+            this.setState({ found: true });
+            console.log(product);
             this.setState({product: product});
+        } else {
+            this.setState({ found: false });
         }
     }
     render() {
@@ -95,7 +101,13 @@ class FullProduct extends React.Component {
                     </Link>
                 </div>
             )
-            : 'پست مورد نظر یافت نشد !!!!';
+            : <h1 style={{
+                color: 'red',
+                backgroundColor: 'black',
+                margin: '1rem',
+                padding: '1rem',
+                borderRadius: '1rem'
+            }}>پست مورد نظر یافت نشد !!!!</h1>;
         return (
             post
         );

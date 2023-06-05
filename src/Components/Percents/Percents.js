@@ -61,9 +61,10 @@ const Percents = (props) => {
             },
         ],
     });
-    const UpdateState = () => {
+    const ShowProduct = () => {
         setState({});
     }
+
     const Products = state.products.map((item) => {
         return <ProductItem
             key={item.id}
@@ -72,8 +73,8 @@ const Percents = (props) => {
             oldprice={item.oldprice}
             description={item.description}
             percent={item.percent}
-            buy={item.percent}
-            save={UpdateState}
+            buy={() => ShowProduct(item.id)}
+            save={() => ShowProduct(item.id)}
         />
     });
     return (

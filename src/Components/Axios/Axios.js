@@ -10,9 +10,9 @@ import NewPost from "./NewPost/NewPost";
 class Axios extends React.Component {
     state = {
         posts: [],
-        fullPost:{
-            title:'عنوان',
-            author:'موضوع',
+        fullPost: {
+            title: 'عنوان',
+            author: 'موضوع',
         }
     }
     componentDidMount() { // useEffect Hook
@@ -25,30 +25,33 @@ class Axios extends React.Component {
                 // console.log(err);
             });
     }
-    UpdateFullPost (id) {
+    UpdateFullPost(id) {
         const data = this.state.posts.find((post) => post.id === id);
         const newData = {
             title: data.title,
             author: data.body
         }
-        this.setState({fullPost:newData});
+        this.setState({ fullPost: newData });
 
     }
-    ClearFullPost () {
+    ClearFullPost() {
         const newData = {
             title: 'عنوان',
             author: 'سازنده'
         }
-        this.setState({fullPost:newData});
+        this.setState({ fullPost: newData });
+    }
+    SaveProductHandler() {
+        console.log("Clicked");
     }
     render() {
-        
+
         const Posts = this.state.posts.map(item => {
             return (<Post
                 key={item.id}
                 Title={'کامران'}
                 Author={item.body}
-                Click={() => this.UpdateFullPost(item.id)}/>)
+                Click={() => this.UpdateFullPost(item.id)} />)
         });
         return (
 
@@ -65,6 +68,7 @@ class Axios extends React.Component {
                 </section>
                 <section className="newPost-container">
                     <NewPost
+                        SaveProduct={() => this.SaveProductHandler()}
                     />
                 </section>
             </div>

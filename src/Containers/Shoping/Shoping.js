@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link, Switch, Redirect } from 'react-router-dom';
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/Controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
@@ -33,6 +33,7 @@ class Shopping extends React.Component {
         router: false,
         loading: false,
         register: false,
+        submitted: false,
     };
 
     componentDidMount() {
@@ -126,16 +127,18 @@ class Shopping extends React.Component {
 
     render() {
         let order = null;
-        let productReg = null;
-        let controls = <Loader />;
-        let products = <Products />
-        let percents = <Percents />
-        let fullProduct = <FullProduct />
-        let about = <About />
+        let controls = null;
+        let products = null;
+        let percents = null;
+        let about = null;
+
         if (this.state.loading) {
             order = <Loader />;
         }
         if (this.state.products) {
+            products = <Products />
+            percents = <Percents />
+            about = <About />
             controls = (<Controls
                 productAdd={this.addProductHandler}
                 productRemove={this.removeProductHandler}
@@ -153,23 +156,25 @@ class Shopping extends React.Component {
                 total={this.state.totalPrice}
             />);
 
-            productReg = (
-                <ProductRegister
-                />
-            )
+
         }
         return (
             <Wrapper>
-                    <Routes>
-                        <Route path='/' element={controls} />
-                        <Route path='/products' element={products} />
-                        <Route path='/percents' element={percents} />
-                        <Route path='/about' element={about} />
-                        <Route path='/:id' exact Component={FullProduct} />
-                        {/* <Route path='/:Id' exact element={fullProduct} /> */}
-                    </Routes>
-
-
+                <Routes>
+                    <Route path='/' element={controls} />
+                    <Route path='/products' element={products} />
+                    <Route path='/percents' element={percents} />
+                    <Route path='/about' element={about} />
+                    <Route path='/:id' Component={FullProduct} />
+                    <Route element={<h2 style={{
+                        color: 'red',
+                        backgroundColor: 'black',
+                        margin: '1rem',
+                        padding: '1rem',
+                        borderRadius: '1rem'
+                    }}>صفحه ای یافت نشد آدرس را درست وارد کنید</h2>} />
+                    {/* <Route path='/:Id' exact element={fullProduct} /> */}
+                </Routes>
                 <MyModal
                     show={this.state.purchased}
                     showBackDrop={this.showHandler}
@@ -189,7 +194,8 @@ class Shopping extends React.Component {
                     show={this.state.register}
                     showBackDrop={this.showHandler}
                 >
-                    {productReg}
+                    <ProductRegister
+                    />
                 </MyModal>
 
             </Wrapper>
