@@ -7,7 +7,10 @@ const NavItem = (props) => {
     return (
         <li className="nav-items-li">
             {/* <a href={props.link}>{props.children}</a> */}
-            <Link to={props.link}>
+            <Link to={{
+                pathname:props.link,
+                search:`sort=${props.search}`
+            }}>
                 {props.children}
             </Link>
         </li>

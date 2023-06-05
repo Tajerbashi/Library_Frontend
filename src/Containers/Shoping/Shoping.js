@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {  Routes, Route } from 'react-router-dom';
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/Controls';
 import MyModal from '../../Components/UI/Modal/MyModal';

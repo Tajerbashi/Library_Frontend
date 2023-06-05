@@ -4,10 +4,10 @@ import NavItem from "../NavItem/NavItem";
 const NavItems = (props) => {
     return(
         <ul className="nav-items-ul">
-            <NavItem link="/">خانه</NavItem>
-            <NavItem link="/products">محصولات</NavItem>
-            <NavItem link="/percents">تخفیف ها</NavItem>
-            <NavItem link="/about">در باره ما</NavItem>
+            <NavItem search="post" link="/">خانه</NavItem>
+            <NavItem search="product" link="/products">محصولات</NavItem>
+            <NavItem search="percent" link="/percents">تخفیف ها</NavItem>
+            <NavItem search="about" link="/about">در باره ما</NavItem>
         </ul>
     );
 }
