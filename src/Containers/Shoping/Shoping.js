@@ -109,7 +109,6 @@ class Shopping extends React.Component {
             .catch(err => {
                 this.setState({ loading: false, purchased: false });
             });
-        // this.setState({ purchased: false});
     }
     productRegisterHandler = () => {
         this.setState({ register: true });
@@ -154,6 +153,8 @@ class Shopping extends React.Component {
                 cancel={this.showHandler}
                 products={this.state.products}
                 total={this.state.totalPrice}
+                link={'products'}
+                search={'product'}
             />);
 
 
@@ -166,14 +167,15 @@ class Shopping extends React.Component {
                     <Route path='/percents' element={percents} />
                     <Route path='/about' element={about} />
                     <Route path='/:id' Component={FullProduct} />
-                    <Route element={<h2 style={{
-                        color: 'red',
-                        backgroundColor: 'black',
-                        margin: '1rem',
-                        padding: '1rem',
-                        borderRadius: '1rem'
-                    }}>صفحه ای یافت نشد آدرس را درست وارد کنید</h2>} />
-                    {/* <Route path='/:Id' exact element={fullProduct} /> */}
+                    <Route element={<h2
+                        style={{
+                            color: 'red',
+                            backgroundColor: 'black',
+                            margin: '20rem 1rem 1rem 1rem',
+                            padding: '1rem',
+                            borderRadius: '1rem'
+                        }}
+                    >صفحه ای یافت نشد آدرس را درست وارد کنید ...!!!</h2>} />
                 </Routes>
                 <MyModal
                     show={this.state.purchased}
