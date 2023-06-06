@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, Link, Switch, Redirect } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Wrapper from '../../Hoc/wrapper';
 import Controls from '../../Components/Controls/Controls';
 import MyModal from '../../Components/UI/Modal/MyModal';
@@ -8,9 +8,7 @@ import Axios from '../../Components/Axios/Axios';
 import axios from '../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
 import ProductRegister from '../../Components/ProductRegistery/ProductRegister';
-import Products from '../../Components/Products/Products'
-import Percents from '../../Components/Percents/Percents';
-import About from '../../Components/About/About';
+
 import FullProduct from '../../Components/FullProduct/FullProduct';
 
 
@@ -127,17 +125,11 @@ class Shopping extends React.Component {
     render() {
         let order = null;
         let controls = null;
-        let products = null;
-        let percents = null;
-        let about = null;
 
         if (this.state.loading) {
             order = <Loader />;
         }
         if (this.state.products) {
-            products = <Products />
-            percents = <Percents />
-            about = <About />
             controls = (<Controls
                 productAdd={this.addProductHandler}
                 productRemove={this.removeProductHandler}
@@ -163,9 +155,7 @@ class Shopping extends React.Component {
             <Wrapper>
                 <Routes>
                     <Route path='/' element={controls} />
-                    <Route path='/products' element={products} />
-                    <Route path='/percents' element={percents} />
-                    <Route path='/about' element={about} />
+                    
                     <Route path='/:id' Component={FullProduct} />
                     <Route element={<h2
                         style={{
