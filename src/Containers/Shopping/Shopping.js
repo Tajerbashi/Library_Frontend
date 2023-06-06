@@ -7,7 +7,7 @@ import Order from '../../Components/Order/Order';
 import Axios from '../../Components/Axios/Axios';
 import axios from '../../Services/Order/orderServices'
 import Loader from '../../Components/UI/Loader/Loader';
-import ProductRegister from '../../Components/ProductRegistery/ProductRegister';
+import ProductRegister from '../../Components/ProductRegister/ProductRegister';
 
 import FullProduct from '../../Components/FullProduct/FullProduct';
 
@@ -130,6 +130,7 @@ class Shopping extends React.Component {
             order = <Loader />;
         }
         if (this.state.products) {
+            
             controls = (<Controls
                 productAdd={this.addProductHandler}
                 productRemove={this.removeProductHandler}
@@ -140,6 +141,7 @@ class Shopping extends React.Component {
                 router={this.routerHandler}
                 productRegister={this.productRegisterHandler}
             />)
+
             order = (<Order
                 continue={this.purchasedContinueHandler}
                 cancel={this.showHandler}
@@ -155,8 +157,7 @@ class Shopping extends React.Component {
             <Wrapper>
                 <Routes>
                     <Route path='/' element={controls} />
-                    
-                    <Route path='/:id' Component={FullProduct} />
+                    {/* <Route path='/:id' Component={<FullProduct/>} /> */}
                     <Route element={<h2
                         style={{
                             color: 'red',

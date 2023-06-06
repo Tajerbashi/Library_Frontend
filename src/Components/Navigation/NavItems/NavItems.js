@@ -9,7 +9,7 @@ const NavItems = (props) => {
             <NavItem search="percent" link="/percents">تخفیف ها</NavItem>
             <NavItem search="about" link="/about">در باره ما</NavItem>
             <div className="bg-gradient">
-                <NavItem search="Panel" link="/MyPanel">پنل کاربر</NavItem>
+                <NavItem search="Account" link="/MyPanel">پنل کاربر</NavItem>
             </div>
         </ul>
     );

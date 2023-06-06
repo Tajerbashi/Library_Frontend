@@ -4,7 +4,6 @@ import './NewPost.css'
 class NewPost extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props);
     }
     state = {
         title: '',
