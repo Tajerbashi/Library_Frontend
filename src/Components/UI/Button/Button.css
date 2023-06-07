@@ -1,4 +1,4 @@
-.btn{
+.btn {
     background: rgba(255, 0, 0, 0);
     border: none;
     border-radius: 3px;
@@ -8,34 +8,49 @@
     margin: 10px;
     padding: 5px 20px !important;
 }
-.yes{
+
+.yes {
     background: rgb(26, 131, 0) !important;
 
 }
-.no{
+
+.no {
     background: rgb(255, 31, 31) !important;
 
 }
-.warning{
+
+.warning {
     background: rgb(209, 84, 0) !important;
 }
-.link{
+
+.warning:hover {
+    background: rgb(117, 47, 0) !important;
+    box-shadow: 0 0 25px 5px rgb(199, 113, 0);
+}
+
+.link {
     background: rgb(0, 140, 255) !important;
 }
-.link:hover{
+
+.link:hover {
     background: rgb(0, 81, 255) !important;
+    box-shadow: 0 0 25px 5px rgb(0, 23, 128);
 }
-.yes:hover{
+
+.yes:hover {
     background: rgb(12, 58, 0) !important;
-    box-shadow: 0 0 25px 5px rgb(0, 0, 0);
+    box-shadow: 0 0 25px 5px rgb(0, 59, 30);
 }
-.no:hover{
+
+.no:hover {
     background: rgb(82, 0, 0) !important;
     box-shadow: 0 0 25px 5px rgb(255, 0, 0);
 
 }
-.warning:hover{
-    background: rgb(192, 77, 0) !important;
-    box-shadow: 0 0 25px 5px rgb(255, 160, 35);
-
+.form-btn{
+    background: rgb(140, 0, 255) !important;
+}
+.form-btn:hover{
+    background: rgb(76, 0, 255) !important;
+    box-shadow: 0 0 25px 5px rgb(50, 0, 92);
 }
