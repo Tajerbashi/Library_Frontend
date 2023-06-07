@@ -1,47 +1,9 @@
 .pr-title{
-    background: linear-gradient(90deg, rgba(255, 196, 0, 0.493),rgba(255, 0, 0, 0),rgba(255, 225, 52, 0.473));
+    background: linear-gradient(90deg, rgba(132, 0, 255, 0.4),rgb(111, 0, 255),rgba(157, 52, 255, 0.4));
     text-align: center;
+    color: wheat;
     padding: 1rem;
     border-radius: 1rem;
     margin: 1rem 0;
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
-}
-.pr-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1rem;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 1rem;
-    
-}
-.pr-input{
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background: rgba(255, 0, 0, 0);
-    border: 1px solid rgba(255, 0, 0, 0);
-    border-bottom: 2px solid rgb(65, 68, 255);
-    outline: none;
-    
-}
-.pr-controller{
-    margin-top: 5rem;
-    padding: 1rem;
-    border-radius: 1rem;
-
-}
-.pr-btn{
-    padding: 0.2rem 1rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
-    outline: none;
-    border: 1px solid rgba(255, 0, 0, 0);
-    color: rgb(0, 0, 0);
-    background: rgba(0, 70, 6, 0);
-    width: 50%;
-}
-.pr-btn:hover{
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.836);
-    background: rgb(0, 81, 255);
-    color: wheat;
 }

@@ -1,68 +1,59 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Wrapper from '../../Hoc/wrapper';
 import './ProductRegister.css'
-import axios from '../../Services/Order/orderServices'
-
+import Input from '../UI/Input/Input';
+import Button from '../UI/Button/Button';
 const ProductRegister = (props) => {
-    const [state, setState] = useState({
-        product: {
-            name: null,
-            price: null
-        },
-        loading: false
-    });
-    const DefineProduct = (event) => {
-        const name = event.target.name;
-        if (name === 'name') {
-            const product = {
-                name: event.target.value,
-                price: state.product.price
-            }
-            setState({ product: product });
-        } else if (name === 'price') {
-            const product = {
-                name: state.product.name,
-                price: event.target.value
-            }
-            setState({ product: product });
-        }
-    }
-    const RegisterProductHandler = () => {
-        var data = state.product;
-        console.log(state.product);
-        axios
-            .post('/Products.json', data)
-            .then((res) => {
-                console.log("Res : ", res);
-            })
-            .catch(err => {
-                console.log("Err : ", err);
-            });
+    const [fullName, setFullName] = useState();
+    const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(fullName);
+        console.log(username);
+        console.log(password);
+        console.log("Clicked on ProductRegister");
     }
 
+    useEffect(() => {
+        console.log(fullName);
+        console.log(username);
+        console.log(password);
+    });
     return (
         <Wrapper>
             <div className='pr-title'>محصول جدید</div>
-            <div className='pr-form'>
-                <input
-                    className='pr-input'
-                    placeholder='نام محصول را وارد کنید ...'
-                    onChange={DefineProduct}
-                    name='name'
-                    type='text' />
-                <input
-                    className='pr-input'
-                    placeholder='قیمت محصول را وارد کنید ...'
-                    onChange={DefineProduct}
-                    name='price'
-                    type='text'
-                />
-            </div>
-            <div className='pr-controller'>
-                <button
-                    className='pr-btn'
-                    onClick={RegisterProductHandler}
-                >ذخیره</button>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <Input
+                        type='input'
+                        id='fullName'
+                        name='fullName'
+                        value={fullName}
+                        placeholder='نام کامل را وارد کنید ...'
+                        onChange={(e) => setFullName(e.target.value)}
+                    />
+                    <Input
+                        type='input'
+                        id='username'
+                        name='username'
+                        value={username}
+                        placeholder='نام کاربری را وارد کنید ...'
+                        onChange={(e) => setUsername(e.target.value)} 
+                    />
+                    <Input
+                        type='input'
+                        id='password'
+                        name='password'
+                        value={password}
+                        placeholder='رمز را وارد کنید ...'
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
+
+                    <Button btnType='yes'
+                        click={(e) => handleSubmit(e)}>ذخیره</Button>
+                </form>
             </div>
         </Wrapper>
     );

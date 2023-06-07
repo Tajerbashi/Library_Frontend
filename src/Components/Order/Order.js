@@ -19,14 +19,13 @@ const Order = (props) => {
             <div className="total">قیمت کل سبد : {props.total}</div>
             <p className="msg">آیا میخواهید ادامه دهید یا خیر ؟</p>
 
-            <Button click={props.continue}>
-                <Link className="btn bg-success text-light" btnType="yes" to={{
+            <Button click={props.continue} btnType="link">
+                <Link className="text-light" btnType="yes" to={{
                     pathname: props.link,
                     search: `sort=${props.search}`
                 }}>
                     بلی
                 </Link>
-
             </Button>
             <Button click={props.cancel} btnType="no">خیر</Button>
         </Wrapper>
