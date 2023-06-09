@@ -8,11 +8,12 @@ import Modal from "../UI/Modal/Modal";
 import './Home.css'
 const Home = () => {
     const [modal, setModal] = useState(false);
-    
+
     const modalHandler = () => {
+        const flag = modal ? false : true;
         console.log("Show Handler :", modal);
         console.log("Set Modal :", setModal);
-        setModal(false);
+        setModal(flag);
     }
     return (
         <div className="container-fluid">
@@ -21,7 +22,9 @@ const Home = () => {
                     <Header />
                 </div>
                 <div className="col-12">
-                    <Navbar />
+                    <Navbar
+                        modal={modal}
+                        OpenModal={modalHandler} />
                 </div>
             </div>
             <div className="row">
@@ -37,12 +40,12 @@ const Home = () => {
                     <Footer />
                 </div>
             </div>
-            <Modal
+            {/* <Modal
                 show={modal}
                 showHandler={() => modalHandler()}
             >
-            </Modal>
-            
+            </Modal> */}
+
         </div>
     );
 }

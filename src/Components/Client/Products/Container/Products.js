@@ -70,7 +70,7 @@ const Products = () => {
                         <Navbar />
                     </div>
                     <div className='col-12 '>
-                        <div className='DefaultContainer m-1 d-flex flex-row justify-content-between align-items-center flex-wrap'>
+                        <div className='DefaultContainer m-1 d-flex flex-row justify-content-evenly align-items-center flex-wrap'>
                             {AllProducts}
                         </div>
                     </div>
