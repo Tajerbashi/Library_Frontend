@@ -59,7 +59,8 @@ const Products = () => {
         />);
     });
     const productsHandler = (id) => {
-        console.log("Id : ",id);
+        console.log("Id : ", id);
+        console.log("setProducts : ", setProducts);
     }
     return (
         <Wrapper>
@@ -68,10 +69,10 @@ const Products = () => {
                     <div className='col-12'>
                         <Navbar />
                     </div>
-                </div>
-                <div className='row DefaultContainer m-1'>
-                    <div className='col-12 d-flex flex-row justify-content-between align-items-center flex-wrap'>
-                        {AllProducts}
+                    <div className='col-12 '>
+                        <div className='DefaultContainer m-1 d-flex flex-row justify-content-between align-items-center flex-wrap'>
+                            {AllProducts}
+                        </div>
                     </div>
                 </div>
             </div>

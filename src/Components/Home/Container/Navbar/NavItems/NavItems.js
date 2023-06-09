@@ -5,7 +5,7 @@ const NavItems = (props) => {
         <ul className='NavItems-Container'>
             <NavItem href='/'>خانه</NavItem>
             <NavItem href='/products'>محصولات</NavItem>
-            <NavItem href='/blogs'>وبلاگ</NavItem>
+            <NavItem href='/webLog'>وبلاگ</NavItem>
             <NavItem href='/panel'>پنل</NavItem>
             <NavItem href='/about'>درباره</NavItem>
         </ul>
