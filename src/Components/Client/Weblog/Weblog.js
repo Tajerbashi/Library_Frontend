@@ -1,7 +1,11 @@
 import './Weblog.css'
 import Wrapper from '../../../HOC/wrapper';
+import Input from '../../UI/Input/Input';
 import Navbar from '../../Home/Container/Navbar/Navbar';
 const WebLog = () => {
+    const saveProductHandler = () => {
+
+    }
     return (
         <Wrapper>
             <div className='container-fluid'>
@@ -11,7 +15,13 @@ const WebLog = () => {
                     </div>
                     <div className='col-12'>
                         <div className='DefaultContainer'>
-                            این قسمت وبلاگ است که میتوان تمامی عناصر مرتبط درج کنیم
+                            <form
+                                onSubmit={saveProductHandler}
+                                className='Form-Container'>
+                                <Input 
+                                    placeholder='نام را وارد کنید ...'
+                                />
+                            </form>
                         </div>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 import NavItems from './NavItems/NavItems'
 import { useState } from 'react'
 import Modal from '../../../UI/Modal/Modal'
-import Button from '../../../UI/Button/Button'
 import './Navbar.css'
 const Navbar = (props) => {
     const [modal, setModal] = useState(false);
@@ -22,7 +21,6 @@ const Navbar = (props) => {
                 show={modal}
                 showHandler={modalHandler}
             >
-                {props.children}
             </Modal>
         </div>
     );

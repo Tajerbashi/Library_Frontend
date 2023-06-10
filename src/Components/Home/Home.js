@@ -40,11 +40,11 @@ const Home = () => {
                     <Footer />
                 </div>
             </div>
-            {/* <Modal
+            <Modal
                 show={modal}
                 showHandler={() => modalHandler()}
             >
-            </Modal> */}
+            </Modal>
 
         </div>
     );
