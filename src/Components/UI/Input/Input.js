@@ -10,6 +10,14 @@ const Input = (props) => {
                 {...props}
             />
             break;
+        case 'password':
+            inputElement = <input
+                type='password'
+                className='input-item'
+                value={props.value}
+                {...props}
+            />
+            break;
         default:
             inputElement = <input
                 className='input-item'
@@ -18,7 +26,7 @@ const Input = (props) => {
             />
     }
     return (
-        <div className='input-Container'>
+        <div>
             {inputElement}
         </div>
     );

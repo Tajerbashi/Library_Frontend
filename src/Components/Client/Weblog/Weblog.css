@@ -1,4 +1,16 @@
 .Form-Container {
     padding: 1rem;
-    width: 40%;
+}
+.table{
+}
+.table > thead > tr {
+    border-radius: 1rem !important;
+}
+.table > thead > tr > th{
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+}
+.table > tbody > tr > td{
+    background: rgba(0, 0, 0, 0.3);
+    color: wheat;
 }
