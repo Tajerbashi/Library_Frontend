@@ -1,14 +1,14 @@
 import './Product.css'
 const Product = (props) => {
-    return(
+    return (
         <div className='DefaultContainer Product-Container'>
-            <h6 className='Product-Title'>{props.title}</h6>
             <div className='Product-Image'>{props.img}</div>
-            <div className='Product-Description'>{props.description}</div>
-            <div className='Product-Controls'>
+            <h6 className='Product-Info-Container'>
+                <span className='Product-Title'>{props.title}</span>
                 <span className='Product-Price'>{props.price}</span>
-                <span><button onClick={props.click} className='Product-btn'>دیدن</button></span>
-            </div>
+            </h6>
+            <div className='Product-Description'>{props.description}</div>
+            <button onClick={props.click} className='Product-btn'>دیدن</button>
         </div>
     );
 }

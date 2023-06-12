@@ -8,7 +8,8 @@
 }
 body{
     direction: rtl;
-    background: linear-gradient(90deg,rgb(69, 66, 255),rgb(105, 145, 255),rgb(69, 66, 255));
+    background: rgb(255, 255, 255);
+    /* background: linear-gradient(90deg,rgb(69, 66, 255),rgb(105, 145, 255),rgb(69, 66, 255)); */
     text-align: center;
     font-family: 'vazir-regular';
 
@@ -22,8 +23,8 @@ a{
     text-decoration: none;
 }
 .DefaultContainer{
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
     border-radius: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0);
 }

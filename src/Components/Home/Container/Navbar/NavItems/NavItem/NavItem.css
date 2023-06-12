@@ -9,7 +9,7 @@
     cursor: pointer;
 }
 .NavItem-Item{
-    color: wheat !important;
+    color: rgb(0, 0, 0) !important;
     
 }
 .NavItem-Container:hover{
