@@ -19,7 +19,7 @@ const Home = () => {
         <div className="container-fluid">
             <div className="row">
                 <div className="col-12">
-                    <Header />
+                    {/* <Header /> */}
                 </div>
                 <div className="col-12">
                     <Navbar
