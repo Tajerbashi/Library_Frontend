@@ -1,7 +1,7 @@
 import './Product.css'
 const Product = (props) => {
     return (
-        <div className='DefaultContainer Product-Container'>
+        <div className='Product-Container'>
             <div className='Product-Image'>{props.img}</div>
             <h6 className='Product-Info-Container'>
                 <span className='Product-Title'>{props.title}</span>

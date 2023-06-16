@@ -14,10 +14,10 @@ const Table = (props) => {
 
     });
     return (
-        <div>
+        <div className='Table-Container'>
             <table className='table table-hover'>
                 <thead>
-                    <tr>{thead}</tr>
+                    <tr>{thead}<th colSpan={2}>عملیات</th></tr>
                 </thead>
                 <tbody>
                     {tbody}

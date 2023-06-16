@@ -1,3 +1,4 @@
+import Button from '../../Button/Button';
 import './Row.css'
 const Row = (props) => {
     let counter = 1;
@@ -10,8 +11,12 @@ const Row = (props) => {
         counter += 1;
         return <td key={counter}>{props.value[item.field]}</td>
     });
+    const actions = <td className=''>
+        <Button btnType='No'></Button>
+        <Button btnType='Warning'></Button>
+    </td>
     return (
-        <tr>{tds}</tr>
+        <tr className='table-row'>{tds}{actions}</tr>
     );
 }
 export default Row;

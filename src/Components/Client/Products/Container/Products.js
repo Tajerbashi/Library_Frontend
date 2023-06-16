@@ -64,13 +64,13 @@ const Products = () => {
     }
     return (
         <Wrapper>
-            <div className='container-fluid'>
+            <div className='DefaultContainer container-fluid'>
                 <div className='row'>
                     <div className='col-12'>
                         <Navbar />
                     </div>
-                    <div className='col-12 '>
-                        <div className='DefaultContainer m-1 d-flex flex-row justify-content-evenly align-items-center flex-wrap'>
+                    <div className='col-12'>
+                        <div className='m-1 d-flex flex-row justify-content-evenly align-items-center flex-wrap'>
                             {AllProducts}
                         </div>
                     </div>

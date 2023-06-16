@@ -1,0 +1,9 @@
+.Table-Container{
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.table{
+    border-radius: 1rem !important;
+    background: rgb(255, 255, 255);
+    color: black;
+}

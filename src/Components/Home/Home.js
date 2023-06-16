@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Header from "./Container/Header/Header";
+// import Header from "./Container/Header/Header";
 import Navbar from "./Container/Navbar/Navbar";
 import Aside from "./Container/Aside/Aside";
 import Section from "./Container/Section/Section";
@@ -16,7 +16,7 @@ const Home = () => {
         setModal(flag);
     }
     return (
-        <div className="container-fluid">
+        <div className="DefaultContainer container-fluid">
             <div className="row">
                 <div className="col-12">
                     {/* <Header /> */}
