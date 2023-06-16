@@ -4,7 +4,7 @@ import Navbar from '../../Home/Container/Navbar/Navbar';
 const About = () => {
     return (
         <Wrapper>
-            <div className='container-fluid'>
+            <div className='DefaultContainer container-fluid'>
                 <div className='row'>
                     <div className='col-12'>
                         <Navbar />

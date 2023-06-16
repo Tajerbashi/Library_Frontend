@@ -5,13 +5,14 @@ const Table = (props) => {
     const thead = props.TableConfig.map(item => {
         return <th key={item.field}>{item.title}</th>
     });
-    const RowHandler = (id) =>{
+    const RowHandler = (id) => {
         console.log("Id : ", id);
     }
     const tbody = props.DataSource.map(item => {
         counter += 1;
         return <Row
-        click={() => RowHandler(item.id)}
+            // click={() => props.RowHandler(item.id)}
+            click={() => RowHandler(item.id)}
             key={counter}
             value={item}
             config={props.TableConfig} />

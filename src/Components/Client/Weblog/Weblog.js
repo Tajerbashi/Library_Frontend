@@ -69,7 +69,9 @@ const WebLog = () => {
     }
     useEffect(() => {
     });
-
+    const RowHandler = () => {
+        console.log("Hello ");
+    } 
     return (
 
         <Wrapper>
@@ -113,6 +115,7 @@ const WebLog = () => {
                             <Table
                                 TableConfig={TableConfig}
                                 DataSource={data}
+                                // RowHandler={RowHandler}
                             />
                         </Card>
                     </div>
