@@ -56,7 +56,6 @@ const WebLog = () => {
 
     const Validation = (object) => {
         for (var item in object) {
-            console.log("Items : ", object[item]);
             if(object[item] === undefined){
                 console.log("1");
                 return false;

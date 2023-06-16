@@ -12,8 +12,8 @@ const Row = (props) => {
         return <td key={counter}>{props.value[item.field]}</td>
     });
     const actions = <td className=''>
-        <Button btnType='No'></Button>
-        <Button btnType='Warning'></Button>
+        <Button click={props.click} btnType='Warning'></Button>
+        <Button click={props.click} btnType='No'></Button>
     </td>
     return (
         <tr className='table-row'>{tds}{actions}</tr>
