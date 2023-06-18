@@ -12,6 +12,7 @@ const WebLog = () => {
         { id: 1, name: 'کامران', family: 'تاجرباشی', password: '123' },
         { id: 2, name: 'محمد', family: 'عزیزی', password: '456' },
         { id: 3, name: 'جواد', family: 'میرزایی', password: '789' },
+        { id: 4, name: 'کامران', family: 'میرزایی', password: '789' },
     ];
     const TableConfig = [
         {
@@ -57,11 +58,9 @@ const WebLog = () => {
     const Validation = (object) => {
         for (var item in object) {
             if(object[item] === undefined){
-                console.log("1");
                 return false;
             }
             if (object[item].trim() === "" ) {
-                console.log("1");
                 return false
             }
         }
