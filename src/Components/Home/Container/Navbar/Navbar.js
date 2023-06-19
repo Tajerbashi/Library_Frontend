@@ -2,6 +2,7 @@ import NavItems from './NavItems/NavItems'
 import { useState } from 'react'
 import Modal from '../../../UI/Modal/Modal'
 import './Navbar.css'
+import Login from '../../../../Pages/Login/Login'
 const Navbar = (props) => {
     const [modal, setModal] = useState(false);
     const modalHandler = () => {
@@ -21,6 +22,7 @@ const Navbar = (props) => {
                 show={modal}
                 showHandler={modalHandler}
             >
+                <Login />
             </Modal>
         </div>
     );
