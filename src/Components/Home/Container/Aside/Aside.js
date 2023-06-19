@@ -1,10 +1,14 @@
 import './Aside.css'
-import {BrowserRouter as Router,Link} from 'react-router-dom'
+import NavItem from './../../../../Components/Home/Container/Navbar/NavItems/NavItem/NavItem'
 const Aside = () => {
     return (
         <div className='DefaultContainer Aside-Container'>
-            <ul>
-                <li>مدیریت کاربران</li>
+            <ul className='NavItems-Container'>
+                <NavItem href='/'>خانه</NavItem>
+                <NavItem href='/products'>محصولات</NavItem>
+                <NavItem href='/webLog'>وبلاگ</NavItem>
+                <NavItem href='/panel'>پنل</NavItem>
+                <NavItem href='/about'>درباره</NavItem>
             </ul>
         </div>
     );
