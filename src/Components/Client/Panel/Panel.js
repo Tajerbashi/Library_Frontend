@@ -4,7 +4,7 @@ import Navbar from '../../Home/Container/Navbar/Navbar';
 import { useReducer, useState } from 'react'
 import Input from '../../UI/Input/Input';
 import Table from '../../UI/Table/Table'
-
+import Card from '../../UI/Card/Card'
 const userReducer = (state, action) => {
     switch (action.type) {
         case 'SET':
@@ -15,29 +15,31 @@ const userReducer = (state, action) => {
             throw new Error('Invalid action');
     }
 };
-
+var DataSource = [
+    { id: 1, name: 'کامران' },
+    { id: 2, name: 'محمد' },
+    { id: 3, name: 'جواد' },
+    { id: 4, name: 'کامران' }
+];
+const TableConfig = [
+    {
+        title: 'نام',
+        field: 'name',
+        col: 1
+    },
+];
 const Panel = () => {
+    const [users, setUsers] = useState(DataSource);
     const [data, setData] = useState([]);
-    const [users, setUsers] = useState([]);
     const [state, dispath] = useReducer(userReducer, []);
-    var DataSource = [
-        { id: 1, name: 'کامران', family: 'تاجرباشی', password: '123' },
-        { id: 2, name: 'محمد', family: 'عزیزی', password: '456' },
-        { id: 3, name: 'جواد', family: 'میرزایی', password: '789' },
-        { id: 4, name: 'کامران', family: 'میرزایی', password: '789' },
-    ];
-    const TableConfig = [
-        {
-            title: 'نام',
-            field: 'name',
-            col: 1
-        },
-    ];
-    const Create = () => {
-
+    
+    
+    const Create = (e) => {
+        e.preventDefault();
+        setUsers({ data }, ...users);
     };
-    const Read = () => {
-
+    const Read = (id) => {
+        console.log('Read ID : ', id);
     };
     const Update = () => {
 
@@ -52,21 +54,27 @@ const Panel = () => {
                     <div className='col-12'>
                         <Navbar />
                     </div>
-                    <div className='col-12 d-flex flex-row justify-content-between'>
-                        <div className='w-100'>
-                            <form>
-                                <Input
-                                    onChange={(e) => { setData(e.target.value) }}
+                    <div className='col-12 d-flex flex-row '>
+                        <div className='w-100 p-2'>
+                            <Card>
+                                <form>
+                                    <Input
+                                        placeholder={'کلمه مورد نظر را وارد کنید ...'}
+                                        onChange={(e) => { setData(e.target.value) }}
+                                    />
+                                    <button className='btn btn-primary' onClick={Create}>ذخیره</button>
+                                </form>
+                            </Card>
+                        </div>
+                        <div className='w-100 p-2'>
+                            <Card>
+                                <Table
+                                    TableConfig={TableConfig}
+                                    DataSource={DataSource}
                                 />
-                            </form>
+                            </Card>
                         </div>
-                        <div className='w-100'>
-                            <Table
-                                TableConfig={TableConfig}
-                                DataSource={DataSource}
-                            // RowHandler={RowHandler}
-                            />
-                        </div>
+
                     </div>
                 </div>
             </div>
