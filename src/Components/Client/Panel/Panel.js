@@ -1,26 +1,22 @@
 import './Panel.css'
 import Wrapper from '../../../HOC/wrapper';
 import Navbar from '../../Home/Container/Navbar/Navbar';
-import { useReducer, useState } from 'react'
+import { useEffect, useReducer } from 'react'
 import Input from '../../UI/Input/Input';
 import Table from '../../UI/Table/Table'
 import Card from '../../UI/Card/Card'
-const userReducer = (state, action) => {
+
+const useReducerHandler = (state, action) => {
     switch (action.type) {
         case 'SET':
-            return action.product
+            return action.all
         case 'ADD':
-            return [...state, action.product]
+            return [...state, action.model]
         default:
             throw new Error('Invalid action');
     }
 };
-var DataSource = [
-    { id: 1, name: 'کامران' },
-    { id: 2, name: 'محمد' },
-    { id: 3, name: 'جواد' },
-    { id: 4, name: 'کامران' }
-];
+
 const TableConfig = [
     {
         title: 'نام',
@@ -29,14 +25,37 @@ const TableConfig = [
     },
 ];
 const Panel = () => {
-    const [users, setUsers] = useState(DataSource);
-    const [data, setData] = useState([]);
-    const [state, dispath] = useReducer(userReducer, []);
-    
-    
+
+    const [state, disPath] = useReducer(useReducerHandler, [
+        {
+            id: 0,
+            name: ''
+        }
+    ]);
+    let newModel = {};
+    useEffect(() => {
+        console.log("UseEffect ::: ", state);
+        disPath({
+            type: 'SET',
+            all: state
+        });
+    }, [state]);
+    const InputHandler = (e) => {
+        console.log(e.target.value);
+        newModel = e.target.value;
+    }
     const Create = (e) => {
         e.preventDefault();
-        setUsers({ data }, ...users);
+        let id = Math.round(Math.random() * 1000)
+        disPath({
+            type: 'ADD',
+            model: {
+                id: id,
+                name: newModel
+            },
+            ...state
+        });
+        console.log(state);
     };
     const Read = (id) => {
         console.log('Read ID : ', id);
@@ -60,17 +79,27 @@ const Panel = () => {
                                 <form>
                                     <Input
                                         placeholder={'کلمه مورد نظر را وارد کنید ...'}
-                                        onChange={(e) => { setData(e.target.value) }}
+                                        onChange={(e) => InputHandler(e)}
                                     />
-                                    <button className='btn btn-primary' onClick={Create}>ذخیره</button>
+                                    <div>
+                                        <button className='btn btn-success mx-1'
+                                            onClick={Create}>ذخیره</button>
+                                        <button className='btn btn-info mx-1'
+                                            onClick={Read}>خواندن</button>
+                                        <button className='btn btn-danger mx-1'
+                                            onClick={Delete}>حذف</button>
+                                        <button className='btn btn-warning mx-1'
+                                            onClick={Update}>ویرایش</button>
+                                    </div>
                                 </form>
+
                             </Card>
                         </div>
                         <div className='w-100 p-2'>
                             <Card>
                                 <Table
                                     TableConfig={TableConfig}
-                                    DataSource={DataSource}
+                                    DataSource={state}
                                 />
                             </Card>
                         </div>
