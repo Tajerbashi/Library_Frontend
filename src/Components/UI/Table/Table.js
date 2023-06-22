@@ -4,8 +4,7 @@ import Input from '../Input/Input';
 import { useEffect, useState } from 'react';
 const Table = (props) => {
     const [search, setSearch] = useState(props.DataSource);
-    const [tbody, setTbody] = useState(0);
-    let counter = 1;
+    const [tbody, setTbody] = useState([]);
     const thead = props.TableConfig.map(item => {
         return <th key={item.field}>{item.title}</th>
     });
@@ -29,11 +28,9 @@ const Table = (props) => {
 
         },1000);
         let data = search.map(item => {
-            counter += 1;
             return <Row
-                // click={() => props.RowHandler(item.id)}
                 click={() => RowHandler(item.id)}
-                key={counter}
+                key={item.id}
                 value={item}
                 config={props.TableConfig} />
 
@@ -42,7 +39,7 @@ const Table = (props) => {
         return () => {
             clearTimeout(timer);
         }
-    }, [search]);
+    }, [props.TableConfig, search]);
 
 
     return (
@@ -50,7 +47,7 @@ const Table = (props) => {
             <div className='search-Container'>
                 <Input
                     placeholder='جستجو کنید ...'
-                    valid={true}
+                    valid={props.valid}
                     onChange={(e) => SearchHandler(e.target.value, e.target.value)}
                 />
             </div>
