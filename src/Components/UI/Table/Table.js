@@ -8,10 +8,6 @@ const Table = (props) => {
     const thead = props.TableConfig.map(item => {
         return <th key={item.field}>{item.title}</th>
     });
-    const RowHandler = (id) => {
-        console.log("Id : ", id);
-    }
-
     const SearchHandler = (word) => {
         const data = props.DataSource.filter(item => {
             return item.name === word ? item : 0;
@@ -29,7 +25,7 @@ const Table = (props) => {
         },1000);
         let data = search.map(item => {
             return <Row
-                click={() => RowHandler(item.id)}
+                click={() => props.RowClicked(item.id)}
                 key={item.id}
                 value={item}
                 config={props.TableConfig} />
@@ -39,7 +35,7 @@ const Table = (props) => {
         return () => {
             clearTimeout(timer);
         }
-    }, [props.TableConfig, search]);
+    }, [props, props.TableConfig, search]);
 
 
     return (

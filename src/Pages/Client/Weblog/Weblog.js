@@ -68,8 +68,8 @@ const WebLog = () => {
     }
     useEffect(() => {
     });
-    const RowHandler = () => {
-        console.log("Hello ");
+    const RowHandler = (id) => {
+        console.log("Hello :",id);
     } 
     return (
 
@@ -114,6 +114,7 @@ const WebLog = () => {
                             <Table
                                 TableConfig={TableConfig}
                                 DataSource={data}
+                                RowClicked={RowHandler}
                                 // RowHandler={RowHandler}
                             />
                         </Card>

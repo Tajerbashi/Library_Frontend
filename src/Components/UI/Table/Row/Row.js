@@ -16,7 +16,7 @@ const Row = (props) => {
         <Button click={props.click} btnType='No'></Button>
     </td>
     return (
-        <tr className='table-row'>{tds}{actions}</tr>
+        <tr onClick={props.click} className='table-row'>{tds}{actions}</tr>
     );
 }
 export default Row;
