@@ -66,6 +66,9 @@ const Panel = () => {
     const Delete = () => {
 
     };
+    const RowHandler = (id) => {
+        console.log("Clicked : ",id);
+    }
     return (
         <Wrapper>
             <div className='DefaultContainer container-fluid'>
@@ -100,6 +103,7 @@ const Panel = () => {
                                 <Table
                                     TableConfig={TableConfig}
                                     DataSource={state}
+                                    RowClicked = {RowHandler}
                                 />
                             </Card>
                         </div>
