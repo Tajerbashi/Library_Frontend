@@ -1,13 +1,19 @@
-.Login-Container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-
+.Login-Container {
+    background: rgb(0, 25, 105);
+    margin: 10rem auto;
+    padding: 5rem;
+    text-align: center;
+    color: wheat;
+    border: 1px solid rgb(122, 153, 255);
+    border-radius: 1rem;
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
 }
-.Login-Form{
 
+.Login-Form {
+    padding: 1rem;
 }
-.Sign-Form{
 
+.Login-Form>h5 {
+    padding: 1rem;
 }

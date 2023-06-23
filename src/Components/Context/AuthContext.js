@@ -1,7 +1,5 @@
 
 import React,{useState} from 'react';
-import './AuthContext.css'
-
 export const AuthContext = React.createContext({
     isAuth: false,
     login: () => {}
