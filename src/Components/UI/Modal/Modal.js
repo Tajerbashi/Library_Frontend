@@ -1,5 +1,5 @@
 import './Modal.css'
-import Wrapper from '../../../HOC/wrapper';
+import Wrapper from '../../HOC/wrapper';
 import BackDrop from './BackDrop/BackDrop'
 const Modal = (props) => {
     return (

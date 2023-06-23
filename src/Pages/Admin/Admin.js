@@ -1,5 +1,5 @@
 
-import Wrapper from '../../HOC/wrapper';
+import Wrapper from '../../Components/HOC/wrapper';
 import './Admin.css';
 
 const Admin = (props) => {

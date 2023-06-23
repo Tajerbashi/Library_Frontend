@@ -1,11 +1,11 @@
 import './Weblog.css'
 import { useEffect, useState } from 'react';
-import Wrapper from '../../../HOC/wrapper';
-import Input from '../../UI/Input/Input';
+import Wrapper from '../../../Components/HOC/wrapper';
+import Input from '../../../Components/UI/Input/Input';
+import Button from '../../../Components/UI/Button/Button';
+import Table from '../../../Components/UI/Table/Table';
+import Card from '../../../Components/UI/Card/Card';
 import Navbar from '../../Home/Container/Navbar/Navbar';
-import Button from '../../UI/Button/Button';
-import Table from '../../UI/Table/Table';
-import Card from '../../UI/Card/Card';
 const WebLog = () => {
     //Table Config
     var DataSource = [

@@ -1,14 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-
-import '../../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css'
-import Wrapper from './../HOC/wrapper'
-import Home from '../Components/Home/Home'
-import Products from "../Components/Client/Products/Container/Products";
-import WebLog from "../Components/Client/Weblog/Weblog";
-import Panel from "../Components/Client/Panel/Panel";
-import About from "../Components/Client/About/About";
-import Admin from '../Pages/Admin/Admin'
+import '../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css'
+import Wrapper from './Components/HOC/wrapper'
+import Home from './Pages/Home/Home'
+import Products from "./Pages/Client/Products/Products";
+import WebLog from "./Pages/Client/Weblog/Weblog";
+import Panel from "./Pages/Client/Panel/Panel";
+import About from "./Pages/Client/About/About";
+import Admin from './Pages/Admin/Admin'
 const App = () => {
     return (
         <Wrapper>

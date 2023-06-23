@@ -1,5 +1,5 @@
 import './About.css'
-import Wrapper from '../../../HOC/wrapper';
+import Wrapper from '../../../Components/HOC/wrapper';
 import Navbar from '../../Home/Container/Navbar/Navbar';
 const About = () => {
     return (

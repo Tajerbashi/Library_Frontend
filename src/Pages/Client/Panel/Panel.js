@@ -1,10 +1,10 @@
 import './Panel.css'
-import Wrapper from '../../../HOC/wrapper';
+import Wrapper from '../../../Components/HOC/wrapper';
 import Navbar from '../../Home/Container/Navbar/Navbar';
 import { useEffect, useReducer } from 'react'
-import Input from '../../UI/Input/Input';
-import Table from '../../UI/Table/Table'
-import Card from '../../UI/Card/Card'
+import Input from '../../../Components/UI/Input/Input';
+import Table from '../../../Components/UI/Table/Table'
+import Card from '../../../Components/UI/Card/Card'
 
 const useReducerHandler = (state, action) => {
     switch (action.type) {

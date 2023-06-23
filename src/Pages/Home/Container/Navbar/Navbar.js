@@ -1,6 +1,6 @@
 import NavItems from './NavItems/NavItems'
 import { useState } from 'react'
-import Modal from '../../../UI/Modal/Modal'
+import Modal from '../../../../Components/UI/Modal/Modal'
 import './Navbar.css'
 import Login from '../../../../Pages/Login/Login'
 const Navbar = (props) => {

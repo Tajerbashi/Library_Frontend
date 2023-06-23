@@ -4,7 +4,7 @@ import Navbar from "./Container/Navbar/Navbar";
 import Aside from "./Container/Aside/Aside";
 import Section from "./Container/Section/Section";
 import Footer from "./Container/Footer/Footer";
-import Modal from "../UI/Modal/Modal";
+import Modal from "../../Components/UI/Modal/Modal";
 import './Home.css'
 const Home = () => {
     const [modal, setModal] = useState(false);

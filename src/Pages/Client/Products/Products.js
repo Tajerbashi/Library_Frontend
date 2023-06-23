@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './Products.css'
-import Product from '../Product/Product';
-import Navbar from '../../../Home/Container/Navbar/Navbar'
-import Wrapper from '../../../../HOC/wrapper'
+import Product from './Product/Product';
+import Navbar from '../../Home/Container/Navbar/Navbar'
+import Wrapper from '../../../Components/HOC/wrapper'
 const Products = () => {
     const Products = [
         {
