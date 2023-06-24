@@ -1,29 +1,28 @@
 import NavItems from './NavItems/NavItems'
-import { useState } from 'react'
-import Modal from '../../../../Components/UI/Modal/Modal'
 import './Navbar.css'
-import Login from '../../../../Pages/Login/Login'
+import useDarkMode from '../../../../Hooks/dark-mode'
+
+
 const Navbar = (props) => {
-    const [modal, setModal] = useState(false);
-    const modalHandler = () => {
-        const flag = modal ? false : true;
-        console.log("Show Handler :", modal);
-        console.log("Set Modal :", setModal);
-        setModal(flag);
+    const [theme, toggleTheme] = useDarkMode();
+    let styles={
+        background: theme === 'dark' ? '#123' : '',
+        color: theme === 'dark' ? '#eee' : '#000',
+        transition: '0.2s all',
+        textAlign: 'center'
     }
     return (
-        <div className='DefaultContainer Navbar-Container d-flex flex-row justify-content-between'>
+        <div
+            className='DefaultContainer Navbar-Container d-flex flex-row justify-content-between'
+            style={styles}
+        >
             <NavItems />
             <button
-                onClick={modalHandler}
+            style={styles}
+                type='button'
+                onClick={toggleTheme}
                 className='Search-Btn'>
             </button>
-            <Modal
-                show={modal}
-                showHandler={modalHandler}
-            >
-                <Login />
-            </Modal>
         </div>
     );
 }

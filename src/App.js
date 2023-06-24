@@ -25,8 +25,6 @@ const App = () => {
                 <Route path='/about' Component={About} />
             </Routes>
         </Router>
-    }else{
-        content = <Login/>
     }
     return (
         <Wrapper>
