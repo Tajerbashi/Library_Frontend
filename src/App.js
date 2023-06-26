@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css'
 import Wrapper from './Components/HOC/wrapper'
-import Home from './Pages/Home/Home'
+// import Home from './Pages/Home/Home'
 import Products from "./Pages/Client/Products/Products";
 import WebLog from "./Pages/Client/Weblog/Weblog";
 import Panel from "./Pages/Client/Panel/Panel";
@@ -17,8 +18,10 @@ const App = () => {
     if (authContext.isAuth) {
         content = <Router>
             <Routes>
-                <Route path='/Admin::Lib(^-*)' Component={Admin} />
-                <Route path='/' Component={Home} />
+                {/* <Route path='/Admin::Lib(^-*)' Component={Admin} /> */}
+                {/* <Route path='/Admin::Lib(^-*)' Component={Admin} /> */}
+                <Route path='/' Component={Admin} />
+                {/* <Route path='/' Component={Home} /> */}
                 <Route path='/products' Component={Products} />
                 <Route path='/webLog' Component={WebLog} />
                 <Route path='/panel' Component={Panel} />
