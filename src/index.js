@@ -5,10 +5,17 @@ import App from './App';
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.css'
 import './index.css'
 import AuthContextProvider from "./Components/Context/AuthContext";
+import { legacy_createStore } from 'redux'
+import { Provider } from 'react-redux'
+import reducer from './Redux/Store/Reducer'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const store = legacy_createStore(reducer);
+
 root.render(
     <AuthContextProvider>
-        <App />
+        <Provider store={store}>
+            <App />
+        </Provider>
     </AuthContextProvider>
 );
