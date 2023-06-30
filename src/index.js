@@ -8,12 +8,10 @@ import App from './App';
 
 import './index.css'
 import AuthContextProvider from "./Components/Context/AuthContext";
-import { legacy_createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducer from './Redux/Reducer'
+import store from './Redux/Store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = legacy_createStore(reducer);
 
 root.render(
     <AuthContextProvider>

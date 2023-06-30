@@ -33,7 +33,7 @@ const FullProduct = ({ match }) => {
                             <Card.Body className='fullProduct-Body'>
                                 <Card.Title className='fullProduct-title'>{product.name}</Card.Title>
                                 <Card.Text className='fullProduct-description'>{product.description}</Card.Text>
-                                <Card.Subtitle className='fullProduct-price'>قیمت محصول : {product.price}</Card.Subtitle>
+                                <Card.Subtitle className='fullProduct-price'>قیمت محصول : {product.price} هزار تومان</Card.Subtitle>
                             </Card.Body>
                         </Card>
                     </Col>

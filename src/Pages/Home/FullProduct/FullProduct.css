@@ -48,8 +48,8 @@
 .fullProduct-Image {
     border: 1px solid rgba(0, 0, 0, 0.5);
     border-radius: 50rem;
+    height: 25rem;
     width: 100%;
-    height: 20rem;
     box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.8);
 }
 

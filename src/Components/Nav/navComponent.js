@@ -15,20 +15,20 @@ const NavComponent = () => {
                     <Nav className="me-auto d-flex flex-lg-row justify-content-between w-100">
                         <div className='d-flex flex-column flex-lg-row'>
                             <LinkContainer to={'/'}>
-                                <Nav.Link >خانه</Nav.Link>
+                                <Nav.Link className='linkNav'>خانه</Nav.Link>
                             </LinkContainer>
                             <LinkContainer to={'/'}>
-                                <Nav.Link >محصولات</Nav.Link>
+                                <Nav.Link className='linkNav'>محصولات</Nav.Link>
                             </LinkContainer>
                         </div>
                         <div className='d-flex flex-column flex-lg-row'>
                             <LinkContainer to={'/'}>
-                                <Nav.Link >
+                                <Nav.Link className='linkNav'>
                                     <i className='fa fa-shopping-cart'></i>
                                 </Nav.Link>
                             </LinkContainer>
                             <LinkContainer to={'/'}>
-                                <Nav.Link >
+                                <Nav.Link className='linkNav'>
                                     <i className='fa fa-user'></i>
                                 </Nav.Link>
                             </LinkContainer>

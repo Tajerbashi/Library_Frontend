@@ -8,6 +8,7 @@ import LoginComponent from './Pages/SEC/Login/loginComponent'
 import IndexComponent from './Pages/Home/Index/IndexComponent'
 import FullProduct from "./Pages/Home/FullProduct/FullProduct";
 import NavComponent from "./Components/Nav/navComponent";
+import HeaderComponent from "./Components/Header/HeaderComponent";
 //#region  code
 // import routes from "./Pages/Router";
 // const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
             <div>
                 <Router>
                     <NavComponent />
+                    <HeaderComponent />
                     <Routes>
                         <Route path="" Component={IndexComponent} />
                         <Route path="/product/:id" Component={FullProduct} />

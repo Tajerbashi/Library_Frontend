@@ -10,7 +10,6 @@ const IndexComponent = () => {
     return (
         <Wrapper>
             <div className='d-flex flex-column justify-content-between align-item-center'>
-                <HeaderComponent />
                 <Container>
                     <Products data={ProductsList} />
                 </Container>
