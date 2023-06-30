@@ -1,7 +1,14 @@
-let SEC = [
+const SECRoutes = [
     {
-        link:'',
-        path:'',
-    }
+        url:'-login',
+        path:'./Login/loginComponent',
+        component:<loginComponent/>,
+    },
+    {
+        url:'-user',
+        path:'./User/userComponent',
+        component:<userComponent/>,
+    },
 ];
-export default SEC;
+
+export default SECRoutes;

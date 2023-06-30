@@ -1,8 +1,12 @@
-import SEC from './SEC/router'
-import COM from './COM/router'
 
-let Routes = [
-    ...SEC,
-    ...COM
+import ADMRoutes from './ADMIN/router'
+import SECRoutes from './SEC/router'
+import HomeRoutes from './Home/router'
+
+const routes = [
+    ...ADMRoutes,
+    ...SECRoutes,
+    ...HomeRoutes
 ];
-export default Routes;
+export default routes;
+

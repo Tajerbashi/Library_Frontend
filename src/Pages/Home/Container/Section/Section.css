@@ -1,9 +1,0 @@
-.Section-Container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    height: 700px;
-    background: rgb(201, 218, 255);
-}
