@@ -15,7 +15,7 @@ const Product = ({ product }) => {
                         {product.description}
                     </Card.Text>
                     <div className='d-flex flex-row justify-content-between'>
-                        <Link to={product.link} className='btn btn-' variant="primary">مشاهده</Link>
+                        <Link to={`/Product/${product._id}`} className='btn btn-' variant="primary">مشاهده</Link>
                         <span className='span-'>{product.price} هزار تومان</span>
                     </div>
                 </Card.Body>

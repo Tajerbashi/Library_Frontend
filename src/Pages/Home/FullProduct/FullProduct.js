@@ -8,7 +8,6 @@ const FullProduct = ({ match }) => {
     const product = ProductsList.find(item => {
         return item._id === routeParams.id
     });
-
     return (
         <div>
             <HeaderComponent />
@@ -33,8 +32,8 @@ const FullProduct = ({ match }) => {
                             <Card.Img className='fullProduct-Image w-50' variant="top" src={product.image} />
                             <Card.Body className='fullProduct-Body'>
                                 <Card.Title className='fullProduct-title'>{product.name}</Card.Title>
-                                <Card.Text>{product.description}</Card.Text>
-                                <Card.Subtitle>قیمت محصول : {product.price}</Card.Subtitle>
+                                <Card.Text className='fullProduct-description'>{product.description}</Card.Text>
+                                <Card.Subtitle className='fullProduct-price'>قیمت محصول : {product.price}</Card.Subtitle>
                             </Card.Body>
                         </Card>
                     </Col>
