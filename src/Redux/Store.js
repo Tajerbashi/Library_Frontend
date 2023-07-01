@@ -5,9 +5,9 @@ import {
 } from 'redux';
 import thunk from 'redux-thunk';
 // applyMiddleware کاربرد
-// میتوانیم توسط این میتوانیم از میدلور های دیگر استفاده کنیم
+//  توسط این میتوانیم از میدلور های دیگر استفاده کنیم
 
-import {productListReducer} from '../Reducer/Product/ProductReducer'
+import {productListReducer} from './Reducer/Product/ProductReducer'
 const reducer = combineReducers({
     productList: productListReducer,
 });
