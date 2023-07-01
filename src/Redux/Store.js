@@ -1,4 +1,4 @@
-import { 
+import {
     legacy_createStore,
     combineReducers,
     applyMiddleware
@@ -7,9 +7,10 @@ import thunk from 'redux-thunk';
 // applyMiddleware کاربرد
 //  توسط این میتوانیم از میدلور های دیگر استفاده کنیم
 
-import {productListReducer} from './Reducer/Product/ProductReducer'
+import { productListReducer, productDetailReducer } from './Reducer/Product/ProductReducer'
 const reducer = combineReducers({
     productList: productListReducer,
+    productDetail: productDetailReducer,
 });
 
 const initialState = {};

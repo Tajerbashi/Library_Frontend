@@ -23,7 +23,7 @@ const IndexComponent = () => {
     return (
         <Wrapper>
             {
-                loading ? <h2>درحال بارگذاری</h2> : <div className='d-flex flex-column justify-content-between align-item-center'>
+                loading ? <h2 className='loadingH2'>درحال بارگذاری ...</h2> : <div className='d-flex flex-column justify-content-between align-item-center'>
                     <Container>
                         <Products data={products} />
                     </Container>

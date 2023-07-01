@@ -15,3 +15,19 @@ export const productListAction = () => async (dispatch) => {
         console.error(err);
     }
 }
+
+export const productDetailAction = (id) => async (dispatch) => {
+    try {
+        dispatch({
+            type: 'PRODUCT_DETAIL_REQUEST',
+        })
+        // const { data } = await axios.get("url");
+        const data = ProductsList.find(item => item._id === id);
+        dispatch({
+            type: 'PRODUCT_DETAIL_SUCCESS',
+            payload: data
+        })
+    } catch (err) {
+        console.error(err);
+    }
+}

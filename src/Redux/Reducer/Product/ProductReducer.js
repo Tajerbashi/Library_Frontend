@@ -7,11 +7,18 @@ export const productListReducer = (state = { products: [] },
         case "PRODUCT_LIST_SUCCESS": return ({
             loading: false, products: action.payload
         })
-        case "CREATE": return ({})
-        case "READ": return ({})
-        case "UPDATE": return ({})
-        case "DELETE": return ({})
-        case "ALL": return ({})
         default: return (state)
+    }
+}
+export const productDetailReducer = (state = { product: {} },
+    action) => {
+    switch (action.type) {
+        case "PRODUCT_DETAIL_REQUEST": return ({
+            loading: true, ...state
+        })
+        case "PRODUCT_DETAIL_SUCCESS": return ({
+            loading: false, productDetail: action.payload
+        })
+        default: return state
     }
 }
