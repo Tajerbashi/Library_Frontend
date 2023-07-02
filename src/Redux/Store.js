@@ -7,13 +7,22 @@ import thunk from 'redux-thunk';
 // applyMiddleware کاربرد
 //  توسط این میتوانیم از میدلور های دیگر استفاده کنیم
 
-import { productListReducer, productDetailReducer } from './Reducer/Product/ProductReducer'
+import { productListReducer, productDetailReducer, } from './Reducer/ProductReducer'
+import { cartReducer } from './Reducer/CartReducer'
 const reducer = combineReducers({
     productList: productListReducer,
     productDetail: productDetailReducer,
+    cart: cartReducer
 });
-
-const initialState = {};
+const cartItemsFromLocalStorage = localStorage
+    .getItem('cartItems') 
+    ? JSON.parse(localStorage.getItem('cartItems')) 
+    : [];
+const initialState = {
+    cart: {
+        cartItems: cartItemsFromLocalStorage
+    }
+};
 
 const middleware = [thunk];
 
