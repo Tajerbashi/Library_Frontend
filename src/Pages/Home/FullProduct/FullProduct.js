@@ -8,8 +8,9 @@ import HeaderComponent from '../../../Components/Header/HeaderComponent';
 const FullProduct = () => {
     const id = useParams();
     const dispatch = useDispatch();
-    const productDetails = useSelector((state) => state.productDetail);
-    const { loading, productDetail } = productDetails;
+    const data = useSelector((state) => state.productDetail);
+    const { loading, product } = data;
+    
     useEffect(() => {
         dispatch(productDetailAction(id.id));
     }, [dispatch, id.id]);
@@ -39,11 +40,11 @@ const FullProduct = () => {
                         <Row className="g-4 fullProduct-Row" >
                             <Col className='fullProduct-Col'>
                                 <Card className='fullProduct-Card'>
-                                    <Card.Img className='fullProduct-Image w-50' variant="top" src={productDetail.image} />
+                                    <Card.Img className='fullProduct-Image w-50' variant="top" src={product.image} />
                                     <Card.Body className='fullProduct-Body'>
-                                        <Card.Title className='fullProduct-title'>{productDetail.name}</Card.Title>
-                                        <Card.Text className='fullProduct-description'>{productDetail.description}</Card.Text>
-                                        <Card.Subtitle className='fullProduct-price'>قیمت محصول : {productDetail.price} هزار تومان</Card.Subtitle>
+                                        <Card.Title className='fullProduct-title'>{product.name}</Card.Title>
+                                        <Card.Text className='fullProduct-description'>{product.description}</Card.Text>
+                                        <Card.Subtitle className='fullProduct-price'>قیمت محصول : {product.price} هزار تومان</Card.Subtitle>
                                     </Card.Body>
                                 </Card>
                             </Col>

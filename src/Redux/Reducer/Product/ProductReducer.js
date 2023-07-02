@@ -1,5 +1,7 @@
-export const productListReducer = (state = { products: [] },
-    action) => {
+export const productListReducer = (
+    state = { products: [] },
+    action
+) => {
     switch (action.type) {
         case "PRODUCT_LIST_REQUEST": return ({
             loading: true, products: []
@@ -10,15 +12,19 @@ export const productListReducer = (state = { products: [] },
         default: return (state)
     }
 }
-export const productDetailReducer = (state = { product: {} },
-    action) => {
+export const productDetailReducer = (
+    state = { product: {} },
+    action
+) => {
     switch (action.type) {
         case "PRODUCT_DETAIL_REQUEST": return ({
-            loading: true, ...state
+            loading: true,
+            ...state
         })
         case "PRODUCT_DETAIL_SUCCESS": return ({
-            loading: false, productDetail: action.payload
+            loading: false,
+            product: action.payload
         })
-        default: return state
+        default: return (state)
     }
 }

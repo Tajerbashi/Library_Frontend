@@ -22,7 +22,7 @@ const NavComponent = () => {
                             </LinkContainer>
                         </div>
                         <div className='d-flex flex-column flex-lg-row'>
-                            <LinkContainer to={'/'}>
+                            <LinkContainer to={'/cart'}>
                                 <Nav.Link className='linkNav'>
                                     <i className='fa fa-shopping-cart'></i>
                                 </Nav.Link>

@@ -22,7 +22,7 @@ export const productDetailAction = (id) => async (dispatch) => {
             type: 'PRODUCT_DETAIL_REQUEST',
         })
         // const { data } = await axios.get("url");
-        const data = ProductsList.find(item => item._id === id);
+        const data = await ProductsList.find(item => item._id == id);
         dispatch({
             type: 'PRODUCT_DETAIL_SUCCESS',
             payload: data
