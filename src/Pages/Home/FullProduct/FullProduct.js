@@ -1,8 +1,8 @@
 import './FullProduct.css'
-import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react'
-import { Row, Card, Col } from 'react-bootstrap'
-import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
+import { Row, Card, Col, Button } from 'react-bootstrap'
+import { Link, useParams, useNavigate  } from "react-router-dom";
 import { productDetailAction } from '../../../Redux/Action/ProductAction'
 import HeaderComponent from '../../../Components/Header/HeaderComponent';
 const FullProduct = () => {
@@ -10,11 +10,15 @@ const FullProduct = () => {
     const dispatch = useDispatch();
     const data = useSelector((state) => state.productDetail);
     const { loading, product } = data;
-    
+    const history = useNavigate();
+
     useEffect(() => {
         dispatch(productDetailAction(id.id));
     }, [dispatch, id.id]);
 
+    const addToCartHandler = () => {
+        history(`/cart/${id.id}`);
+    }
     return (
         <div>
             <HeaderComponent />
@@ -28,10 +32,12 @@ const FullProduct = () => {
                                 بازگشت به صفحه اصلی
                                 <i className='fa fa-home '></i>
                             </Link>
-                            <Link to={'/'} className='fullProduct-Back btn btn-primary bg-gradient'>
+                            <Button
+                                onClick={addToCartHandler}
+                                className='fullProduct-Back btn btn-primary bg-gradient'>
                                 افزودن به سبد خرید
                                 <i className='fa fa-shopping-cart'></i>
-                            </Link>
+                            </Button>
                             <Link to={'/'} className='fullProduct-Back btn btn-success bg-gradient'>
                                 <span>پرداخت</span>
                                 <i className='fa fa-credit-card-alt'></i>

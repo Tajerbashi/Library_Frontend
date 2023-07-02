@@ -47,7 +47,7 @@ const App = () => {
                     <Routes>
                         <Route path="" Component={IndexComponent} />
                         <Route path="/product/:id" Component={FullProduct} />
-                        <Route path="/cart" Component={Cart} />
+                        <Route path="/cart/:id?" Component={Cart} />
                     </Routes>
                 </Router>
             </div>
