@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux'
-import { addToCart } from '../../../Redux/Action/CartAction'
-import { Row, Col, ListGroup, Image, Button } from 'react-bootstrap'
+import { addToCart, removeFromCart } from '../../../Redux/Action/CartAction'
+import { Row, Col, ListGroup, Image, Button, Card } from 'react-bootstrap'
 import './Cart.css';
 const Cart = () => {
   const params = useParams();
@@ -13,6 +13,7 @@ const Cart = () => {
 
   const removeFromCartHandler = (id) => {
     console.log("ID : ", id);
+    dispatch(removeFromCart(id));
   }
 
   useEffect(() => {
@@ -62,6 +63,13 @@ const Cart = () => {
             )}
       </Col>
       <Col md={4}>
+        <Card>
+          <ListGroup variant='flush'>
+            <ListGroup.Item>
+              {cartItems.reduce((acc, curItem) => acc + curItem.price, 0)}
+            </ListGroup.Item>
+          </ListGroup>
+        </Card>
       </Col>
     </Row>
   )
