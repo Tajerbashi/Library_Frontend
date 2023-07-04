@@ -3,7 +3,6 @@
     padding: 10rem 0 0 0;
     height: 30%;
     width: 100%;
-    position: absolute;
     box-sizing: border-box;
     background: linear-gradient(65deg,rgb(31, 72, 255),rgb(74, 122, 255),rgb(19, 42, 255));
 }

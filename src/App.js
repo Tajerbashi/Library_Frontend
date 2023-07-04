@@ -3,13 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css'
 import Wrapper from './Components/HOC/wrapper'
 import { AuthContext } from './Components/Context/AuthContext'
-import LoginComponent from './Pages/SEC/Login/loginComponent'
 //  Component
 import HeaderComponent from "./Components/Header/HeaderComponent";
-import IndexComponent from './Pages/Home/Index/IndexComponent'
-import FullProduct from "./Pages/Home/FullProduct/FullProduct";
 import NavComponent from "./Components/Nav/navComponent";
-import Cart from "./Pages/Home/Cart/Cart";
+import FooterComponent from "./Components/Footer/FooterComponent";
+import Home from "./Pages/Home/Home/Home";
 
 //#region  code
 // import routes from "./Pages/Router";
@@ -37,25 +35,29 @@ import Cart from "./Pages/Home/Cart/Cart";
 //#endregion
 const App = () => {
     const authContext = useContext(AuthContext);
-    let content = <LoginComponent />
-    if (authContext.isAuth) {
-        content = (
-            <div>
-                <Router>
-                    <NavComponent />
-                    <HeaderComponent />
-                    <Routes>
-                        <Route path="/" Component={IndexComponent} />
-                        <Route path="/product/:id" Component={FullProduct} />
-                        <Route path="/cart/:id?" Component={Cart} />
-                    </Routes>
-                </Router>
-            </div>
-        );
-    }
+    // let content = <LoginComponent />
+    // if (authContext.isAuth) {
+    //     content = (
+    //         <div>
+    //             <Router>
+    //                 <NavComponent />
+    //                 <HeaderComponent />
+    //                 <Routes>
+    //                 </Routes>
+    //             </Router>
+    //         </div>
+    //     );
+    // }
     return (
         <Wrapper>
-            {content}
+            <Router>
+                <NavComponent />
+                <HeaderComponent />
+                <Routes>
+                    <Route path="/" Component={Home} />
+                </Routes>
+                <FooterComponent />
+            </Router>
         </Wrapper>
     );
 };

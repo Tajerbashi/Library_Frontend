@@ -1,7 +1,7 @@
 import './HeaderComponent.css'
 const HeaderComponent = (props) => {
     return (
-        <div className='DefaultContainer headerContainer shadow'>
+        <div className='headerContainer shadow'>
             <form>
                 <div className='header-form-container'>
                     <input 
