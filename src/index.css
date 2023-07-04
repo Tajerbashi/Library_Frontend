@@ -31,7 +31,6 @@ a {
     box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
 }
-
 .loadingH2 {
     position: fixed !important;
     animation-name: loader-loading;

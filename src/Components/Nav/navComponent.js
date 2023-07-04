@@ -14,6 +14,9 @@ const NavComponent = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto d-flex flex-lg-row justify-content-between w-100">
                         <div className='d-flex flex-column flex-lg-row'>
+                            <LinkContainer to={'/admin-panel'}>
+                                <Nav.Link className='linkNav'>پنل ادمین</Nav.Link>
+                            </LinkContainer>
                             <LinkContainer to={'/'}>
                                 <Nav.Link className='linkNav'>خانه</Nav.Link>
                             </LinkContainer>
