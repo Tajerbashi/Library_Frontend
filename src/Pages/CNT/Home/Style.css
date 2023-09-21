@@ -1,0 +1,6 @@
+.position{
+    position: relative; top: 3px;
+}
+.img-container{
+    background-image: url('../../../Assets/img/hero_1.jpg');
+}

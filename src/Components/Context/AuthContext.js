@@ -5,7 +5,6 @@ export const AuthContext = React.createContext({
     login: () => {}
 
 });
-
 const AuthContextProvider = (props) => {
     const [isLoggedIn,setInLoggedIn] = useState(false);
     const loginHandler = () => {
@@ -18,7 +17,9 @@ const AuthContextProvider = (props) => {
             login: loginHandler,
         }}
         >
+            <p>
             {props.children}
+            </p>
         </AuthContext.Provider>
     );
 }
