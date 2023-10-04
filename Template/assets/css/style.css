@@ -1,0 +1,41 @@
+@font-face {
+    font-family: IRANSansWeb;
+  src: url(../fonts/IRANSansWeb.ttf) format('truetype'),
+       url('../fonts/IRANSansWeb\ Bold.ttf') format('truety');
+  }
+
+* {
+    margin: 0;
+    padding: 0
+}
+
+html, body {
+    line-height: 1.4;
+    direction: rtl;
+    font-family: 'IRANSansWeb';
+    /* background: linear-gradient(0deg, rgb(0, 0, 0), rgb(185, 66, 11)); */
+    /* height: 100%; */
+}
+
+body {
+    background: url("../img/background1.jpg") no-repeat center center/cover;
+    height: 100vh;
+    z-index: 0;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+ul {
+    list-style: none;
+}
+.backdrop-text{
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem 3rem;
+    border-radius: 1rem;
+    
+}
+.header-backdrop{
+    border-bottom: 3px solid #eee;
+}
