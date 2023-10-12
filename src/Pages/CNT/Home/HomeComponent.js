@@ -1,16 +1,14 @@
 import React from 'react'
 import Wrapper from '../../../Components/HOC/wrapper'
-import HeaderComponent from './components/HeaderComponent'
-import SectionComponent from './components/SectionComponent'
-import FooterComponent from './components/FooterComponent'
+import HeaderComponent from './components/Header/HeaderComponent'
+import SectionComponent from './components/Section/SectionComponent'
+import FooterComponent from './components/Footer/FooterComponent'
 const HomeComponent = () => {
   return (
     <Wrapper>
-      <div className='container py-4'>
         <HeaderComponent></HeaderComponent>
         <SectionComponent />
         <FooterComponent></FooterComponent>
-      </div>
     </Wrapper>
   )
 }

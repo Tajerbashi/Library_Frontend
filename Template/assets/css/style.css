@@ -32,10 +32,11 @@ ul {
 }
 .backdrop-text{
     background: rgba(0, 0, 0, 0.5);
-    padding: 2rem 3rem;
-    border-radius: 1rem;
+    padding: 4rem 5rem;
     
 }
 .header-backdrop{
-    border-bottom: 3px solid #eee;
+}
+.text-red{
+    color: rgb(134, 173, 255) !important;
 }

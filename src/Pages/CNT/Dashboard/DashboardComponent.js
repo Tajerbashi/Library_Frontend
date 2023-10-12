@@ -1,8 +1,8 @@
 import React from 'react'
-
+import './style.css'
 const DashboardComponent = () => {
   return (
-    <div>
+    <div className='dashboard-container-tk'>
       This is a dashboard component
     </div>
   )

@@ -1,0 +1,24 @@
+#navbar{
+    padding: 1rem;
+    background: black;
+}
+#menu{
+    background: rgb(255, 109, 109);
+}
+.list-container-tk{
+    /* background: rgb(255, 109, 109); */
+}
+.list-tk{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.list-item-tk{
+    width: 80px;
+}
+.list-item-tk>a{
+    display: flex;
+    color: aliceblue;
+    flex-direction: column;
+}
