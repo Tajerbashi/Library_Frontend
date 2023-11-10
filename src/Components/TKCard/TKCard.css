@@ -1,0 +1,6 @@
+.container-card{
+    box-sizing: border-box;
+    box-shadow: 0px 0px 7px 2px #272727;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}

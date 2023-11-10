@@ -1,0 +1,13 @@
+@font-face {
+    font-family: iransansweb;
+    src: url(../Fonts/IRANSansWeb.ttf);
+}
+*{
+    font-family: iransansweb;
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: rgb(147, 147, 255);
+}
