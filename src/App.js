@@ -1,10 +1,13 @@
 import "./App.css";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import {Routes, Route } from "react-router-dom";
+
+import Dashboard from "./Layout/Dashboard";
+
 const App = () => {
   return (
-    <div className="App">
-        <Dashboard />
-    </div>
+      <Routes>
+        <Route path={`/`} element={<Dashboard/>} />
+      </Routes>
   );
 };
 

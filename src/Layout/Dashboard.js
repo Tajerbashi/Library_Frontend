@@ -1,11 +1,11 @@
 import React from 'react';
 
-const TKButton = () => {
+const Dashboard = () => {
     return (
         <div>
-            
+            Dashboard
         </div>
     );
 }
 
-export default TKButton;
+export default Dashboard;
