@@ -1,85 +1,66 @@
 import React from "react";
-import {
-  MDBCarousel,
-  MDBCarouselItem,
-  MDBCarouselCaption,
-} from "mdb-react-ui-kit";
-const items = [
-    {
-        id: 1,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 2,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 3,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 4,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 5,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 6,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-      {
-        id: 7,
-        title: "Picture 1",
-        src: "./../../assets/1.jpg",
-        name: "Piture Name 1",
-        description:
-          "Objects are not valid as a React child Objects are not valid as a React child Objects are not valid as a React child",
-      },
-  
+import Carousel from "react-bootstrap/Carousel";
+
+// import { Card, CardImg, CardTitle, CardText, CardImgOverlay } from "reactstrap";
+import "./Slider.css";
+let listPic = [
+  {
+    id: 1,
+    title: "تصویر اول",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/1.jpg",
+  },
+  {
+    id: 2,
+    title: "تصویر دوم",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/2.jpg",
+  },
+  {
+    id: 3,
+    title: "تصویر سوم",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/3.jpg",
+  },
+  {
+    id: 4,
+    title: "تصویر چهارم",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/4.jpg",
+  },
+  {
+    id: 5,
+    title: "تصویر پنجم",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/5.jpg",
+  },
+  {
+    id: 6,
+    title: "تصویر ششم",
+    description:
+      "مهراد جم متولد 14 مرداد 1376 در آبادان ، خواننده و آهنگساز نوظهور است از هنرمندان تازه به دوران رسیده می باشد که از ترانه سرایی و آهنگسازی شروع کرد و حالا در قامت خواننده پاپ فعالیت می کند که بشدت هم هوادار پیدا کرده است. نام اصلی اش «محسن سعیدی کیا» می باشد که بعد از شروع فعالیت خود در عرصه ترانه سرایی نام هنری (مهراد جم) را انتخاب کرد تا راحتر در یاد بماند.",
+    src: "img/6.jpg",
+  },
 ];
-const SliderComponent = () => {
-  console.log("Items ", items);
-  const elements = items.map((item, key) => (
-    <MDBCarouselItem key={key} itemId={item.id}>
-      <img src={item.src} className="d-block w-100" alt="..." />
-      <MDBCarouselCaption>
-        <h5>{item.title}</h5>
-        <p>{item.description}</p>
-      </MDBCarouselCaption>
-    </MDBCarouselItem>
+const SliderComponent = (props) => {
+  const {height ,width} = props;
+  let element = listPic.map((item, key) => (
+    <Carousel.Item key={key} className="rounded-5">
+      <img
+          src={require(`../../assets/${item.src}`)}
+          className={`img-fluid img-style rounded top ${height}`}
+          alt="$"
+        />
+        <Carousel.Caption>
+          <h3>{item.title}</h3>
+        </Carousel.Caption>
+    </Carousel.Item>
   ));
-  console.log("elements : ", elements);
-  return (
-    <MDBCarousel className="bg-danger rounded p-1 m-1" showIndicators showControls fade>
-      {elements}
-      <img src={""} alt="pic"/>
-    </MDBCarousel>
-  );
+  return <Carousel height={height} width={width}>{element}</Carousel>;
 };
 export default SliderComponent;
