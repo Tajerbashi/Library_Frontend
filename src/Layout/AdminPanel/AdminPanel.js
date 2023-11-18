@@ -5,6 +5,7 @@ import {
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
+  HomeOutlined,
 } from "@ant-design/icons";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
@@ -17,6 +18,16 @@ function getItem(label, key, icon, children) {
   };
 }
 const items = [
+  {
+    label: (
+      <a href="/" rel="noopener noreferrer">
+        خانه
+      </a>
+    ),
+    key: "mail",
+    icon: <HomeOutlined />,
+  },
+  getItem("بازگشت به خانه", "10", <HomeOutlined />),
   getItem("پنل مدیریت", "1", <PieChartOutlined />),
   getItem("محصولات", "2", <PieChartOutlined />),
   getItem("کتابخانه", "3", <DesktopOutlined />),

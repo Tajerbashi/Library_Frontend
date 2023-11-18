@@ -1,95 +1,114 @@
-import React from 'react';
-import { LaptopOutlined, NotificationOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-const { Header, Content, Footer, Sider } = Layout;
-const items1 = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
-const items2 = [UserOutlined, LaptopOutlined, NotificationOutlined].map((icon, index) => {
-  const key = String(index + 1);
-  return {
-    key: `sub${key}`,
-    icon: React.createElement(icon),
-    label: `subnav ${key}`,
-    children: new Array(4).fill(null).map((_, j) => {
-      const subKey = index * 4 + j + 1;
-      return {
-        key: subKey,
-        label: `option${subKey}`,
-      };
-    }),
-  };
-});
+import './Dashboard.css'
+import React from "react";
+import { Breadcrumb, Layout, Menu, theme } from "antd";
+import {
+  AppstoreOutlined,
+  MailOutlined,
+  // SettingOutlined,
+} from "@ant-design/icons";
+const { Header, Content, Footer } = Layout;
+const items = [
+  {
+    label: (
+      <a href="/" rel="noopener noreferrer">
+        خانه
+      </a>
+    ),
+    key: "mail",
+    icon: <MailOutlined />,
+  },
+  {
+    label: (
+      <a href="/Admin" rel="noopener noreferrer">
+        داشبورد ادمین
+      </a>
+    ),
+    key: "app",
+    icon: <AppstoreOutlined />,
+    disabled: false,
+  },
+  {
+    label: (
+      <a href="/Products" rel="noopener noreferrer">
+        محصولات
+      </a>
+    ),
+    key: "alipay",
+    icon: <AppstoreOutlined />,
+  },
+  {
+    label: (
+      <a href="/Signin" rel="noopener noreferrer">
+        ورود
+      </a>
+    ),
+    key: "mail",
+    icon: <MailOutlined />,
+  },
+  {
+    label: (
+      <a href="/Signup" rel="noopener noreferrer">
+        ثبت نام
+      </a>
+    ),
+    key: "mail",
+    icon: <MailOutlined />,
+  },
+];
+
 const Dashboard = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
   return (
-    <Layout>
-      <Header
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-        }}
-      >
-        <div className="demo-logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']} items={items1} />
-      </Header>
-      <Content
-        style={{
-          padding: '0 50px',
-        }}
-      >
-        <Breadcrumb
+    <div>
+      <Layout>
+        <Header
           style={{
-            margin: '16px 0',
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
-        <Layout
-          style={{
-            padding: '24px 0',
-            background: colorBgContainer,
-          }}
-        >
-          <Sider
+          <div className="demo-logo" />
+          <Menu
+            theme="dark"
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+            items={items}
+          ></Menu>
+        </Header>
+      </Layout>
+      <Layout>
+        <Content className="main-layout">
+          <Breadcrumb
+            style={{
+              margin: "16px 0",
+            }}
+          >
+            <Breadcrumb.Item>خانه</Breadcrumb.Item>
+            <Breadcrumb.Item>صفحه اصلی</Breadcrumb.Item>
+          </Breadcrumb>
+          <div
+            className="site-layout-content"
             style={{
               background: colorBgContainer,
             }}
-            width={200}
           >
-            <Menu
-              mode="inline"
-              defaultSelectedKeys={['1']}
-              defaultOpenKeys={['sub1']}
-              style={{
-                height: '100%',
-              }}
-              items={items2}
-            />
-          </Sider>
-          <Content
-            style={{
-              padding: '0 24px',
-              minHeight: 280,
-            }}
-          >
-            Content
-          </Content>
-        </Layout>
-      </Content>
-      <Footer
-        style={{
-          textAlign: 'center',
-        }}
-      >
-        Ant Design ©2023 Created by Ant UED
-      </Footer>
-    </Layout>
+          </div>
+        </Content>
+      </Layout>
+      <Layout>
+        <Footer
+          style={{
+            textAlign: "center",
+            position: "sticky",
+            bottom: "0",
+          }}
+        >
+          این وبسایت برای تست طراحی میشود
+        </Footer>
+      </Layout>
+    </div>
   );
 };
 export default Dashboard;

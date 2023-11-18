@@ -1,4 +1,6 @@
-.dashboard-style{
-    height: 100vh;
-    /* background: linear-gradient(180deg,rgb(97, 184, 255),rgb(0, 119, 255)); */
+
+.main-layout{
+    padding: 0.5rem 2rem;
+    font-family: inherit;
+    height: 85vh;
 }
