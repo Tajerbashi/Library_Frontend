@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 const NavbarComponent = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-primary rounded-5 p-3">
+    <Navbar collapseOnSelect expand="lg" className="bg-primary rounded-5 p-3 fixed-top mt-1 me-1">
       <Container>
         <Navbar.Brand href="#home" className="text-light">
           کتابخانه

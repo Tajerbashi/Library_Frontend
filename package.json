@@ -13,6 +13,7 @@
     "@testing-library/user-event": "^13.5.0",
     "@trendyol-js/react-carousel": "^3.0.2",
     "@twicpics/components": "^0.25.1",
+    "antd": "^5.11.2",
     "bootstrap": "^5.3.2",
     "cdbreact": "^1.5.18",
     "flowbite-react": "^0.6.4",

@@ -5,22 +5,94 @@ import Grid from "@mui/material/Grid";
 
 const Main = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Grid container spacing={2}>
-        <Grid item xs={3}>
-          <SliderComponent height={'h-400'}/>
+    <div className="mt-5">
+      <Box sx={{ flexGrow: 1 }}>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
         </Grid>
-        <Grid item xs={3}>
-          <SliderComponent height={'h-300'}/>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
         </Grid>
-        <Grid item xs={3}>
-          <SliderComponent height={'h-250'}/>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
         </Grid>
-        <Grid item xs={3}>
-          <SliderComponent height={'h-100'}/>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
         </Grid>
-      </Grid>
-    </Box>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-400"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-300"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-250"} />
+          </Grid>
+          <Grid item xs={3}>
+            <SliderComponent height={"h-100"} />
+          </Grid>
+        </Grid>
+      </Box>
+    </div>
   );
 };
 
